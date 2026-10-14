@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Source Serif 4 Variable", ui-serif, Georgia, serif;
+
+  /* Aus dem Logo: Rot #E31536, Anthrazit #231F20, Grau #94989A */
+  --color-red: #e31536;
+  --color-red-600: #c40f2c;
+  --color-red-50: #fdf0f2;
+  --color-ink: #1d1b1c;
+  --color-ink-800: #2b2829;
+  --color-ink-700: #3a3637;
+  --color-muted: #5f5a57;
+  --color-grey: #94989a;
+  --color-line: #e6e1db;
+  --color-paper: #f7f5f2;
+  --color-paper-200: #efebe6;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-ink);
+}
+
+::selection {
+  background: var(--color-ink);
+  color: #fff;
+}
+
+.text-balance { text-wrap: balance; }
+.text-pretty { text-wrap: pretty; }
+
+details > summary { list-style: none; }
+details > summary::-webkit-details-marker { display: none; }
+details[open] .faq-icon { transform: rotate(45deg); }
+
+/* Feine Linienstruktur für dunkle Flächen */
+.hairlines {
+  background-image: linear-gradient(to right, rgb(255 255 255 / 0.05) 1px, transparent 1px);
+  background-size: 96px 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
