@@ -20,6 +20,7 @@ npm run lint
 - Kriterien der Vorqualifizierung ändern: [`src/lib/funnel.ts`](src/lib/funnel.ts)
 - Lead-Übertragung & Ausfallsicherheit: [`docs/leads-webhook.md`](docs/leads-webhook.md)
 - Meta-Werbung (5 Ad Angles, Texte, Creatives): [`docs/ad-angles.md`](docs/ad-angles.md)
+- Projekt-Briefing (Kundenfakten, Entscheidungen): [`docs/briefing.md`](docs/briefing.md)
 
 ## Vor dem Livegang mit der Kanzlei klären
 
