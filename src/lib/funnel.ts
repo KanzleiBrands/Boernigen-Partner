@@ -37,9 +37,10 @@ export const QUESTIONS: Question[] = [
       { value: "holding", label: "Holding- oder Gruppenstruktur" },
       { value: "einzel", label: "Einzelunternehmen / Freiberufler" },
       { value: "gbr-partg", label: "GbR / Partnerschaftsgesellschaft" },
+      { value: "gmbh-co-kg", label: "GmbH & Co. KG" },
       { value: "ag", label: "AG / sonstige Kapitalgesellschaft" },
-      // Ausschluss laut Kanzlei: KG und OHG (inkl. GmbH & Co. KG)
-      { value: "kg", label: "KG / GmbH & Co. KG", dq: true },
+      // Ausschluss laut Kanzlei: KG und OHG (GmbH & Co. KG ist ausdrücklich erlaubt)
+      { value: "kg", label: "KG", dq: true },
       { value: "ohg", label: "OHG", dq: true },
     ],
   },
@@ -54,12 +55,12 @@ export const QUESTIONS: Question[] = [
       { value: "industrie", label: "Produktion & Industrie" },
       { value: "gesundheit", label: "Gesundheit & Heilberufe" },
       { value: "immobilien", label: "Immobilien (Bestand & Verwaltung)" },
+      { value: "bautraeger", label: "Bauträger & Projektentwicklung" },
       { value: "freie-berufe", label: "Freie Berufe (Ingenieure, Architekten …)" },
       { value: "sonstige", label: "Andere Branche" },
-      // Bargeldintensive Betriebe + Bauträger werden nicht betreut
+      // Bargeldintensive Betriebe werden nicht betreut
       { value: "gastro-hotel", label: "Gastronomie & Hotellerie", dq: true },
       { value: "gluecksspiel", label: "Glücksspiel & Spielstätten", dq: true },
-      { value: "bautraeger", label: "Bauträger", dq: true },
     ],
   },
   {

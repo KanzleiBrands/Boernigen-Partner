@@ -28,7 +28,5 @@ npm run lint
 - [ ] Portraits Jan & Petra Börnigen vom Drehtag einsetzen (Platzhalter in `src/app/page.tsx`, Abschnitt „Partner“)
 - [ ] Mandanten-Zitate freigeben lassen (stammen aus dem Onboarding-Formular)
 - [ ] Zusage „Rückmeldung innerhalb eines Werktags“ bestätigen
-- [ ] Bauträger ausgeschlossen (laut Onboarding) – so beibehalten?
-- [ ] GmbH & Co. KG wird wie KG ausgeschlossen – so gewollt?
 - [ ] Datenschutzerklärung der Hauptseite um das Anfrageformular und die Weitergabe an Kanzlei Brands OS / Resend ergänzen
 - [ ] Cookie-Consent + Meta-Pixel/Conversions API einbauen

@@ -132,7 +132,7 @@ const faqs = [
   },
   {
     q: "Für wen ist das Angebot gedacht?",
-    a: "Für inhabergeführte Unternehmen und Selbstständige ab etwa 500.000 € Jahresumsatz im Großraum München. Bargeldintensive Branchen wie Gastronomie, Hotellerie oder Glücksspiel sowie Bauträger betreuen wir nicht.",
+    a: "Für inhabergeführte Unternehmen und Selbstständige ab etwa 500.000 € Jahresumsatz im Großraum München. Bargeldintensive Branchen wie Gastronomie, Hotellerie oder Glücksspiel betreuen wir nicht.",
   },
   {
     q: "Wir sind nicht direkt in München. Passt das trotzdem?",
@@ -423,7 +423,6 @@ export default function Home() {
                 <ul className="mt-6 space-y-3.5 text-muted">
                   {[
                     "Sie einen bargeldintensiven Betrieb führen (z. B. Gastronomie, Hotellerie, Glücksspiel)",
-                    "Sie als Bauträger tätig sind",
                     "Sie ausschließlich den günstigsten Preis suchen",
                     "Sie Belege lieber einmal im Jahr im Schuhkarton abgeben",
                   ].map((t) => (
