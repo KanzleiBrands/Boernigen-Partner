@@ -11,7 +11,7 @@ Browser (Vorab-Check)
   │ prüft Pflichtfelder + Kriterien, berechnet Score (A/B/C) und Zielgebiet
   ├─► Kanzlei Brands OS        LEAD_WEBHOOK_URL         (3 Versuche, 8 s Timeout, HMAC-signiert)
   ├─► Backup-Webhook (opt.)    LEAD_BACKUP_WEBHOOK_URL  (z. B. Make/Zapier → Google Sheet)
-  ├─► E-Mail an die Kanzlei    LEAD_EMAIL               (immer – Sicherungskopie mit allen Daten)
+  ├─► E-Mail-Kopie (opt.)      LEAD_EMAIL               (nur wenn gesetzt – Standard: aus, das OS benachrichtigt die Kanzlei)
   └─► Alarm-Mail               ALERT_EMAIL              (nur wenn ein Webhook scheitert, inkl. JSON)
   ▼
 Antwort 200, sobald mindestens EIN Kanal den Lead sicher hat → Browser löscht die Outbox
@@ -26,14 +26,14 @@ Antwort 502, wenn alle Kanäle scheitern → Lead bleibt im Browser und wird bei
 | `LEAD_WEBHOOK_SECRET` | empfohlen | Gemeinsames Geheimnis für die HMAC-Signatur |
 | `LEAD_WEBHOOK_TOKEN` | optional | Falls das OS einen `Authorization: Bearer …`-Header erwartet |
 | `LEAD_BACKUP_WEBHOOK_URL` | empfohlen | Zweites, unabhängiges Ziel (Make/Zapier-Webhook → Google Sheet / Airtable) |
-| `RESEND_API_KEY` | ja | Für die E-Mail-Kopie (Domain bup-steuerberater.de in Resend verifizieren) |
-| `MAIL_FROM` | ja | z. B. `Börnigen & Partners <anfrage@bup-steuerberater.de>` |
-| `LEAD_EMAIL` | ja | Standard: `kanzlei@bup-steuerberater.de` (mehrere mit Komma) |
-| `ALERT_EMAIL` | ja | Postfach bei Kanzlei Brands, das bei Webhook-Fehlern alarmiert wird |
+| `LEAD_EMAIL` | optional | E-Mail-Kopie jedes Leads (mehrere mit Komma). Leer = keine Mail, nur OS |
+| `RESEND_API_KEY` | nur mit Mail | Für `LEAD_EMAIL`/`ALERT_EMAIL` (Absender-Domain in Resend verifizieren) |
+| `MAIL_FROM` | nur mit Mail | z. B. `Kanzlei Brands <leads@kanzlei-brands.de>` |
+| `ALERT_EMAIL` | empfohlen | Postfach bei Kanzlei Brands, das bei Webhook-Fehlern alarmiert wird |
 | `NEXT_PUBLIC_BOOKING_URL` | optional | Kalender-Link (z. B. Calendly/OS-Terminbuchung) – wird auf `/danke` eingebettet |
 | `NEXT_PUBLIC_SITE_URL` | optional | Live-Domain, z. B. `https://erstgespraech.bup-steuerberater.de` |
 
-Ohne `RESEND_API_KEY` schlägt die Mail auf der Produktivumgebung bewusst fehl (statt „erfolgreich“ zu melden), damit ein Lead nie fälschlich als gesichert gilt.
+**Minimal-Setup:** nur `LEAD_WEBHOOK_URL`. Das OS informiert die Kanzlei selbst per Mail. Ist `LEAD_EMAIL` gesetzt, aber `RESEND_API_KEY` fehlt, schlägt die Mail auf der Produktivumgebung bewusst fehl (statt „erfolgreich“ zu melden).
 
 ## Was das OS empfängt
 
@@ -98,7 +98,7 @@ const ok = Math.abs(Date.now() / 1000 - Number(ts)) < 300 &&
 1. **Browser-Outbox:** Der Lead liegt im Browser, bevor er gesendet wird. Netzabbruch, Server-Fehler oder geschlossener Tab → beim nächsten Aufruf der Seite wird automatisch nachgesendet (14 Tage). Gleiche `lead_id` → keine Dubletten.
 2. **Wiederholungen:** 3 Versuche im Browser × 3 Versuche zum OS mit steigender Wartezeit. Kurze Ausfälle des OS (Deploy, Neustart) werden überbrückt.
 3. **Zwei unabhängige Webhooks:** OS + Backup (Make/Zapier → Google Sheet). Fällt das OS länger aus, liegt der Lead trotzdem vollständig im Sheet.
-4. **E-Mail-Kopie an die Kanzlei:** Jeder Lead geht zusätzlich an `kanzlei@bup-steuerberater.de` – mit Score im Betreff und Übertragungsstatus in der Mail. Der Vertrieb kann sofort anrufen, unabhängig vom OS.
+4. **E-Mail-Kopie (optional):** Mit `LEAD_EMAIL` geht jeder Lead zusätzlich per Mail raus – mit Score im Betreff und Übertragungsstatus. Standardmäßig aus, weil das OS die Kanzlei benachrichtigt.
 5. **Alarm + Log:** Scheitert ein Webhook, geht eine Alarm-Mail mit dem kompletten JSON an Kanzlei Brands (manuell im OS nachtragen). Zusätzlich steht jeder Lead als `[lead]`-Zeile in den Vercel-Logs.
 
 **Wöchentlicher Abgleich (5 Minuten):** Anzahl Leads in Meta (Event `Lead`) ↔ Google Sheet (Backup) ↔ OS. Weichen die Zahlen ab, über die `lead_id` den fehlenden Lead finden.

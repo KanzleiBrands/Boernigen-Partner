@@ -101,7 +101,7 @@ export function buildPayload(input: {
  * Liefert einen Lead an alle Kanäle aus:
  *  1. Kanzlei Brands OS (LEAD_WEBHOOK_URL) – Hauptkanal
  *  2. Backup-Webhook (LEAD_BACKUP_WEBHOOK_URL, z. B. Make/Zapier → Google Sheet) – optional
- *  3. E-Mail an die Kanzlei (LEAD_EMAIL) – immer, als Sicherungskopie
+ *  3. E-Mail-Kopie (LEAD_EMAIL) – optional, nur wenn LEAD_EMAIL gesetzt ist
  *  4. Alarm-Mail an Kanzlei Brands (ALERT_EMAIL), falls ein Webhook scheitert
  *
  * `delivered` ist true, sobald mindestens ein Kanal den Lead sicher hat.
@@ -147,18 +147,22 @@ export async function deliverLead(p: LeadPayload) {
     ["Übertragung", status],
   ])}`;
 
+  // Standardweg: nur das OS (es benachrichtigt die Kanzlei selbst). Mail-Kopie nur, wenn ausdrücklich konfiguriert.
+  const mailTo = list(process.env.LEAD_EMAIL, "");
   let mailOk = false;
-  try {
-    await sendMail({
-      to: list(process.env.LEAD_EMAIL, "kanzlei@bup-steuerberater.de"),
-      subject: `${webhookFailed ? "⚠ " : ""}Neue Erstgespräch-Anfrage (${p.score.klasse}): ${k.firma} – ${k.vorname} ${k.nachname}`,
-      html,
-      replyTo: k.email,
-      idempotencyKey: `lead-${p.lead_id}`,
-    });
-    mailOk = true;
-  } catch (e) {
-    console.error("[lead:mail]", p.lead_id, e);
+  if (mailTo.length) {
+    try {
+      await sendMail({
+        to: mailTo,
+        subject: `${webhookFailed ? "⚠ " : ""}Neue Erstgespräch-Anfrage (${p.score.klasse}): ${k.firma} – ${k.vorname} ${k.nachname}`,
+        html,
+        replyTo: k.email,
+        idempotencyKey: `lead-${p.lead_id}`,
+      });
+      mailOk = true;
+    } catch (e) {
+      console.error("[lead:mail]", p.lead_id, e);
+    }
   }
 
   if (webhookFailed && process.env.ALERT_EMAIL) {
