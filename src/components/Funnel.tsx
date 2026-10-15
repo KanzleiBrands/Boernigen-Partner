@@ -133,7 +133,7 @@ export function Funnel() {
       } catch {
         /* ignorieren */
       }
-      router.push(`/danke?v=${encodeURIComponent(kontakt.vorname)}`);
+      router.push(`/danke?n=${encodeURIComponent(`${kontakt.vorname} ${kontakt.nachname}`)}`);
       return;
     }
     setStatus(r);
