@@ -10,6 +10,12 @@ export type LeadPayload = {
   quelle: string;
   kanzlei: string;
   status: "qualifiziert";
+  // Flach auf oberster Ebene, damit das Kanzlei Brands OS die Kontaktfelder automatisch erkennt
+  vorname: string;
+  nachname: string;
+  firma: string;
+  email: string;
+  telefon: string;
   kontakt: {
     vorname: string;
     nachname: string;
@@ -87,6 +93,11 @@ export function buildPayload(input: {
     quelle: "landingpage-erstgespraech",
     kanzlei: "Börnigen & Partners Steuerberatungsgesellschaft mbH",
     status: "qualifiziert",
+    vorname: input.kontakt.vorname,
+    nachname: input.kontakt.nachname,
+    firma: input.kontakt.firma,
+    email: input.kontakt.email,
+    telefon: input.kontakt.telefon,
     kontakt: input.kontakt,
     nachricht: input.nachricht,
     qualifizierung,

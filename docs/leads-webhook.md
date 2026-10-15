@@ -56,6 +56,8 @@ Beispiel-Body (echter Testlauf):
   "quelle": "landingpage-erstgespraech",
   "kanzlei": "Börnigen & Partners Steuerberatungsgesellschaft mbH",
   "status": "qualifiziert",
+  "vorname": "Max", "nachname": "Muster", "firma": "Muster Consulting GmbH",
+  "email": "max@example.com", "telefon": "0171 1234567",
   "kontakt": {
     "vorname": "Max", "nachname": "Muster", "firma": "Muster Consulting GmbH",
     "email": "max@example.com", "telefon": "0171 1234567", "plz": "81675",
@@ -80,6 +82,8 @@ Beispiel-Body (echter Testlauf):
   "einwilligung": { "datenschutz": true, "zeitpunkt": "2026-10-14T15:32:38.203Z", "text": "Ich bin einverstanden, …" }
 }
 ```
+
+**Kontaktfelder doppelt:** `vorname`, `nachname`, `firma`, `email` und `telefon` stehen zusätzlich auf oberster Ebene. Das Kanzlei Brands OS erkennt Kontaktfelder nur dort automatisch (`AUTO_DETECT` in `src/lib/webhook-ingest.ts` des OS) – ohne sie erscheint der Lead als „Unbenannt · Keine E-Mail · Kein Telefon“. `kontakt` bleibt für andere Empfänger erhalten.
 
 **Das OS muss:** mit `2xx` antworten, sobald der Lead gespeichert ist (nicht erst nach weiterer Verarbeitung), und `lead_id` als eindeutigen Schlüssel nutzen. `4xx` wird nicht wiederholt (Konfigurationsfehler → Alarm-Mail), `5xx`/`408`/`429`/Timeout werden wiederholt.
 
