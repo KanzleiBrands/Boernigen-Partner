@@ -1,8 +1,8 @@
 import { existsSync } from "node:fs";
 import path from "node:path";
-import { ArrowRight, Check, Lock, Plus, ShieldCheck } from "lucide-react";
-import Link from "next/link";
+import { Check, Lock, Plus, ShieldCheck } from "lucide-react";
 import { Header } from "@/components/Header";
+import { StickyCta } from "@/components/StickyCta";
 import { Footer } from "@/components/Footer";
 import { SelfCheck, type Pain } from "@/components/SelfCheck";
 import { YearEndCountdown } from "@/components/YearEndCountdown";
@@ -15,7 +15,7 @@ import {
   StructureDiagram,
   SwitchGraphic,
 } from "@/components/Visuals";
-import { Container, CtaButton, CtaNote, Eyebrow, FUNNEL_HREF, H2 } from "@/components/ui";
+import { Container, CtaButton, CtaNote, Eyebrow, H2 } from "@/components/ui";
 
 /*
  * Copy-Prinzip: Apple-Stil – kurze Headlines (≤ 6 Wörter), ein Satz Erklärung, die Grafik erzählt den Rest.
@@ -145,7 +145,7 @@ export default function Home() {
       <Header />
       <main>
         {/* HERO */}
-        <section className="relative overflow-hidden bg-paper">
+        <section id="hero" className="relative overflow-hidden bg-paper">
           <div
             className="pointer-events-none absolute -top-40 -right-40 size-[520px] rounded-full bg-red/[0.07] blur-2xl"
             aria-hidden
@@ -502,16 +502,8 @@ export default function Home() {
       </main>
       <Footer />
 
-      {/* Mobile Sticky-CTA */}
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-white/95 p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur sm:hidden">
-        <Link
-          href={FUNNEL_HREF}
-          className="flex w-full items-center justify-center gap-2 rounded-xl bg-red py-3.5 text-[15px] font-semibold text-white"
-        >
-          Kostenloses Erstgespräch sichern
-          <ArrowRight className="size-4" aria-hidden />
-        </Link>
-      </div>
+      {/* Mobile Sticky-CTA – erst nach dem Hero */}
+      <StickyCta heroId="hero" />
     </>
   );
 }
