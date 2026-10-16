@@ -69,11 +69,9 @@ Beispiel-Body (echter Testlauf):
     "rechtsform":  { "wert": "gmbh", "label": "GmbH / UG" },
     "branche":     { "wert": "beratung", "label": "Beratung & Dienstleistung" },
     "mitarbeiter": { "wert": "10-49", "label": "10 – 49" },
-    "leistungen":  { "wert": ["komplett"], "label": "Alles aus einer Hand" },
-    "anlass":      { "wert": ["erreichbarkeit", "nicht-proaktiv"], "label": "Antworten dauern zu lange, Keine proaktiven Gestaltungsvorschläge" },
-    "zeitpunkt":   { "wert": "sofort", "label": "So bald wie möglich" }
+    "anlass":      { "wert": ["erreichbarkeit", "nicht-proaktiv"], "label": "Antworten dauern zu lange, Keine proaktiven Gestaltungsvorschläge" }
   },
-  "score": { "punkte": 11, "klasse": "A" },
+  "score": { "punkte": 8, "klasse": "A" },
   "im_zielgebiet": true,
   "tracking": {
     "utm_source": "meta", "utm_campaign": "bup-erstgespraech", "utm_content": "angle1-video",

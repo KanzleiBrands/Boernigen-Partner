@@ -7,9 +7,9 @@ import { MetaPixel } from "@/components/MetaPixel";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://boernigen-partner.vercel.app"),
-  title: "Kostenfreier Steuer-Hebel-Check für Unternehmer | Börnigen & Partners Steuerberater",
+  title: "Steuerberater für Unternehmer im Raum München | Börnigen & Partners",
   description:
-    "Für Unternehmer im Raum München ab 500.000 € Umsatz: In 30 Minuten zeigen wir Ihnen Ihre 3 wichtigsten ungenutzten Steuer-Hebel – kostenfrei, vertraulich, ohne Wechselpflicht. Börnigen & Partners Steuerberater.",
+    "Für Unternehmer im Raum München ab 500.000 € Umsatz: Weniger Steuern, weniger Papierkram. Kostenloses Erstgespräch: In 30 Minuten wissen Sie, wo Sie Steuern und Zeit sparen können.",
   openGraph: {
     type: "website",
     locale: "de_DE",

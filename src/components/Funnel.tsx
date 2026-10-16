@@ -162,7 +162,7 @@ export function Funnel() {
 
       {q ? (
         <div key={q.id} className="animate-[fadeIn_.35s_ease-out]">
-          <h1 className="font-serif text-3xl leading-tight font-medium text-balance text-ink sm:text-[2.2rem]">
+          <h1 className="text-[1.75rem] leading-tight font-semibold tracking-[-0.02em] text-balance text-ink sm:text-[2.2rem]">
             {q.title}
           </h1>
           {q.subtitle && <p className="mt-3 text-muted">{q.subtitle}</p>}
@@ -223,7 +223,7 @@ export function Funnel() {
           <p className="inline-flex items-center gap-2 rounded-sm bg-red-50 px-3 py-1.5 text-sm font-medium text-red-600">
             <Check className="size-4" aria-hidden /> Ihr Unternehmen passt zu unserem Betreuungsprofil.
           </p>
-          <h1 className="mt-5 font-serif text-3xl leading-tight font-medium text-balance text-ink sm:text-[2.2rem]">
+          <h1 className="mt-5 text-[1.75rem] leading-tight font-semibold tracking-[-0.02em] text-balance text-ink sm:text-[2.2rem]">
             Wohin dürfen wir Ihren Terminvorschlag senden?
           </h1>
           <p className="mt-3 text-muted">
@@ -328,7 +328,7 @@ export function Funnel() {
                 "Erneut senden"
               ) : (
                 <>
-                  Kostenfreien Hebel-Check anfragen <ArrowRight className="size-4" aria-hidden />
+                  Kostenloses Erstgespräch anfragen <ArrowRight className="size-4" aria-hidden />
                 </>
               )}
             </button>
@@ -372,7 +372,7 @@ function Disqualified({ option, onBack }: { option: Option; onBack: () => void }
   const umsatz = option.value === "unter-500k";
   return (
     <div className="animate-[fadeIn_.35s_ease-out]">
-      <h1 className="font-serif text-3xl leading-tight font-medium text-balance text-ink sm:text-[2.2rem]">
+      <h1 className="text-[1.75rem] leading-tight font-semibold tracking-[-0.02em] text-balance text-ink sm:text-[2.2rem]">
         Vielen Dank für Ihr Interesse.
       </h1>
       <p className="mt-5 text-lg leading-relaxed text-ink-700">

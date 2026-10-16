@@ -33,10 +33,13 @@ const pains: Pain[] = [
 ];
 
 const offer = [
-  { t: "Ihre 3 wichtigsten Hebel", d: "Sortiert nach Wirkung – inklusive allem, was vor dem 31.12. noch geht." },
-  { t: "Nachzahlungs-Frühwarnung", d: "Droht eine Nachzahlung? Sie wissen es, bevor der Bescheid kommt." },
-  { t: "Digital-Check", d: "Wo Lohn und Buchhaltung bei Ihnen noch Zeit fressen." },
-  { t: "Wechsel-Fahrplan", d: "Falls sinnvoll: Ablauf, Zeitpunkt, Honorar. Schwarz auf weiß." },
+  {
+    t: "Wo Sie Steuern sparen können",
+    d: "Ihre 3 größten Ansatzpunkte – inklusive allem, was vor dem 31.12. noch geht.",
+  },
+  { t: "Warnung vor Nachzahlungen", d: "Droht eine Nachzahlung? Sie wissen es, bevor der Bescheid kommt." },
+  { t: "Wo Ihnen Zeit verloren geht", d: "Was sich bei Lohn und Buchhaltung automatisieren lässt." },
+  { t: "Was ein Wechsel bedeuten würde", d: "Falls sinnvoll: Ablauf, Zeitpunkt, Honorar. Schwarz auf weiß." },
 ];
 
 const faqs = [
@@ -44,7 +47,7 @@ const faqs = [
     q: "Ich bin eigentlich zufrieden. Lohnt sich das?",
     a: "Gerade dann. Zufrieden heißt oft: Es läuft ordentlich – aber niemand gestaltet. Finden wir nichts, sagen wir Ihnen das ehrlich.",
   },
-  { q: "Was kostet der Hebel-Check?", a: "Nichts. Kostenfrei, unverbindlich, ohne Wechselpflicht." },
+  { q: "Was kostet das Erstgespräch?", a: "Nichts. Kostenlos, unverbindlich, ohne Wechselpflicht." },
   {
     q: "Ist ein Wechsel nicht aufwendig?",
     a: "Für Sie nicht. Kündigung, DATEV-Datenübernahme, Fristen und die Abstimmung mit Ihrer bisherigen Kanzlei übernehmen wir.",
@@ -149,16 +152,16 @@ export default function Home() {
           />
           <Container className="relative grid gap-10 pt-10 pb-14 sm:py-20 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-16 lg:py-24">
             <div>
-              <Eyebrow>Für Unternehmer ab 500.000 € Umsatz</Eyebrow>
+              <Eyebrow>Für Unternehmer ab 500.000 € Umsatz · Raum München</Eyebrow>
               <h1 className="mt-5 text-[2.6rem] leading-[1.02] font-semibold tracking-[-0.035em] text-balance text-ink sm:text-6xl lg:text-[4.2rem]">
-                Ihr Steuerberater sollte Sie anrufen. <span className="text-red">Nicht umgekehrt.</span>
+                <span className="text-red">Weniger Steuern.</span> Weniger Papierkram. Mehr Zeit für Ihr Unternehmen.
               </h1>
               <p className="mt-5 max-w-lg text-lg leading-relaxed text-ink-700 sm:text-xl">
-                Steuern planen. Lohn und Buchhaltung automatisieren. Die richtigen Hebel setzen – bevor Sie fragen
-                müssen.
+                Wir planen Ihre Steuern, bevor sie anfallen, automatisieren Lohn und Buchhaltung und melden uns, bevor
+                es teuer wird.
               </p>
               <div className="mt-8">
-                <CtaButton className="w-full sm:w-auto">Kostenfrei meine Steuer-Hebel finden</CtaButton>
+                <CtaButton className="w-full sm:w-auto">Kostenloses Erstgespräch sichern</CtaButton>
                 <CtaNote />
               </div>
             </div>
@@ -167,8 +170,8 @@ export default function Home() {
               <div className="mt-3 grid grid-cols-3 gap-2 text-center">
                 {[
                   ["5×", "DATEV Digitale Kanzlei"],
-                  ["30 Min.", "kostenfrei"],
-                  ["3", "Hebel für Sie"],
+                  ["30 Min.", "Klarheit"],
+                  ["0 €", "Erstgespräch"],
                 ].map(([a, b]) => (
                   <div key={b} className="rounded-2xl bg-white px-2 py-3 ring-1 ring-line">
                     <p className="text-xl font-semibold tracking-tight text-ink">{a}</p>
@@ -213,7 +216,7 @@ export default function Home() {
             <Head
               eyebrow="Ehrlicher Selbsttest"
               title="Kommt Ihnen das bekannt vor?"
-              sub="Tippen Sie an, was auf Sie zutrifft."
+              sub="Jeder dieser Punkte kostet Sie Geld und Zeit – Jahr für Jahr mehr. Tippen Sie an, was zutrifft."
             />
             <SelfCheck pains={pains} />
           </Container>
@@ -224,12 +227,12 @@ export default function Home() {
           <Container>
             <Head
               eyebrow="Steuern"
-              title="Planen statt bezahlen, was herauskommt."
-              sub="Gleiches Unternehmen, gleicher Umsatz. Zwei völlig verschiedene Jahre."
+              title="Steuern planen statt Nachzahlungen erleben."
+              sub="Gleiches Unternehmen, gleicher Umsatz. Der einzige Unterschied: ein Steuerberater, der vorausdenkt."
             />
             <YearComparison />
             <div className="mt-10 text-center">
-              <CtaButton className="w-full sm:w-auto">Option B: Steuern optimieren, bevor sie entstehen</CtaButton>
+              <CtaButton className="w-full sm:w-auto">Ich will Option B – Erstgespräch sichern</CtaButton>
               <p className="mt-3 text-xs text-grey">Schematische Darstellung typischer Abläufe.</p>
             </div>
           </Container>
@@ -237,9 +240,9 @@ export default function Home() {
 
         {/* STRUKTUR */}
         <Pillar
-          eyebrow="Gestaltung & Struktur"
-          title="Die richtige Struktur. Bevor es zählt."
-          sub="Holding, Geschäftsführergehalt, Rechtsform: Hier entscheidet sich, was Ihnen am Ende bleibt."
+          eyebrow="Steuerliche Gestaltung"
+          title="Mehr vom Gewinn behalten."
+          sub="Mit der richtigen Struktur – Holding, Geschäftsführergehalt, Rechtsform – bleibt Ihnen mehr von dem, was Sie verdienen. Wir prüfen, was zu Ihnen passt."
           points={[
             "Gewinne in der Holding reinvestieren",
             "Geschäftsführervergütung optimal aufgestellt",
@@ -253,8 +256,8 @@ export default function Home() {
           tint
           flip
           eyebrow="Lohn & HR"
-          title="Lohn direkt aus Ihrem HR-System."
-          sub="Ihr System liefert, wir rechnen ab. Ohne Excel. Ohne E-Mail-Pingpong."
+          title="Lohnabrechnung ohne Excel und E-Mail-Chaos."
+          sub="Arbeitszeiten, Urlaub, neue Mitarbeiter: Ihr Personalsystem schickt alles direkt an uns. Wir rechnen ab – pünktlich und ohne Abtippfehler."
           points={["Personio Expert Partner", "HRworks Partner", "Weitere HR-Tools angebunden"]}
           visual={<PayrollFlow />}
         />
@@ -262,8 +265,8 @@ export default function Home() {
         {/* BUCHHALTUNG */}
         <Pillar
           eyebrow="Finanzbuchhaltung"
-          title="Buchhaltung ohne Abtippen."
-          sub="Digitale Vorsysteme sparen Ihrer Buchhaltung Stunden. Zeit für das, was Ihr Unternehmen weiterbringt."
+          title="Buchhaltung, die Ihrem Team Stunden spart."
+          sub="Belege und Kontoauszüge fließen automatisch zu uns. Ihre Buchhaltungskraft tippt nicht mehr ab – und hat Zeit für Aufgaben, die Ihr Unternehmen voranbringen."
           points={[
             "Belege und Bankdaten fließen automatisch",
             "Zahlen monatlich aktuell",
@@ -276,10 +279,14 @@ export default function Home() {
         <Pillar
           tint
           flip
-          eyebrow="CFO-Service"
-          title="Wir denken wie Ihr CFO."
-          sub="Sie sehen jederzeit, wo Sie stehen. Wir setzen die Hebel. Sie konzentrieren sich auf Ihr Wachstum."
-          points={["Liquidität und Steuerlast im Blick", "Vorschläge, bevor Sie fragen", "Fester Ansprechpartner"]}
+          eyebrow="CFO-Service – Ihr externer Finanzchef"
+          title="Ein Finanzchef an Ihrer Seite. Ohne ihn einzustellen."
+          sub="Große Unternehmen haben einen CFO, der Geld, Steuern und Planung im Blick hat. Diesen Blick bekommen Sie bei uns dazu – damit Sie sich auf Ihr Geschäft konzentrieren können."
+          points={[
+            "Sie wissen jederzeit, wie viel Geld Ihnen bleibt",
+            "Wir melden uns mit Vorschlägen, bevor Sie fragen",
+            "Ein fester Ansprechpartner, der Ihr Unternehmen kennt",
+          ]}
           visual={<CfoCockpit />}
         />
 
@@ -289,14 +296,18 @@ export default function Home() {
             <Head
               light
               eyebrow="Der Stichtag"
-              title="Gestaltung hat ein Verfallsdatum."
-              sub="Was bis zum 31.12. nicht geplant ist, wird im Abschluss nur noch festgestellt."
+              title="Viele Steuervorteile verfallen am 31. Dezember."
+              sub="Was bis zum Jahresende nicht geregelt ist, lässt sich danach nicht mehr ändern. Dann zahlen Sie, was herauskommt."
             />
             <div className="mt-10">
               <YearEndCountdown />
             </div>
             <ul className="mx-auto mt-10 grid max-w-3xl gap-3 text-left sm:grid-cols-3">
-              {["Tantieme & GF-Gehalt", "Investitionszeitpunkt", "Ausschüttung oder Holding"].map((t, i) => (
+              {[
+                "Ihr Gehalt & Bonus als Geschäftsführer",
+                "Der Zeitpunkt größerer Anschaffungen",
+                "Gewinne entnehmen oder im Unternehmen lassen",
+              ].map((t, i) => (
                 <li key={t} className="flex items-center gap-3 rounded-2xl bg-white/[0.06] px-4 py-4">
                   <span className="text-sm font-semibold text-red">0{i + 1}</span>
                   <span className="font-medium">{t}</span>
@@ -304,7 +315,7 @@ export default function Home() {
               ))}
             </ul>
             <div className="mt-10">
-              <CtaButton className="w-full sm:w-auto">Hebel vor dem 31.12. sichern</CtaButton>
+              <CtaButton className="w-full sm:w-auto">Erstgespräch vor dem 31.12. sichern</CtaButton>
               <CtaNote light />
             </div>
           </Container>
@@ -314,9 +325,9 @@ export default function Home() {
         <section className="py-16 sm:py-28">
           <Container>
             <Head
-              eyebrow="Der Steuer-Hebel-Check"
-              title="30 Minuten. Ihre 3 Hebel."
-              sub="Kostenfrei. Ohne Wechselpflicht."
+              eyebrow="Ihr kostenloses Erstgespräch"
+              title="30 Minuten, die sich für Sie lohnen."
+              sub="Sie erfahren, wo Sie Steuern und Zeit verschenken – auch wenn Sie danach nicht wechseln."
             />
             <div className="mx-auto mt-10 max-w-3xl rounded-3xl bg-white p-6 shadow-[0_40px_80px_-40px_rgba(29,27,28,0.35)] ring-1 ring-line sm:p-10">
               <ol className="grid gap-6 sm:grid-cols-2">
@@ -340,7 +351,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="mt-8 text-center">
-                <CtaButton className="w-full sm:w-auto">Kostenfrei meine 3 Hebel erfahren</CtaButton>
+                <CtaButton className="w-full sm:w-auto">Kostenloses Erstgespräch sichern</CtaButton>
                 <CtaNote />
               </div>
             </div>
@@ -350,7 +361,11 @@ export default function Home() {
         {/* PARTNER + STIMMEN */}
         <section className="bg-paper py-16 sm:py-28">
           <Container>
-            <Head eyebrow="Ihre Steuerberater" title="Menschen. Keine Warteschleife." />
+            <Head
+              eyebrow="Ihre Steuerberater"
+              title="Feste Ansprechpartner, die Ihr Unternehmen kennen."
+              sub="Kein Callcenter, kein ständig wechselnder Sachbearbeiter. Sie sprechen mit Steuerberatern, die Ihre Zahlen kennen."
+            />
             <div className="mx-auto mt-10 grid max-w-xl grid-cols-2 gap-3 sm:gap-5">
               {partners.map(({ ini, name, title, img }) => (
                 <figure key={name}>
@@ -395,9 +410,9 @@ export default function Home() {
         <section className="py-16 sm:py-28">
           <Container>
             <Head
-              eyebrow="Wechsel"
-              title="Wechseln? Erledigen wir."
-              sub="Ihr Aufwand: ein Gespräch und eine Unterschrift."
+              eyebrow="Steuerberater wechseln"
+              title="Wechseln ist einfacher, als Sie denken."
+              sub="Wir übernehmen alles. Ihr Aufwand: ein Gespräch und eine Unterschrift."
             />
             <div className="mx-auto mt-10 max-w-4xl">
               <SwitchGraphic />
@@ -468,12 +483,14 @@ export default function Home() {
               <div className="rounded-3xl bg-red p-6">
                 <p className="text-sm font-semibold text-white/80">Option B</p>
                 <p className="mt-2 text-xl font-semibold">30 Minuten Klarheit.</p>
-                <p className="mt-2 leading-relaxed text-white/90">Ihre 3 Hebel. Kostenfrei. Dann entscheiden Sie.</p>
+                <p className="mt-2 leading-relaxed text-white/90">
+                  Kostenloses Erstgespräch. Sie wissen, wo Sie sparen können – dann entscheiden Sie.
+                </p>
               </div>
             </div>
             <div className="mt-10 text-center">
               <CtaButton variant="light" className="w-full sm:w-auto">
-                Option B: Steuern planen statt bezahlen
+                Option B: Kostenloses Erstgespräch sichern
               </CtaButton>
               <p className="mt-4 flex items-center justify-center gap-2 text-sm text-white/55">
                 <Lock className="size-3.5" aria-hidden />
@@ -491,7 +508,7 @@ export default function Home() {
           href={FUNNEL_HREF}
           className="flex w-full items-center justify-center gap-2 rounded-xl bg-red py-3.5 text-[15px] font-semibold text-white"
         >
-          Kostenfrei Steuer-Hebel finden
+          Kostenloses Erstgespräch sichern
           <ArrowRight className="size-4" aria-hidden />
         </Link>
       </div>

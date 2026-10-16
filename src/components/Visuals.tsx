@@ -43,8 +43,8 @@ export function AdvisorMessage({ avatar }: { avatar?: string }) {
         </span>
       </div>
       <p className="mt-3 rounded-2xl rounded-tl-sm bg-paper p-3.5 text-[15px] leading-relaxed text-ink">
-        Ihre Hochrechnung ist fertig. <strong className="font-semibold">Zwei Hebel</strong> sollten wir vor dem 31.12.
-        noch ziehen. Passt Ihnen Donnerstag?
+        Ihre Hochrechnung ist fertig. Mit <strong className="font-semibold">zwei Maßnahmen</strong> vor dem 31.12.
+        sparen Sie noch Steuern. Passt Ihnen Donnerstag?
       </p>
       <p className="mt-2 flex items-center justify-end gap-1 text-[11px] text-grey">
         Gelesen <CheckCheck className="size-3.5 text-red" aria-hidden />
@@ -335,7 +335,7 @@ export function SwitchGraphic() {
       <div className="flex flex-col rounded-3xl bg-white p-6 ring-1 ring-line sm:p-7">
         <p className="text-xs font-semibold tracking-[0.16em] text-muted uppercase">Ihr Teil</p>
         <div className="mt-5 flex flex-1 flex-col justify-end gap-2">
-          {["2 Minuten Vorab-Check", "30 Minuten Gespräch", "Eine Unterschrift"].map((t) => (
+          {["2 Minuten Fragebogen", "30 Minuten Gespräch", "Eine Unterschrift"].map((t) => (
             <div
               key={t}
               className="flex items-center gap-3 rounded-xl bg-paper px-4 py-3 text-[15px] font-medium text-ink"

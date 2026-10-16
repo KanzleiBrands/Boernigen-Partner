@@ -9,7 +9,7 @@
 export type Option = { value: string; label: string; hint?: string; dq?: boolean };
 
 export type Question = {
-  id: "rechtsform" | "umsatz" | "branche" | "mitarbeiter" | "leistungen" | "anlass" | "zeitpunkt";
+  id: "rechtsform" | "umsatz" | "branche" | "mitarbeiter" | "anlass";
   title: string;
   subtitle?: string;
   multi?: boolean;
@@ -75,21 +75,6 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: "leistungen",
-    title: "Welche Leistungen sollen wir für Sie übernehmen?",
-    subtitle: "Mehrfachauswahl möglich.",
-    multi: true,
-    options: [
-      { value: "komplett", label: "Alles aus einer Hand" },
-      { value: "lohn", label: "Lohn- & Gehaltsabrechnung" },
-      { value: "fibu", label: "Finanzbuchhaltung" },
-      { value: "abschluss", label: "Jahresabschluss & Steuererklärungen" },
-      { value: "gestaltung", label: "Proaktive Steuer- & Gestaltungsberatung" },
-      { value: "cfo", label: "CFO-Service, Controlling & Liquiditätsplanung" },
-      { value: "nachfolge", label: "Unternehmensbewertung & Nachfolge" },
-    ],
-  },
-  {
     id: "anlass",
     title: "Was stört Sie an Ihrer aktuellen Steuerberatung am meisten?",
     subtitle: "Mehrfachauswahl möglich.",
@@ -104,16 +89,6 @@ export const QUESTIONS: Question[] = [
       { value: "honorar", label: "Honorare sind intransparent" },
       { value: "gewachsen", label: "Wir sind der Kanzlei entwachsen" },
       { value: "kein-stb", label: "Wir haben aktuell keinen Steuerberater" },
-    ],
-  },
-  {
-    id: "zeitpunkt",
-    title: "Wann möchten Sie die Zusammenarbeit idealerweise starten?",
-    options: [
-      { value: "sofort", label: "So bald wie möglich" },
-      { value: "3-monate", label: "In den nächsten 3 Monaten" },
-      { value: "jahreswechsel", label: "Zum nächsten Jahreswechsel" },
-      { value: "offen", label: "Ich möchte mich zunächst informieren" },
     ],
   },
 ];
@@ -149,14 +124,14 @@ export function inRegion(plz: string | undefined) {
   return REGION_PREFIXES.some((prefix) => p.startsWith(prefix));
 }
 
-/** Einfaches Scoring für die Priorisierung im Vertrieb (A/B/C). */
+/** Einfaches Scoring für die Priorisierung im Vertrieb (A/B/C). Max. 10 Punkte. */
 export function leadScore(answers: Answers, plz?: string) {
   let s = 0;
   s += { "500k-1m": 2, "1m-2-5m": 3, "2-5m-10m": 4, "ueber-10m": 4 }[answers.umsatz as string] ?? 0;
   s += { "1-9": 1, "10-49": 2, "50-249": 3, "250+": 3 }[answers.mitarbeiter as string] ?? 0;
-  const l = (answers.leistungen as string[] | undefined) ?? [];
-  s += l.includes("komplett") ? 3 : Math.min(l.length, 3);
-  s += { sofort: 2, "3-monate": 2, jahreswechsel: 1 }[answers.zeitpunkt as string] ?? 0;
+  // Mehrere Wechselgründe = höherer Leidensdruck
+  const a = ((answers.anlass as string[] | undefined) ?? []).filter((v) => v !== "kein-stb");
+  s += Math.min(a.length, 2);
   if (inRegion(plz)) s += 1;
-  return { punkte: s, klasse: s >= 10 ? "A" : s >= 7 ? "B" : "C" } as const;
+  return { punkte: s, klasse: s >= 7 ? "A" : s >= 5 ? "B" : "C" } as const;
 }

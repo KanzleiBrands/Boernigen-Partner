@@ -21,7 +21,7 @@ export default async function DankePage({ searchParams }: { searchParams: Promis
         <Container className="py-16 sm:py-24">
           <div className="mx-auto max-w-3xl">
             <Eyebrow>Anfrage eingegangen</Eyebrow>
-            <h1 className="mt-6 font-serif text-4xl leading-tight font-medium text-balance text-ink sm:text-5xl">
+            <h1 className="mt-6 text-4xl leading-tight font-semibold tracking-[-0.025em] text-balance text-ink sm:text-5xl">
               Vielen Dank{name ? `, ${name}` : ""}. Wir melden uns persönlich bei Ihnen.
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-ink-700">
@@ -42,7 +42,7 @@ export default async function DankePage({ searchParams }: { searchParams: Promis
               {[
                 { icon: FileSearch, t: "Vorbereitung", d: "Wir sehen uns Ihre Angaben an und bereiten das Gespräch gezielt vor." },
                 { icon: PhoneCall, t: "Kontakt", d: "Wir rufen Sie an und stimmen einen Termin ab – Telefon, Video oder vor Ort." },
-                { icon: CalendarCheck, t: "Hebel-Check", d: "30 Minuten Steuer-Hebel-Check: Sie gehen mit Ihren 3 wichtigsten Hebeln raus – kostenfrei und unverbindlich." },
+                { icon: CalendarCheck, t: "Erstgespräch", d: "30 Minuten, kostenlos: Sie erfahren, wo Sie Steuern und Zeit sparen können." },
               ].map(({ icon: Icon, t, d }) => (
                 <li key={t} className="border-t border-line pt-6">
                   <Icon className="size-6 text-red" aria-hidden />

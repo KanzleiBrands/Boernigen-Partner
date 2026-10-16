@@ -24,8 +24,8 @@ export function SelfCheck({ pains }: { pains: Pain[] }) {
       : n === 1
         ? "Ein Warnsignal. Ein Grund, genauer hinzusehen."
         : n <= 3
-          ? "Ihr Unternehmen ist Ihrer Kanzlei entwachsen."
-          : "Sie zahlen für Verwaltung – und verschenken Gestaltung.";
+          ? "Hier verschenken Sie sehr wahrscheinlich Geld."
+          : "Sie zahlen zu viel – an Steuern und an Zeit.";
 
   return (
     <div className="mx-auto mt-10 max-w-3xl">
@@ -63,7 +63,7 @@ export function SelfCheck({ pains }: { pains: Pain[] }) {
         <p className="flex-1 text-lg leading-snug font-semibold">{verdict}</p>
         {n >= 2 && (
           <CtaButton variant="light" className="w-full sm:w-auto">
-            Ungenutzte Hebel aufdecken
+            Sparpotenzial prüfen lassen
           </CtaButton>
         )}
       </div>

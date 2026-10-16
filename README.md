@@ -13,7 +13,7 @@ npm run lint
 | Seite | Zweck |
 |---|---|
 | `/` | Landingpage |
-| `/erstgespraech` | Vorab-Check (Vorqualifizierung, 8 Schritte) |
+| `/erstgespraech` | Vorab-Check (Vorqualifizierung, 6 Schritte) |
 | `/danke` | Bestätigung (+ optional Kalender) – Conversion-URL für Meta |
 | `/api/lead` | Nimmt Leads an und verteilt sie an OS-Webhook, Backup und E-Mail |
 

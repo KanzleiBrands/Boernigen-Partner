@@ -34,7 +34,7 @@ const lanes: Lane[] = [
   {
     key: "alt",
     label: "Option A",
-    title: "Kanzlei, die verwaltet",
+    title: "Steuerberater, der nur bucht",
     scene: "Donnerstag, 7:40 Uhr. Ein Brief vom Finanzamt: Nachzahlung. Ihre Kanzlei? Im Urlaub.",
     line: [
       [0, 150],
@@ -48,7 +48,7 @@ const lanes: Lane[] = [
     events: [
       { m: 4, y: 118, t: "Mai", d: "Die BWA kommt – zu spät für Entscheidungen." },
       { m: 10.25, y: 125, t: "November", d: "Nachzahlung plus höhere Vorauszahlungen.", alert: true },
-      { m: 11.2, y: 167, t: "31.12.", d: "Niemand hat angerufen. Die Hebel sind verfallen.", alert: true },
+      { m: 11.2, y: 167, t: "31.12.", d: "Niemand hat angerufen. Die Steuervorteile sind verfallen.", alert: true },
     ],
     old: true,
     closing: "Sie bezahlen, was herauskommt.",
@@ -56,8 +56,8 @@ const lanes: Lane[] = [
   {
     key: "neu",
     label: "Option B",
-    title: "Börnigen & Partners",
-    scene: "14. November. Ihr Berater meldet sich: „Zwei Hebel ziehen wir noch vor dem 31.12.“",
+    title: "Steuerberater, der vorausdenkt",
+    scene: "14. November. Ihr Berater meldet sich: „Mit zwei Maßnahmen vor dem 31.12. sparen Sie noch Steuern.“",
     line: [
       [0, 150],
       [2, 130],
@@ -72,7 +72,7 @@ const lanes: Lane[] = [
     events: [
       { m: 1, y: 140, t: "Jeden Monat", d: "Zahlen aktuell. Sie sehen, wo Sie stehen." },
       { m: 5.7, y: 107, t: "Juni", d: "Steuerlast hochgerechnet. Keine Überraschung." },
-      { m: 10.4, y: 65, t: "November", d: "Hebel gesetzt: Tantieme, Investition, Ausschüttung." },
+      { m: 10.4, y: 65, t: "November", d: "Alles geregelt: Tantieme, Investition, Ausschüttung." },
     ],
     old: false,
     closing: "Sie planen, was Sie zahlen.",
@@ -169,10 +169,12 @@ export function YearComparison() {
           key={lane.key}
           className={`flex flex-col overflow-hidden rounded-3xl ${lane.old ? "bg-white ring-1 ring-line" : "bg-white shadow-[0_40px_80px_-40px_rgba(29,27,28,0.45)] ring-2 ring-ink"}`}
         >
-          <header
-            className={`flex items-baseline gap-3 px-5 py-4 sm:px-6 ${lane.old ? "bg-paper" : "bg-ink text-white"}`}
-          >
-            <span className={`text-sm font-semibold ${lane.old ? "text-grey" : "text-red"}`}>{lane.label}</span>
+          <header className={`flex flex-col gap-0.5 px-5 py-4 sm:px-6 ${lane.old ? "bg-paper" : "bg-ink text-white"}`}>
+            <span
+              className={`text-xs font-semibold tracking-[0.14em] uppercase ${lane.old ? "text-grey" : "text-red"}`}
+            >
+              {lane.label}
+            </span>
             <h3 className="text-lg font-semibold">{lane.title}</h3>
           </header>
           <div className="px-5 pt-5 sm:px-6">

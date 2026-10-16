@@ -50,7 +50,7 @@ export function H2({
 }
 
 export function CtaButton({
-  children = "Kostenfrei meine Steuer-Hebel finden",
+  children = "Kostenloses Erstgespräch sichern",
   variant = "red",
   className = "",
 }: {
@@ -76,7 +76,7 @@ export function CtaButton({
 export function CtaNote({ light }: { light?: boolean }) {
   return (
     <p className={`mt-4 text-sm ${light ? "text-white/60" : "text-muted"}`}>
-      2 Minuten Vorab-Check · kostenfrei · ohne Wechselpflicht
+      2 Minuten Fragebogen · kostenlos · ohne Wechselpflicht
     </p>
   );
 }

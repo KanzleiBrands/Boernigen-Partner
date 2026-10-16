@@ -1,7 +1,7 @@
-# Meta-Kampagne „Steuer-Hebel-Check“ – Ad Angles & Creatives
+# Meta-Kampagne „Kostenloses Erstgespräch“ – Ad Angles & Creatives
 
 **Kunde:** Börnigen & Partners Steuerberatungsgesellschaft mbH (Unterföhring / Haar)
-**Angebot:** Steuer-Hebel-Check – kostenfrei, 30 Minuten. Ergebnis: Ihre 3 wichtigsten ungenutzten Hebel, Nachzahlungs-Frühwarnung, Wechsel-Fahrplan. Ehrlichkeits-Versprechen: „Sind Sie gut aufgestellt, sagen wir Ihnen das.“
+**Angebot:** Kostenloses Erstgespräch, 30 Minuten – klare Nutzensprache, keine Fachbegriffe wie „Hebel“ oder „CFO“ ohne Erklärung. Ergebnis: wo Sie Steuern sparen können (3 größte Ansatzpunkte), Nachzahlungs-Frühwarnung, Wechsel-Fahrplan. Ehrlichkeits-Versprechen: „Sind Sie gut aufgestellt, sagen wir Ihnen das.“
 **Zielgruppe:** Inhaber/Geschäftsführer ab 500.000 € Umsatz, München + ca. 150 km
 **Funnel:** Ad → `/` → Vorab-Check `/erstgespraech` → `/danke` (Pixel-Event `Lead`)
 
@@ -9,7 +9,7 @@
 
 **Hormozi – Value Equation:** Wert = Traumergebnis × Eintrittswahrscheinlichkeit ÷ (Wartezeit × Aufwand).
 - *Traumergebnis:* Steuerlast planen statt erleiden, keine Überraschungen, ein Berater, der sich meldet.
-- *Wahrscheinlichkeit:* 5× DATEV „Digitale Kanzlei“, Partner mit Gesicht, Mandantenstimmen, konkreter Mechanismus („3 Hebel“).
+- *Wahrscheinlichkeit:* 5× DATEV „Digitale Kanzlei“, Partner mit Gesicht, Mandantenstimmen, konkreter Mechanismus („3 größte Sparpotenziale“).
 - *Wartezeit:* Ergebnis schon im 30-Minuten-Gespräch – nicht erst nach dem Wechsel.
 - *Aufwand:* 2-Minuten-Check, Wechsel übernehmen wir komplett.
 - *Risikoumkehr:* kostenfrei, ohne Wechselpflicht, Ehrlichkeits-Versprechen.
@@ -29,7 +29,7 @@
 | Targeting | Advantage+ Audience (breit) – die Vorqualifizierung filtert |
 | Struktur | 1 Kampagne, 1 Anzeigengruppe, 8 Angles × 2 Creatives. Nach 7–10 Tagen Verlierer aus; Gewinner-Hooks variieren |
 | Saison | **Okt–Dez: Angle 3 (Stichtag) und 2 (Nachzahlung) mit höchstem Budget.** Jan–Mär: Angle 2 + 7 (Bescheid-Saison). Ab Q2: Angle 1, 5, 6 |
-| UTM | `?utm_source=meta&utm_medium=paid&utm_campaign=bup-hebelcheck&utm_content={{ad.name}}` |
+| UTM | `?utm_source=meta&utm_medium=paid&utm_campaign=bup-erstgespraech&utm_content={{ad.name}}` |
 | Platzierungen | Feed 4:5, Reels/Stories 9:16 |
 | CTA-Button | „Mehr dazu“ |
 
@@ -48,16 +48,16 @@
 >
 > Wenn Sie jetzt nachdenken müssen, ist das die Antwort.
 >
-> Im kostenfreien Steuer-Hebel-Check zeigen wir Ihnen in 30 Minuten Ihre 3 wichtigsten ungenutzten Hebel. Sind Sie bereits gut aufgestellt, sagen wir Ihnen auch das.
+> Im kostenlosen Erstgespräch zeigen wir Ihnen in 30 Minuten Ihre 3 größten Ansatzpunkte, um Steuern zu sparen. Sind Sie bereits gut aufgestellt, sagen wir Ihnen auch das.
 >
 > 👉 In 2 Minuten prüfen, ob Ihr Unternehmen passt.
 
 **Headline:** Wann kam der letzte Vorschlag?
-**Beschreibung:** Steuer-Hebel-Check · kostenfrei · 30 Min.
+**Beschreibung:** Kostenloses Erstgespräch · 30 Min.
 
 **Creatives**
 - **A – Statisch 4:5 (Typo):** Weißer Grund, große Serifenschrift: **„Wann hat Ihr Steuerberater Ihnen zuletzt etwas vorgeschlagen?“** Darunter klein und rot: „Ohne dass Sie gefragt haben.“ Logo unten rechts.
-- **B – Video 9:16 (Jan Börnigen, 20 s):** Hook in Sekunde 0–2, direkt in die Kamera: „Wann hat Ihr Steuerberater Ihnen zuletzt etwas vorgeschlagen?“ – 2 s Pause, Blick halten. „Wenn Sie überlegen müssen … dann lassen Sie Geld liegen. Holen Sie sich den Steuer-Hebel-Check. 30 Minuten, kostenfrei.“
+- **B – Video 9:16 (Jan Börnigen, 20 s):** Hook in Sekunde 0–2, direkt in die Kamera: „Wann hat Ihr Steuerberater Ihnen zuletzt etwas vorgeschlagen?“ – 2 s Pause, Blick halten. „Wenn Sie überlegen müssen … dann lassen Sie Geld liegen. Holen Sie sich ein kostenloses Erstgespräch. 30 Minuten, kostenfrei.“
 
 ---
 
@@ -74,16 +74,16 @@
 >
 > Eine Steuerberatung, die mitdenkt, plant Ihre Steuerlast unterjährig – mit aktuellen Zahlen statt mit dem Blick in den Rückspiegel.
 >
-> Im kostenfreien Steuer-Hebel-Check bekommen Sie eine ehrliche Nachzahlungs-Frühwarnung für Ihr Unternehmen. Bevor der nächste Bescheid kommt.
+> Im kostenlosen Erstgespräch bekommen Sie eine ehrliche Nachzahlungs-Frühwarnung für Ihr Unternehmen. Bevor der nächste Bescheid kommt.
 >
 > Für Unternehmer im Raum München ab 500.000 € Umsatz.
 
 **Headline:** Nachzahlung? Dann kommt noch mehr.
-**Beschreibung:** Nachzahlungs-Frühwarnung im kostenfreien Hebel-Check
+**Beschreibung:** Warnung vor Nachzahlungen – im kostenlosen Erstgespräch
 
 **Creatives**
 - **A – Statisch 4:5:** Echter Schreibtisch, geöffneter Brief vom Finanzamt (Inhalt unscharf), daneben Kalender mit 4 rot markierten Quartalsterminen. Overlay: **„Ein Brief. Fünf Zahlungen.“** Klein: „Warum hat Sie niemand gewarnt?“
-- **B – Video 9:16 (POV, 15 s):** Hand öffnet Brief → Schnitt: Kalender, rote Kreise erscheinen nacheinander (10.3., 10.6., 10.9., 10.12.) mit Klick-Sound. Text: „Nachzahlung + 4× höhere Vorauszahlungen.“ Endkarte: „Steuer-Hebel-Check: Frühwarnung, bevor der Bescheid kommt.“
+- **B – Video 9:16 (POV, 15 s):** Hand öffnet Brief → Schnitt: Kalender, rote Kreise erscheinen nacheinander (10.3., 10.6., 10.9., 10.12.) mit Klick-Sound. Text: „Nachzahlung + 4× höhere Vorauszahlungen.“ Endkarte: „Kostenloses Erstgespräch: Warnung, bevor der Bescheid kommt.“
 
 ---
 
@@ -94,7 +94,7 @@
 >
 > Leider nein.
 >
-> Die wichtigsten Steuer-Hebel für dieses Jahr laufen am 31. Dezember ab:
+> Die wichtigsten Steuervorteile für dieses Jahr verfallen am 31. Dezember:
 >
 > 1️⃣ Geschäftsführervergütung & Tantieme – müssen im Voraus vereinbart sein. Rückwirkend erkennt das Finanzamt nichts an.
 > 2️⃣ Investitionszeitpunkt – ob eine Anschaffung dieses oder nächstes Jahr wirkt, entscheidet der Kalender.
@@ -102,18 +102,18 @@
 >
 > Was bis dahin nicht geplant ist, wird im Abschluss nur noch festgestellt. Und bezahlt.
 >
-> Im kostenfreien Steuer-Hebel-Check zeigen wir Ihnen, welche Hebel Sie dieses Jahr noch ziehen können.
+> Im kostenlosen Erstgespräch zeigen wir Ihnen, womit Sie dieses Jahr noch Steuern sparen können.
 >
 > Für Unternehmer im Raum München ab 500.000 € Umsatz. Termine vor Jahresende sind begrenzt.
 
-**Headline:** Ihre Steuer-Hebel laufen am 31.12. ab
-**Beschreibung:** Kostenfreier Hebel-Check – noch vor Jahresende
+**Headline:** Steuervorteile verfallen am 31.12.
+**Beschreibung:** Kostenloses Erstgespräch – noch vor Jahresende
 
 > „Termine vor Jahresende sind begrenzt“ nur verwenden, wenn die Kanzlei das bestätigt (Kapazität Nov/Dez).
 
 **Creatives**
-- **A – Statisch 4:5:** Abreißkalender „31. DEZEMBER“, Seite leicht angerissen. Overlay oben: **„Ihre Steuer-Hebel haben ein Verfallsdatum.“** Unten Anthrazit-Balken: „Hebel-Check · kostenfrei · vor Jahresende“.
-- **B – Karussell 1:1 (5 Karten):** 1 „3 Steuer-Hebel, die am 31.12. verfallen“ → 2–4 je ein Hebel mit einem Satz → 5 „Welche gelten für Sie? → Hebel-Check sichern“.
+- **A – Statisch 4:5:** Abreißkalender „31. DEZEMBER“, Seite leicht angerissen. Overlay oben: **„Viele Steuervorteile verfallen am 31.12.“** Unten Anthrazit-Balken: „Erstgespräch · kostenfrei · vor Jahresende“.
+- **B – Karussell 1:1 (5 Karten):** 1 „3 Steuervorteile, die am 31.12. verfallen“ → 2–4 je ein Vorteil mit einem Satz → 5 „Welche gelten für Sie? → Erstgespräch sichern“.
 
 ---
 
@@ -134,7 +134,7 @@
 >
 > Aufwendig ist etwas anderes: Jahr für Jahr Gestaltungsspielraum zu verschenken, weil Wechseln „zu viel Arbeit“ wäre.
 >
-> Starten Sie mit dem kostenfreien Steuer-Hebel-Check – ohne Wechselpflicht.
+> Starten Sie mit dem kostenlosen Erstgespräch – ohne Wechselpflicht.
 
 **Headline:** Kanzleiwechsel? Erledigen wir.
 **Beschreibung:** Ihr Aufwand: 2 Minuten + 1 Gespräch
@@ -156,7 +156,7 @@
 >
 > Genau dafür bezahlen Sie einen Steuerberater. Nicht fürs Buchen – fürs Mitdenken.
 >
-> Wenn das bei Ihnen gerade nicht passiert: Im kostenfreien Steuer-Hebel-Check zeigen wir Ihnen in 30 Minuten, welche Fragen in Ihrem Fall noch nie gestellt wurden.
+> Wenn das bei Ihnen gerade nicht passiert: Im kostenlosen Erstgespräch zeigen wir Ihnen in 30 Minuten, welche Fragen in Ihrem Fall noch nie gestellt wurden.
 
 **Headline:** Mitdenken ist unser Job. Nicht Ihrer.
 **Beschreibung:** Für Unternehmer ab 500.000 € Umsatz
@@ -178,13 +178,13 @@
 >
 > Wurde Ihnen keine davon gestellt? Dann sind Sie nicht allein. Die meisten Kanzleien beantworten Fragen. Wenige stellen sie.
 >
-> Im kostenfreien Steuer-Hebel-Check gehen wir genau diese Fragen für Ihr Unternehmen durch – und Sie gehen mit Ihren 3 wichtigsten Hebeln raus.
+> Im kostenlosen Erstgespräch gehen wir genau diese Fragen für Ihr Unternehmen durch – und Sie gehen mit Ihren 3 größten Sparpotenzialen raus.
 
 **Headline:** 3 Fragen, die Sie hören sollten
-**Beschreibung:** Kostenfreier Hebel-Check für Unternehmer
+**Beschreibung:** Kostenloses Erstgespräch für Unternehmer
 
 **Creatives**
-- **A – Karussell 1:1:** Karte 1 „3 Fragen, die Ihr Steuerberater stellen sollte“ → 2–4 je eine Frage groß in Serifenschrift → 5 „Keine gehört? Hebel-Check sichern“.
+- **A – Karussell 1:1:** Karte 1 „3 Fragen, die Ihr Steuerberater stellen sollte“ → 2–4 je eine Frage groß in Serifenschrift → 5 „Keine gehört? Erstgespräch sichern“.
 - **B – Statisch 4:5 (Checkliste):** Drei Kästchen, alle leer. Überschrift: „Wurde Ihnen dieses Jahr eine dieser Fragen gestellt?“
 
 ---
@@ -200,9 +200,9 @@
 >
 > Was „zufrieden“ selten heißt: Jemand hat aktiv nach Gestaltungsspielraum gesucht.
 >
-> Deshalb ist der Steuer-Hebel-Check bewusst kein Wechselgespräch. Wir schauen 30 Minuten von außen auf Ihre Situation.
+> Deshalb ist unser Erstgespräch bewusst kein Verkaufsgespräch. Wir schauen 30 Minuten von außen auf Ihre Situation.
 >
-> Finden wir ungenutzte Hebel, kennen Sie sie. Finden wir keine, haben Sie die Bestätigung, dass Sie gut aufgestellt sind.
+> Finden wir Sparpotenzial, kennen Sie es. Finden wir keine, haben Sie die Bestätigung, dass Sie gut aufgestellt sind.
 >
 > In beiden Fällen gewinnen Sie. Kostenfrei.
 
@@ -228,7 +228,7 @@
 >
 > Börnigen & Partners – 5× in Folge von DATEV als „Digitale Kanzlei“ ausgezeichnet – betreut inhabergeführte Unternehmen im Raum München nach dem zweiten Prinzip.
 >
-> Im kostenfreien Steuer-Hebel-Check sehen Sie den Unterschied in 30 Minuten.
+> Im kostenlosen Erstgespräch sehen Sie den Unterschied in 30 Minuten.
 
 **Headline:** Verwalten oder gestalten?
 **Beschreibung:** 5× DATEV „Digitale Kanzlei“
@@ -241,7 +241,7 @@
 
 ## Nachschub, sobald Material da ist
 
-- **Fallstudien-Ad (Baulig #2):** „[Branche], [Umsatz], seit 8 Jahren bei derselben Kanzlei. Im Hebel-Check zeigte sich: …“ – braucht eine freigegebene, anonymisierte Mandantengeschichte. Keine Beträge, Ergebnis qualitativ („Holding gegründet“, „keine Nachzahlung mehr“).
+- **Fallstudien-Ad (Baulig #2):** „[Branche], [Umsatz], seit 8 Jahren bei derselben Kanzlei. Im Erstgespräch zeigte sich: …“ – braucht eine freigegebene, anonymisierte Mandantengeschichte. Keine Beträge, Ergebnis qualitativ („Holding gegründet“, „keine Nachzahlung mehr“).
 - **Heldenreise-Ad (Baulig #4):** Jan oder Petra Börnigen: Warum sie die Kanzlei digital und proaktiv aufgebaut haben. Am Drehtag aufnehmen.
 - **Behind-the-Scenes (Baulig #16):** 30 s aus dem Kanzleialltag – Mooswand mit Logo, Team, Bildschirm mit DATEV-Auswertung.
 
