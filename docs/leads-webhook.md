@@ -117,7 +117,9 @@ const ok = Math.abs(Date.now() / 1000 - Number(ts)) < 300 &&
 
 ## Meta-Pixel & Conversions API (Lead-Event)
 
-Eingebaut und aktiv, sobald die Variablen gesetzt sind. Ohne `NEXT_PUBLIC_META_PIXEL_ID` gibt es weder Cookie-Banner noch Tracking.
+Eingebaut und aktiv, sobald die Variablen gesetzt sind. Ohne `NEXT_PUBLIC_META_PIXEL_ID` kein Tracking.
+
+> ⚠️ **Ohne Einwilligungsabfrage (bewusste Entscheidung Kanzlei Brands, 16.10.2026).** Pixel und Conversions API laufen für jeden Besucher, es gibt keinen Cookie-Banner. Das entspricht nicht § 25 TTDSG / DSGVO (Abmahn- und Bußgeldrisiko liegt bei der Kanzlei als Verantwortlicher). Ein Banner mit wirkungslosem „Ablehnen“ wurde bewusst **nicht** eingebaut, weil das Besucher täuschen würde. Eine einwilligungsbasierte Variante liegt in der Git-Historie (Commit `3ec3d48`).
 
 | Variable | Wo finden | Hinweis |
 |---|---|---|
@@ -126,15 +128,15 @@ Eingebaut und aktiv, sobald die Variablen gesetzt sind. Ohne `NEXT_PUBLIC_META_P
 | `META_TEST_EVENT_CODE` | Events Manager → Pixel → „Events testen“ (z. B. `TEST12345`) | Nur zum Testen; danach löschen und neu deployen |
 
 **Ablauf**
-1. Besucher sieht den Cookie-Hinweis. Pixel (`PageView`) lädt **nur nach „Akzeptieren“** (TTDSG/DSGVO). Entscheidung änderbar über „Cookie-Einstellungen“ im Footer.
+1. Jede Seite: Pixel lädt und feuert `PageView`.
 2. Nach erfolgreicher Anfrage (Server hat den Lead gesichert):
    - Browser: `fbq('track', 'Lead', {}, { eventID: lead_id })`
    - Server: Conversions API `Lead` mit `event_id = lead_id`, gehashter E-Mail/Telefon/Name/PLZ, IP, User-Agent, `_fbp`/`_fbc` (fehlt `_fbc`, wird es aus der gemerkten `fbclid` gebildet).
    - Meta dedupliziert beide über die gleiche ID → **ein** Lead im Werbeanzeigenmanager.
-3. Ohne Einwilligung: kein Pixel, kein Server-Event. Disqualifizierte Besucher lösen nie `Lead` aus.
+3. Disqualifizierte Besucher lösen nie `Lead` aus.
 4. Fehler bei Meta beeinflussen die Lead-Übertragung nicht (Log `[meta-capi]` in Vercel).
 
-**Testen:** `META_TEST_EVENT_CODE` setzen, neu deployen, Seite öffnen, akzeptieren, Test-Anfrage senden → im Events Manager unter „Events testen“ erscheinen `PageView` und `Lead` (Browser **und** Server, „Dedupliziert“). Dann Code entfernen und neu deployen.
+**Testen:** `META_TEST_EVENT_CODE` setzen, neu deployen, Seite öffnen, Test-Anfrage senden → im Events Manager unter „Events testen“ erscheinen `PageView` und `Lead` (Browser **und** Server, „Dedupliziert“). Dann Code entfernen und neu deployen.
 
 **Kampagne:** Optimierungsereignis `Lead` auf diesem Pixel wählen.
 

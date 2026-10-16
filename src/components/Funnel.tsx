@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { ArrowLeft, ArrowRight, Check, Loader2, Lock, Phone } from "lucide-react";
 import { QUESTIONS, isDisqualified, type Answers, type Option } from "@/lib/funnel";
 import { getTracking, newLeadId, send } from "@/lib/outbox";
-import { getConsent, getMetaCookies } from "@/lib/consent";
+import { getMetaCookies } from "@/lib/meta-cookies";
 import { KANZLEI } from "@/components/ui";
 
 const STATE_KEY = "bup_funnel_state";
@@ -124,11 +124,8 @@ export function Funnel() {
       consentText: CONSENT_TEXT,
       tracking: getTracking(),
       website: honeypot,
-      // Für die Conversions API – nur mit Marketing-Einwilligung
-      meta:
-        getConsent() === "granted"
-          ? { ...getMetaCookies(), eventSourceUrl: window.location.href }
-          : undefined,
+      // Für die Conversions API (Zuordnung zum Anzeigen-Klick)
+      meta: { ...getMetaCookies(), eventSourceUrl: window.location.href },
     };
     const r = await send(leadId, body);
     if (r === "ok") {

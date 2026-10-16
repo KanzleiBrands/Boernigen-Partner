@@ -1,5 +1,4 @@
 import { Container, KANZLEI } from "@/components/ui";
-import { CookieSettingsLink } from "@/components/MetaPixel";
 
 export function Footer() {
   return (
@@ -39,7 +38,6 @@ export function Footer() {
             <a href={KANZLEI.datenschutz} className="hover:text-white">
               Datenschutz
             </a>
-            <CookieSettingsLink className="hover:text-white" />
           </div>
         </div>
       </Container>

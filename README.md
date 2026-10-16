@@ -29,5 +29,5 @@ npm run lint
 - [ ] Mandanten-Zitate freigeben lassen (stammen aus dem Onboarding-Formular)
 - [ ] Zusage „Rückmeldung innerhalb eines Werktags“ bestätigen
 - [ ] Datenschutzerklärung der Hauptseite um das Anfrageformular und die Weitergabe an Kanzlei Brands OS / Resend ergänzen
-- [x] Cookie-Hinweis + Meta-Pixel/Conversions API eingebaut – nur noch `NEXT_PUBLIC_META_PIXEL_ID` + `META_CAPI_TOKEN` in Vercel setzen ([Anleitung](docs/leads-webhook.md#meta-pixel--conversions-api-lead-event))
+- [x] Meta-Pixel/Conversions API eingebaut (⚠️ ohne Einwilligungsabfrage, siehe Anleitung) – nur noch `NEXT_PUBLIC_META_PIXEL_ID` + `META_CAPI_TOKEN` in Vercel setzen ([Anleitung](docs/leads-webhook.md#meta-pixel--conversions-api-lead-event))
 - [ ] Datenschutzerklärung der Kanzlei um Meta-Pixel + Conversions API ergänzen

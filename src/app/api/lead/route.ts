@@ -90,13 +90,13 @@ export async function POST(request: Request) {
     return Response.json({ ok: false, error: "Übertragung fehlgeschlagen." }, { status: 502 });
   }
 
-  // Standard-Event „Lead“ an Meta (Conversions API) – nur mit Marketing-Einwilligung, nach der Antwort
+  // Standard-Event „Lead“ an Meta (Conversions API) – nach der Antwort, blockiert den Lead nie
   const m = body.meta as Record<string, unknown> | undefined;
   if (m && typeof m === "object") {
     after(() =>
       sendMetaLead(payload, {
         fbp: str(m.fbp, 200) || undefined,
-        // _fbc fehlt, wenn erst nach dem Anzeigen-Klick zugestimmt wurde → aus der gemerkten fbclid bilden
+        // _fbc fehlt z. B. bei Werbeblockern → aus der gemerkten fbclid bilden
         fbc: str(m.fbc, 300) || (tracking.fbclid ? `fb.1.${Date.now()}.${tracking.fbclid}` : undefined),
         eventSourceUrl: str(m.eventSourceUrl, 500) || undefined,
         clientIp: request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || undefined,

@@ -26,8 +26,7 @@ export type MetaContext = {
 
 /**
  * Sendet das Standard-Event „Lead“ an die Meta Conversions API.
- * Nur aktiv, wenn NEXT_PUBLIC_META_PIXEL_ID + META_CAPI_TOKEN gesetzt sind und der Besucher
- * Marketing-Cookies zugestimmt hat. event_id = lead_id → Meta dedupliziert mit dem Browser-Pixel.
+ * Nur aktiv, wenn NEXT_PUBLIC_META_PIXEL_ID + META_CAPI_TOKEN gesetzt sind. event_id = lead_id → Meta dedupliziert mit dem Browser-Pixel.
  * Fehler werden nur geloggt – die Lead-Übertragung hängt nie davon ab.
  */
 export async function sendMetaLead(p: LeadPayload, ctx: MetaContext) {
