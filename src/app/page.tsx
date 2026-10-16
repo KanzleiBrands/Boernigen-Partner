@@ -19,6 +19,8 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SelfCheck, type Pain } from "@/components/SelfCheck";
 import { YearEndCountdown } from "@/components/YearEndCountdown";
+import { YearComparison } from "@/components/YearComparison";
+import { AdvisorMessage, SwitchGraphic } from "@/components/Visuals";
 import { Container, CtaButton, CtaNote, Eyebrow, FUNNEL_HREF, H2 } from "@/components/ui";
 import Link from "next/link";
 
@@ -101,19 +103,59 @@ const compare: [string, string, string][] = [
 ];
 
 const services = [
-  { icon: Scale, title: "Steuer- & Gestaltungsberatung", text: "Geschäftsführergehalt, Ausschüttungen, Holding, Rechtsform – vorausschauend statt rückblickend." },
-  { icon: BarChart3, title: "CFO-Service", text: "Controlling, Liquiditätsplanung, Bankreporting. Ein Sparringspartner für Ihre Entscheidungen." },
-  { icon: FileText, title: "Finanzbuchhaltung", text: "Digitale Belegverarbeitung über DATEV Unternehmen online – Zahlen monatlich aktuell." },
-  { icon: Users, title: "Lohn & HR", text: "Lohn- und Gehaltsabrechnung, Benefits, Sachbezüge – nahtlos angebunden an Personio." },
-  { icon: Landmark, title: "Jahresabschluss & Steuern", text: "Abschlüsse, betriebliche und private Erklärungen – termingerecht und verständlich erklärt." },
-  { icon: TrendingUp, title: "Bewertung & Nachfolge", text: "Unternehmensbewertung im eigenen Haus – für Nachfolge, Kauf, Verkauf, Gesellschafterwechsel." },
+  {
+    icon: Scale,
+    title: "Steuer- & Gestaltungsberatung",
+    text: "Geschäftsführergehalt, Ausschüttungen, Holding, Rechtsform – vorausschauend statt rückblickend.",
+  },
+  {
+    icon: BarChart3,
+    title: "CFO-Service",
+    text: "Controlling, Liquiditätsplanung, Bankreporting. Ein Sparringspartner für Ihre Entscheidungen.",
+  },
+  {
+    icon: FileText,
+    title: "Finanzbuchhaltung",
+    text: "Digitale Belegverarbeitung über DATEV Unternehmen online – Zahlen monatlich aktuell.",
+  },
+  {
+    icon: Users,
+    title: "Lohn & HR",
+    text: "Lohn- und Gehaltsabrechnung, Benefits, Sachbezüge – nahtlos angebunden an Personio.",
+  },
+  {
+    icon: Landmark,
+    title: "Jahresabschluss & Steuern",
+    text: "Abschlüsse, betriebliche und private Erklärungen – termingerecht und verständlich erklärt.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Bewertung & Nachfolge",
+    text: "Unternehmensbewertung im eigenen Haus – für Nachfolge, Kauf, Verkauf, Gesellschafterwechsel.",
+  },
 ];
 
 const steps = [
-  { title: "Vorab-Check", time: "2 Minuten", text: "8 kurze Klick-Fragen. Sie erfahren sofort, ob wir zusammenpassen." },
-  { title: "Steuer-Hebel-Check", time: "30 Minuten", text: "Telefon, Video oder vor Ort. Sie gehen mit Ihren 3 wichtigsten Hebeln raus – egal, wie Sie sich danach entscheiden." },
-  { title: "Klares Angebot", time: "wenige Tage", text: "Leistungsumfang und Honorar transparent auf einen Blick. Sie entscheiden in Ruhe." },
-  { title: "Wechsel ohne Aufwand", time: "wir übernehmen", text: "Kündigung, Datenübernahme aus DATEV, Abstimmung mit Ihrer bisherigen Kanzlei, laufende Fristen – alles bei uns." },
+  {
+    title: "Vorab-Check",
+    time: "2 Minuten",
+    text: "8 kurze Klick-Fragen. Sie erfahren sofort, ob wir zusammenpassen.",
+  },
+  {
+    title: "Steuer-Hebel-Check",
+    time: "30 Minuten",
+    text: "Telefon, Video oder vor Ort. Sie gehen mit Ihren 3 wichtigsten Hebeln raus – egal, wie Sie sich danach entscheiden.",
+  },
+  {
+    title: "Klares Angebot",
+    time: "wenige Tage",
+    text: "Leistungsumfang und Honorar transparent auf einen Blick. Sie entscheiden in Ruhe.",
+  },
+  {
+    title: "Wechsel ohne Aufwand",
+    time: "wir übernehmen",
+    text: "Kündigung, Datenübernahme aus DATEV, Abstimmung mit Ihrer bisherigen Kanzlei, laufende Fristen – alles bei uns.",
+  },
 ];
 
 const faqs = [
@@ -148,8 +190,18 @@ const faqs = [
 ];
 
 const partners = [
-  { ini: "JB", name: "Jan Börnigen", title: "Dipl.-Kfm., Steuerberater", img: "/img/team/jan-boernigen.jpg" },
-  { ini: "PB", name: "Petra Börnigen", title: "Dipl.-Kffr., Steuerberaterin", img: "/img/team/petra-boernigen.jpg" },
+  {
+    ini: "JB",
+    name: "Jan Börnigen",
+    title: "Dipl.-Kfm., Steuerberater",
+    img: "/img/team/jan-boernigen.jpg",
+  },
+  {
+    ini: "PB",
+    name: "Petra Börnigen",
+    title: "Dipl.-Kffr., Steuerberaterin",
+    img: "/img/team/petra-boernigen.jpg",
+  },
 ];
 // Portrait nur zeigen, wenn die Datei in public/img/team liegt – sonst Initialen als Platzhalter
 const hasImage = (src: string) => existsSync(path.join(process.cwd(), "public", src));
@@ -186,33 +238,40 @@ export default function Home() {
               </div>
             </div>
 
-            <aside className="relative rounded-sm border border-line bg-white p-7 shadow-[0_30px_60px_-30px_rgba(29,27,28,0.25)] sm:p-9">
-              <div className="absolute -top-3 left-7 rounded-sm bg-red px-3 py-1 text-[11px] font-semibold tracking-[0.16em] text-white uppercase">
-                Kostenfrei · 30 Minuten
+            <div className="relative">
+              <aside className="relative rounded-sm border border-line bg-white p-7 shadow-[0_30px_60px_-30px_rgba(29,27,28,0.25)] sm:p-9">
+                <div className="absolute -top-3 left-7 rounded-sm bg-red px-3 py-1 text-[11px] font-semibold tracking-[0.16em] text-white uppercase">
+                  Kostenfrei · 30 Minuten
+                </div>
+                <h2 className="font-serif text-2xl leading-snug font-medium text-ink">Der Steuer-Hebel-Check</h2>
+                <p className="mt-2 text-[15px] leading-relaxed text-muted">Das nehmen Sie aus dem Gespräch mit:</p>
+                <ol className="mt-6 space-y-5">
+                  {offer.map(({ t, d }, i) => (
+                    <li key={t} className="flex gap-4">
+                      <span className="flex size-8 shrink-0 items-center justify-center rounded-full border border-red/30 font-serif text-sm text-red">
+                        {i + 1}
+                      </span>
+                      <div>
+                        <p className="font-semibold text-ink">{t}</p>
+                        <p className="mt-0.5 text-[15px] leading-relaxed text-muted">{d}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+                <div className="mt-7 flex gap-3 rounded-sm bg-paper p-4 text-[15px] leading-relaxed text-ink-700">
+                  <ShieldCheck className="mt-0.5 size-5 shrink-0 text-red" aria-hidden />
+                  <p>
+                    <strong className="font-semibold text-ink">Unser Ehrlichkeits-Versprechen:</strong> Sind Sie bereits
+                    gut aufgestellt, sagen wir Ihnen das klar – und Sie bleiben mit gutem Gefühl bei Ihrer Kanzlei.
+                  </p>
+                </div>
+              </aside>
+              {/* So fühlt sich Gestaltung an – Beispielnachricht */}
+              <div className="relative z-10 mt-5 lg:-mt-6 lg:-ml-16 lg:w-[380px] lg:-rotate-1">
+                <AdvisorMessage avatar={hasImage(partners[0].img) ? partners[0].img : undefined} />
+                <p className="mt-3 pl-2 text-sm text-muted italic">So fühlt sich eine Kanzlei an, die mitdenkt.</p>
               </div>
-              <h2 className="font-serif text-2xl leading-snug font-medium text-ink">Der Steuer-Hebel-Check</h2>
-              <p className="mt-2 text-[15px] leading-relaxed text-muted">Das nehmen Sie aus dem Gespräch mit:</p>
-              <ol className="mt-6 space-y-5">
-                {offer.map(({ t, d }, i) => (
-                  <li key={t} className="flex gap-4">
-                    <span className="flex size-8 shrink-0 items-center justify-center rounded-full border border-red/30 font-serif text-sm text-red">
-                      {i + 1}
-                    </span>
-                    <div>
-                      <p className="font-semibold text-ink">{t}</p>
-                      <p className="mt-0.5 text-[15px] leading-relaxed text-muted">{d}</p>
-                    </div>
-                  </li>
-                ))}
-              </ol>
-              <div className="mt-7 flex gap-3 rounded-sm bg-paper p-4 text-[15px] leading-relaxed text-ink-700">
-                <ShieldCheck className="mt-0.5 size-5 shrink-0 text-red" aria-hidden />
-                <p>
-                  <strong className="font-semibold text-ink">Unser Ehrlichkeits-Versprechen:</strong> Sind Sie bereits gut
-                  aufgestellt, sagen wir Ihnen das klar – und Sie bleiben mit gutem Gefühl bei Ihrer Kanzlei.
-                </p>
-              </div>
-            </aside>
+            </div>
           </Container>
         </section>
 
@@ -221,7 +280,11 @@ export default function Home() {
           <Container className="grid grid-cols-2 gap-x-6 gap-y-8 py-9 md:grid-cols-4 md:items-center">
             <div className="col-span-2 flex items-center gap-4 md:col-span-1">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/img/datev-digitale-kanzlei-2023.png" alt="DATEV-Auszeichnung Digitale Kanzlei 2023" className="size-16 shrink-0" />
+              <img
+                src="/img/datev-digitale-kanzlei-2023.png"
+                alt="DATEV-Auszeichnung Digitale Kanzlei 2023"
+                className="size-16 shrink-0"
+              />
               <p className="text-sm leading-snug text-ink-700">
                 <strong className="block text-base text-ink">5× in Folge</strong>
                 als „Digitale Kanzlei“ von DATEV ausgezeichnet
@@ -255,6 +318,25 @@ export default function Home() {
           </Container>
         </section>
 
+        {/* ZWEI JAHRE – das Bild ausmalen */}
+        <section className="bg-paper py-20 sm:py-28">
+          <Container>
+            <div className="max-w-3xl">
+              <Eyebrow>Stellen Sie es sich einmal vor</Eyebrow>
+              <H2 className="mt-5">Gleiches Unternehmen. Gleicher Umsatz. Zwei völlig verschiedene Jahre.</H2>
+              <p className="mt-5 text-lg leading-relaxed text-ink-700">
+                Der Unterschied zwischen einer Kanzlei, die verwaltet, und einer, die gestaltet, steht nicht im
+                Jahresabschluss. Er steht auf Ihrem Konto – und in Ihrem Kalender.
+              </p>
+            </div>
+            <YearComparison />
+            <div className="mt-12 flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:gap-6">
+              <CtaButton>Ich will Jahr B</CtaButton>
+              <p className="text-sm text-muted">Schematische Darstellung typischer Abläufe, keine Einzelfallzusage.</p>
+            </div>
+          </Container>
+        </section>
+
         {/* ZEITDRUCK – echter Stichtag */}
         <section className="hairlines relative bg-ink py-20 text-white sm:py-28">
           <Container>
@@ -265,8 +347,8 @@ export default function Home() {
                   Steuerliche Gestaltung hat ein Verfallsdatum: den 31. Dezember.
                 </H2>
                 <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/70">
-                  Was bis zum Jahresende nicht geplant ist, lässt sich im Abschluss nur noch feststellen. Dann bucht Ihre
-                  Kanzlei, was passiert ist – und Sie zahlen, was dabei herauskommt.
+                  Was bis zum Jahresende nicht geplant ist, lässt sich im Abschluss nur noch feststellen. Dann bucht
+                  Ihre Kanzlei, was passiert ist – und Sie zahlen, was dabei herauskommt.
                 </p>
               </div>
               <div className="lg:justify-self-end">
@@ -307,7 +389,10 @@ export default function Home() {
                 <div className="bg-ink p-5 text-white">Börnigen &amp; Partners</div>
               </div>
               {compare.map(([k, a, b]) => (
-                <div key={k} className="grid border-t border-line first:border-t-0 sm:grid-cols-[1fr_1.3fr_1.5fr] sm:first:border-t">
+                <div
+                  key={k}
+                  className="grid border-t border-line first:border-t-0 sm:grid-cols-[1fr_1.3fr_1.5fr] sm:first:border-t"
+                >
                   <div className="px-5 pt-5 font-semibold text-ink sm:p-5">{k}</div>
                   <div className="flex items-start gap-3 px-5 pt-3 text-muted sm:p-5">
                     <X className="mt-0.5 size-4 shrink-0 text-grey" aria-hidden />
@@ -331,7 +416,11 @@ export default function Home() {
                 <figure key={name}>
                   {hasImage(img) ? (
                     // eslint-disable-next-line @next/next/no-img-element
-                    <img src={img} alt={`${name}, ${title}`} className="aspect-[4/5] w-full rounded-sm object-cover object-top" />
+                    <img
+                      src={img}
+                      alt={`${name}, ${title}`}
+                      className="aspect-[4/5] w-full rounded-sm object-cover object-top"
+                    />
                   ) : (
                     <div className="flex aspect-[4/5] items-center justify-center rounded-sm bg-gradient-to-br from-paper-200 to-white">
                       <span className="font-serif text-6xl text-ink/15">{ini}</span>
@@ -352,10 +441,10 @@ export default function Home() {
                 Vorschläge, bevor die Entscheidung fällt.“
               </blockquote>
               <p className="mt-8 leading-relaxed text-muted">
-                Jan und Petra Börnigen führen eine der digitalsten Kanzleien im Raum München – fünfmal in Folge von DATEV
-                ausgezeichnet. Wir automatisieren, was sich automatisieren lässt. Damit unsere Berater Zeit für das
-                haben, was zählt: Ihre Entscheidungen. Zwei Standorte, 27 Mitarbeitende, ein fester Ansprechpartner für
-                Sie.
+                Jan und Petra Börnigen führen eine der digitalsten Kanzleien im Raum München – fünfmal in Folge von
+                DATEV ausgezeichnet. Wir automatisieren, was sich automatisieren lässt. Damit unsere Berater Zeit für
+                das haben, was zählt: Ihre Entscheidungen. Zwei Standorte, 27 Mitarbeitende, ein fester Ansprechpartner
+                für Sie.
               </p>
             </div>
           </Container>
@@ -400,6 +489,9 @@ export default function Home() {
                 </li>
               ))}
             </ol>
+            <div className="mt-16">
+              <SwitchGraphic />
+            </div>
             <div className="mt-14">
               <CtaButton>Jetzt Vorab-Check starten</CtaButton>
               <CtaNote />
@@ -416,13 +508,16 @@ export default function Home() {
                 <H2 className="mt-5">Alles aus einer Hand. Oder genau der Teil, den Sie brauchen.</H2>
               </div>
               <p className="text-lg leading-relaxed text-ink-700 lg:pb-2">
-                Lohn, Buchhaltung und Beratung greifen ineinander. Kein Informationsverlust zwischen drei Dienstleistern,
-                kein „Da müssen Sie Ihr Lohnbüro fragen“.
+                Lohn, Buchhaltung und Beratung greifen ineinander. Kein Informationsverlust zwischen drei
+                Dienstleistern, kein „Da müssen Sie Ihr Lohnbüro fragen“.
               </p>
             </div>
             <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {services.map(({ icon: Icon, title, text }) => (
-                <div key={title} className="rounded-sm border border-line bg-white p-7 transition-shadow hover:shadow-lg">
+                <div
+                  key={title}
+                  className="rounded-sm border border-line bg-white p-7 transition-shadow hover:shadow-lg"
+                >
                   <Icon className="size-6 text-red" aria-hidden />
                   <h3 className="mt-5 text-lg font-semibold text-ink">{title}</h3>
                   <p className="mt-2 leading-relaxed text-muted">{text}</p>
@@ -505,7 +600,10 @@ export default function Home() {
                 <details key={f.q} className="group py-5">
                   <summary className="flex cursor-pointer items-start justify-between gap-6 text-lg font-semibold text-ink">
                     {f.q}
-                    <Plus className="faq-icon mt-1 size-5 shrink-0 text-red transition-transform duration-200" aria-hidden />
+                    <Plus
+                      className="faq-icon mt-1 size-5 shrink-0 text-red transition-transform duration-200"
+                      aria-hidden
+                    />
                   </summary>
                   <p className="mt-3 pr-10 leading-relaxed text-muted">{f.a}</p>
                 </details>
@@ -516,7 +614,10 @@ export default function Home() {
 
         {/* FINAL CTA – Zusammenfassung + Entscheidung */}
         <section className="hairlines relative overflow-hidden bg-ink py-20 text-white sm:py-28">
-          <div className="pointer-events-none absolute -bottom-40 -left-40 size-[480px] rounded-full bg-red/10" aria-hidden />
+          <div
+            className="pointer-events-none absolute -bottom-40 -left-40 size-[480px] rounded-full bg-red/10"
+            aria-hidden
+          />
           <Container className="relative">
             <div className="mx-auto max-w-3xl text-center">
               <H2 light>Sie haben zwei Möglichkeiten.</H2>
@@ -564,4 +665,3 @@ export default function Home() {
     </>
   );
 }
-
