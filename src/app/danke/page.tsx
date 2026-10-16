@@ -42,7 +42,7 @@ export default async function DankePage({ searchParams }: { searchParams: Promis
               {[
                 { icon: FileSearch, t: "Vorbereitung", d: "Wir sehen uns Ihre Angaben an und bereiten das Gespräch gezielt vor." },
                 { icon: PhoneCall, t: "Kontakt", d: "Wir rufen Sie an und stimmen einen Termin ab – Telefon, Video oder vor Ort." },
-                { icon: CalendarCheck, t: "Erstgespräch", d: "30 Minuten Zweitmeinung zu Ihrer Situation – kostenfrei und unverbindlich." },
+                { icon: CalendarCheck, t: "Hebel-Check", d: "30 Minuten Steuer-Hebel-Check: Sie gehen mit Ihren 3 wichtigsten Hebeln raus – kostenfrei und unverbindlich." },
               ].map(({ icon: Icon, t, d }) => (
                 <li key={t} className="border-t border-line pt-6">
                   <Icon className="size-6 text-red" aria-hidden />

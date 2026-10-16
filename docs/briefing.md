@@ -32,7 +32,8 @@ Quellen: Kundenonboarding-Formular, Kampagnen-Briefing (Mandatsakquise), bup-ste
 
 ## Getroffene Entscheidungen
 
-- Angebot verpackt als **„Steuerliche Zweitmeinung“** (kostenfrei, 30 Min.) – senkt die Hürde, weil kein Wechsel-Bekenntnis nötig ist.
+- Angebot (seit 16.10.2026): **„Steuer-Hebel-Check“** (kostenfrei, 30 Min.) statt „Steuerliche Zweitmeinung“ (zu langweilig). Aufgebaut nach Hormozi (Value Equation, Risikoumkehr) und Baulig-Evergreen-Strukturen. Inhalt: 3 wichtigste Hebel, Nachzahlungs-Frühwarnung, Wechsel-Fahrplan, Ehrlichkeits-Versprechen.
+- Zeitdruck über den echten Stichtag 31.12. (Countdown auf der Landingpage).
 - Keine konkreten Ersparnis-Beträge in Seite und Ads (§ 57a StBerG – sachliche Werbung).
 - Bauträger und GmbH & Co. KG sind ausdrücklich **zugelassen** (Entscheidung Kanzlei Brands, 14.10.2026). Ausgeschlossen bleiben reine KG und OHG.
 - PLZ außerhalb des Zielgebiets ist kein Ausschluss, sondern Merkmal `im_zielgebiet` im Lead.

@@ -1,163 +1,255 @@
-# Meta-Kampagne „Erstgespräch / Steuerliche Zweitmeinung“ – 5 Ad Angles
+# Meta-Kampagne „Steuer-Hebel-Check“ – Ad Angles & Creatives
 
 **Kunde:** Börnigen & Partners Steuerberatungsgesellschaft mbH (Unterföhring / Haar)
-**Ziel:** Qualifizierte Anfragen für ein Erstgespräch von Unternehmern, die mit ihrer Steuerberatung unzufrieden sind
-**Zielgruppe:** Inhaber, Geschäftsführer und Selbstständige ab 500.000 € Umsatz, München + ca. 150 km
-**Landingpage:** `/` → Vorab-Check `/erstgespraech` → `/danke`
+**Angebot:** Steuer-Hebel-Check – kostenfrei, 30 Minuten. Ergebnis: Ihre 3 wichtigsten ungenutzten Hebel, Nachzahlungs-Frühwarnung, Wechsel-Fahrplan. Ehrlichkeits-Versprechen: „Sind Sie gut aufgestellt, sagen wir Ihnen das.“
+**Zielgruppe:** Inhaber/Geschäftsführer ab 500.000 € Umsatz, München + ca. 150 km
+**Funnel:** Ad → `/` → Vorab-Check `/erstgespraech` → `/danke` (Pixel-Event `Lead`)
 
-## Kampagnen-Setup (Empfehlung)
+## Wie die Texte gebaut sind
+
+**Hormozi – Value Equation:** Wert = Traumergebnis × Eintrittswahrscheinlichkeit ÷ (Wartezeit × Aufwand).
+- *Traumergebnis:* Steuerlast planen statt erleiden, keine Überraschungen, ein Berater, der sich meldet.
+- *Wahrscheinlichkeit:* 5× DATEV „Digitale Kanzlei“, Partner mit Gesicht, Mandantenstimmen, konkreter Mechanismus („3 Hebel“).
+- *Wartezeit:* Ergebnis schon im 30-Minuten-Gespräch – nicht erst nach dem Wechsel.
+- *Aufwand:* 2-Minuten-Check, Wechsel übernehmen wir komplett.
+- *Risikoumkehr:* kostenfrei, ohne Wechselpflicht, Ehrlichkeits-Versprechen.
+- *Hook-Regel:* Erste Zeile = ein Gedanke, den der Unternehmer schon selbst hatte. Call-out der Zielgruppe in den ersten 3 Sekunden („Unternehmer ab 500.000 € Umsatz“).
+
+**Baulig – Evergreen-Strukturen:** Jeder Angle unten folgt einer der 20 Strukturen (Hook → Zuspitzung → Lösungs-Teaser → Mechanismus → CTA).
+
+**Berufsrecht (§ 57a StBerG):** sachlich, nicht irreführend. Keine Ersparnis-Beträge, keine Erfolgsgarantien, keine Herabsetzung konkreter Kollegen. Wir arbeiten mit Fragen, Fakten (Stichtag 31.12.) und Konsequenzen. „Ihre Kanzlei“ = die Situation des Lesers, nie ein benannter Wettbewerber.
+
+## Kampagnen-Setup
 
 | Punkt | Empfehlung |
 |---|---|
-| Kampagnenziel | Leads (Website-Conversion), Optimierung auf das Pixel-/CAPI-Event `Lead` (feuert erst nach bestandener Vorqualifizierung) |
-| Standort | München, Radius ca. 150 km (alternativ: Oberbayern + Schwaben + Niederbayern + Landkreise Regensburg/Ulm). „Personen, die an diesem Ort wohnen oder sich regelmäßig dort aufhalten“ |
+| Ziel | Leads (Website), Optimierung auf `Lead` (feuert nur nach bestandener Vorqualifizierung) |
+| Standort | München, Radius ca. 150 km |
 | Alter | 30–65 |
-| Targeting | Breit (Advantage+ Audience) – die Vorqualifizierung filtert. Als Signal: Interessen „Unternehmer“, „Geschäftsführer“, „Selbstständigkeit“, „DATEV“, „Kleine und mittlere Unternehmen“ |
-| Sonderkategorie | Keine (Finanzdienstleistungen-Kategorie greift nicht für Steuerberatung). Bei Ablehnung trotzdem prüfen |
-| Budget-Aufteilung | 1 Kampagne, 1 Anzeigengruppe (Advantage+), 5 Angles × 2 Creatives = 10 Anzeigen. Nach 7–10 Tagen Verlierer abschalten |
-| UTM | `?utm_source=meta&utm_medium=paid&utm_campaign=bup-erstgespraech&utm_content={{ad.name}}&ad_angle=angle1` – landet automatisch im Lead (Feld `tracking`) |
-| Platzierungen | Feed + Reels + Stories (Advantage+). 4:5 für Feed, 9:16 für Reels/Stories |
-| CTA-Button | „Mehr dazu“ (seriöser als „Jetzt buchen“) |
-| Headline unter dem Creative | max. 40 Zeichen, siehe je Angle |
-
-**Berufsrecht (§ 57a StBerG):** Werbung muss sachlich und darf nicht irreführend sein. Deshalb **keine konkreten Ersparnis-Beträge** („19.775 € sparen“) und keine Garantien – stattdessen Fragen, Situationen und Konsequenzen. Alle Texte unten sind so formuliert. Die Kunden-Zitate in Angle 5 erst nach Freigabe durch die Kanzlei nutzen.
+| Targeting | Advantage+ Audience (breit) – die Vorqualifizierung filtert |
+| Struktur | 1 Kampagne, 1 Anzeigengruppe, 8 Angles × 2 Creatives. Nach 7–10 Tagen Verlierer aus; Gewinner-Hooks variieren |
+| Saison | **Okt–Dez: Angle 3 (Stichtag) und 2 (Nachzahlung) mit höchstem Budget.** Jan–Mär: Angle 2 + 7 (Bescheid-Saison). Ab Q2: Angle 1, 5, 6 |
+| UTM | `?utm_source=meta&utm_medium=paid&utm_campaign=bup-hebelcheck&utm_content={{ad.name}}` |
+| Platzierungen | Feed 4:5, Reels/Stories 9:16 |
+| CTA-Button | „Mehr dazu“ |
 
 ---
 
-## Angle 1 – „Entwachsen“ (Identifikation, breiteste Zielgruppe)
+## Angle 1 – „Der unaufgeforderte Vorschlag“ · *Realtalk-Ad*
 
-**Kernidee:** Nicht die Kanzlei ist schlecht – das Unternehmen ist ihr entwachsen. Entlastet den Unternehmer (kein Eingeständnis eines Fehlers) und macht den Wechsel zur logischen Wachstumsentscheidung.
+**Primärtext**
+> Eine ehrliche Frage an Unternehmer ab 500.000 € Umsatz:
+>
+> Wann hat Ihr Steuerberater Ihnen zuletzt etwas vorgeschlagen – ohne dass Sie gefragt haben?
+>
+> Nicht gebucht. Nicht abgegeben. Vorgeschlagen.
+>
+> Ein anderes Geschäftsführergehalt. Eine Holding. Den richtigen Zeitpunkt für eine Investition. Eine Warnung vor der nächsten Nachzahlung.
+>
+> Wenn Sie jetzt nachdenken müssen, ist das die Antwort.
+>
+> Im kostenfreien Steuer-Hebel-Check zeigen wir Ihnen in 30 Minuten Ihre 3 wichtigsten ungenutzten Hebel. Sind Sie bereits gut aufgestellt, sagen wir Ihnen auch das.
+>
+> 👉 In 2 Minuten prüfen, ob Ihr Unternehmen passt.
 
-**Primärtext:**
-> Ihr Unternehmen ist in den letzten Jahren gewachsen.
->
-> Mehr Umsatz. Mehr Mitarbeitende. Mehr Verantwortung.
->
-> Und Ihre Steuerberatung? Macht noch genau das, was sie vor zehn Jahren gemacht hat: Belege verbuchen, Abschluss erstellen, Steuererklärung abgeben.
->
-> Das ist kein Fehler Ihrer Kanzlei. Aber ab einer gewissen Größe reicht Verwalten nicht mehr. Dann brauchen Sie jemanden, der gestaltet – bevor Entscheidungen fallen, nicht danach.
->
-> Wir sind Börnigen & Partners, Steuerberater in Unterföhring und Haar. Für Unternehmer im Raum München ab 500.000 € Umsatz bieten wir eine kostenfreie steuerliche Zweitmeinung an: 30 Minuten, vertraulich, unverbindlich.
->
-> 👉 Hier prüfen, ob Ihr Unternehmen zu uns passt.
+**Headline:** Wann kam der letzte Vorschlag?
+**Beschreibung:** Steuer-Hebel-Check · kostenfrei · 30 Min.
 
-**Headline:** Ist Ihr Unternehmen Ihrer Kanzlei entwachsen?
-**Beschreibung:** Kostenfreie Zweitmeinung für Unternehmer ab 500.000 € Umsatz
-
-**Creative:**
-- **Format A (Statisch, 4:5):** Ruhiges, hochwertiges Motiv – Unternehmer im eigenen Betrieb oder Büro, Blick nach vorn (Drehtag). Textoverlay oben in Serifenschrift: **„Ihr Unternehmen ist gewachsen. Ihre Steuerberatung auch?“** Unten kleiner Balken in Anthrazit: „Steuerliche Zweitmeinung · kostenfrei · für Unternehmer ab 500.000 € Umsatz“. Logo unten rechts.
-- **Format B (Video, 9:16, 20–30 s):** Jan Börnigen spricht direkt in die Kamera. Hook in den ersten 2 Sekunden als Text + gesprochen: „Wenn Ihr Steuerberater heute noch genau das macht wie vor zehn Jahren – dann ist das ein Problem.“ Danach: 3 Anzeichen (Zahlen kommen zu spät, keine Vorschläge, wechselnde Ansprechpartner), Schluss: „Holen Sie sich eine Zweitmeinung. 30 Minuten, kostenfrei.“ Untertitel immer eingebrannt.
+**Creatives**
+- **A – Statisch 4:5 (Typo):** Weißer Grund, große Serifenschrift: **„Wann hat Ihr Steuerberater Ihnen zuletzt etwas vorgeschlagen?“** Darunter klein und rot: „Ohne dass Sie gefragt haben.“ Logo unten rechts.
+- **B – Video 9:16 (Jan Börnigen, 20 s):** Hook in Sekunde 0–2, direkt in die Kamera: „Wann hat Ihr Steuerberater Ihnen zuletzt etwas vorgeschlagen?“ – 2 s Pause, Blick halten. „Wenn Sie überlegen müssen … dann lassen Sie Geld liegen. Holen Sie sich den Steuer-Hebel-Check. 30 Minuten, kostenfrei.“
 
 ---
 
-## Angle 2 – „Die Nachzahlung“ (Akuter Schmerz, höchste Dringlichkeit)
+## Angle 2 – „Die Nachzahlung“ · *Agitation-Ad*
 
-**Kernidee:** Der Steuerbescheid mit Nachzahlung + erhöhten Vorauszahlungen ist der häufigste konkrete Auslöser für einen Wechsel. Funktioniert im Inspirations-Beispiel (Quattek) bereits nachweislich.
-
-**Primärtext:**
-> Der Steuerbescheid kommt – und erwischt Sie kalt.
+**Primärtext**
+> Die Nachzahlung ist nicht das Problem.
 >
-> Eine Nachzahlung, auf die Sie niemand vorbereitet hat. Dazu angepasste Vorauszahlungen für das laufende Jahr. Liquidität, die Sie für Ihr Unternehmen eingeplant hatten, ist plötzlich weg.
+> Das Problem kommt mit ihr: Das Finanzamt passt Ihre Vorauszahlungen an. Rückwirkend für das laufende Jahr. Und ab sofort jedes Quartal.
 >
-> Die Frage ist nicht, ob Steuern anfallen. Die Frage ist, warum Sie es erst erfahren, wenn es zu spät ist.
+> Aus einem Brief werden fünf Zahlungen, die Sie nicht eingeplant hatten. Liquidität, die eigentlich für Mitarbeiter, Investitionen oder Rücklagen gedacht war.
+>
+> Und die eigentliche Frage stellt kaum jemand: Warum hat Sie niemand vorher gewarnt?
 >
 > Eine Steuerberatung, die mitdenkt, plant Ihre Steuerlast unterjährig – mit aktuellen Zahlen statt mit dem Blick in den Rückspiegel.
 >
-> Für Unternehmer im Raum München ab 500.000 € Umsatz: Holen Sie sich eine kostenfreie Zweitmeinung von Börnigen & Partners. Wir zeigen Ihnen, wo Sie steuerlich stehen – auch wenn Sie danach bei Ihrer Kanzlei bleiben.
+> Im kostenfreien Steuer-Hebel-Check bekommen Sie eine ehrliche Nachzahlungs-Frühwarnung für Ihr Unternehmen. Bevor der nächste Bescheid kommt.
+>
+> Für Unternehmer im Raum München ab 500.000 € Umsatz.
 
-**Headline:** Nie wieder von Nachzahlungen überrascht
-**Beschreibung:** Kostenfreie steuerliche Zweitmeinung – 30 Minuten
+**Headline:** Nachzahlung? Dann kommt noch mehr.
+**Beschreibung:** Nachzahlungs-Frühwarnung im kostenfreien Hebel-Check
 
-**Creative:**
-- **Format A (Statisch, 4:5):** Close-up eines Briefumschlags vom Finanzamt auf einem Schreibtisch (Bürosituation, kein Stockfoto-Look), daneben Kaffeetasse/Laptop. Overlay: **„Der Steuerbescheid kommt. Und erwischt Sie kalt.“** Darunter klein: „Wie Sie Ihre Steuerlast planen statt nur zahlen.“
-- **Format B (Video, 9:16):** POV-Shot: Hand öffnet Brief, Schnitt auf Steuerberater im Büro. Hook-Text: „Nachzahlung + höhere Vorauszahlungen?“ Steuerberater erklärt in 20 Sekunden, warum das bei unterjähriger Planung nicht passieren muss.
+**Creatives**
+- **A – Statisch 4:5:** Echter Schreibtisch, geöffneter Brief vom Finanzamt (Inhalt unscharf), daneben Kalender mit 4 rot markierten Quartalsterminen. Overlay: **„Ein Brief. Fünf Zahlungen.“** Klein: „Warum hat Sie niemand gewarnt?“
+- **B – Video 9:16 (POV, 15 s):** Hand öffnet Brief → Schnitt: Kalender, rote Kreise erscheinen nacheinander (10.3., 10.6., 10.9., 10.12.) mit Klick-Sound. Text: „Nachzahlung + 4× höhere Vorauszahlungen.“ Endkarte: „Steuer-Hebel-Check: Frühwarnung, bevor der Bescheid kommt.“
 
 ---
 
-## Angle 3 – „Verwalter vs. Gestalter“ (Proaktive Gestaltungsberatung, höchster Mandatswert)
+## Angle 3 – „Verfallsdatum 31.12.“ · *Zeitdruck-Ad* (Okt–Dez Hauptangle)
 
-**Kernidee:** Spricht die anspruchsvollsten Unternehmer an (GmbH, Holding-Fragen, GF-Gehalt). Trigger: „Von meiner Kanzlei kam dazu noch nie ein Vorschlag.“
+**Primärtext**
+> Sie denken, Sie haben noch Zeit bis zum Jahresabschluss?
+>
+> Leider nein.
+>
+> Die wichtigsten Steuer-Hebel für dieses Jahr laufen am 31. Dezember ab:
+>
+> 1️⃣ Geschäftsführervergütung & Tantieme – müssen im Voraus vereinbart sein. Rückwirkend erkennt das Finanzamt nichts an.
+> 2️⃣ Investitionszeitpunkt – ob eine Anschaffung dieses oder nächstes Jahr wirkt, entscheidet der Kalender.
+> 3️⃣ Ausschüttung oder Thesaurierung – die Weiche stellen Sie vor dem Stichtag.
+>
+> Was bis dahin nicht geplant ist, wird im Abschluss nur noch festgestellt. Und bezahlt.
+>
+> Im kostenfreien Steuer-Hebel-Check zeigen wir Ihnen, welche Hebel Sie dieses Jahr noch ziehen können.
+>
+> Für Unternehmer im Raum München ab 500.000 € Umsatz. Termine vor Jahresende sind begrenzt.
 
-**Primärtext:**
-> Wann hat Ihr Steuerberater Ihnen zuletzt etwas vorgeschlagen – ohne dass Sie gefragt haben?
+**Headline:** Ihre Steuer-Hebel laufen am 31.12. ab
+**Beschreibung:** Kostenfreier Hebel-Check – noch vor Jahresende
+
+> „Termine vor Jahresende sind begrenzt“ nur verwenden, wenn die Kanzlei das bestätigt (Kapazität Nov/Dez).
+
+**Creatives**
+- **A – Statisch 4:5:** Abreißkalender „31. DEZEMBER“, Seite leicht angerissen. Overlay oben: **„Ihre Steuer-Hebel haben ein Verfallsdatum.“** Unten Anthrazit-Balken: „Hebel-Check · kostenfrei · vor Jahresende“.
+- **B – Karussell 1:1 (5 Karten):** 1 „3 Steuer-Hebel, die am 31.12. verfallen“ → 2–4 je ein Hebel mit einem Satz → 5 „Welche gelten für Sie? → Hebel-Check sichern“.
+
+---
+
+## Angle 4 – „Wechseln ist aufwendig“ · *Myth-Buster-Ad*
+
+**Primärtext**
+> „Ein Kanzleiwechsel? Viel zu aufwendig.“
 >
-> Geschäftsführergehalt. Ausschüttungen. Holding. Der richtige Zeitpunkt für Investitionen.
+> Das ist der Grund Nr. 1, warum Unternehmer jahrelang bei einer Steuerberatung bleiben, die nicht mehr zu ihnen passt.
 >
-> Das sind die Hebel, die über Ihre Steuerlast entscheiden. Und sie haben eines gemeinsam: Sie wirken nur nach vorne. Was im Dezember nicht geplant ist, lässt sich im März nicht mehr ändern.
+> Die Wahrheit: Für Sie ist ein Wechsel fast kein Aufwand.
 >
-> Viele Unternehmer haben eine Kanzlei, die ordentlich verwaltet. Wenige haben eine, die aktiv gestaltet.
+> ✔ Kündigung und Abstimmung mit der bisherigen Kanzlei – übernehmen wir.
+> ✔ DATEV-Daten, Buchhaltung, Lohnhistorie – werden strukturiert übernommen.
+> ✔ Laufende Fristen und Abschlüsse – koordinieren wir.
 >
-> Börnigen & Partners begleitet inhabergeführte Unternehmen im Raum München steuerlich und unternehmerisch – vom Lohn bis zur Holdingstruktur.
+> Ihr Aufwand: 2 Minuten Vorab-Check und ein 30-Minuten-Gespräch.
 >
-> Im kostenfreien Erstgespräch zeigen wir Ihnen, welche Fragen in Ihrem Fall noch nicht gestellt wurden.
+> Aufwendig ist etwas anderes: Jahr für Jahr Gestaltungsspielraum zu verschenken, weil Wechseln „zu viel Arbeit“ wäre.
+>
+> Starten Sie mit dem kostenfreien Steuer-Hebel-Check – ohne Wechselpflicht.
+
+**Headline:** Kanzleiwechsel? Erledigen wir.
+**Beschreibung:** Ihr Aufwand: 2 Minuten + 1 Gespräch
+
+**Creatives**
+- **A – Statisch 4:5 (Gegenüberstellung):** Links durchgestrichen, grau: „Kündigung · Datenübernahme · Fristen · Abstimmung“. Rechts rot: „Ihr Teil: 1 Gespräch.“
+- **B – Video 9:16 (Petra Börnigen, 25 s):** „Der häufigste Satz, den ich höre: ‚Wechseln ist mir zu aufwendig.‘ Ehrlich? Für Sie ist das ein Gespräch. Den Rest machen wir – Kündigung, DATEV-Übernahme, Fristen.“
+
+---
+
+## Angle 5 – „Nicht Ihr Job“ · *Identitäts-Ad*
+
+**Primärtext**
+> Als Unternehmer ist es nicht Ihre Aufgabe, an Steuergestaltung zu denken.
+>
+> Sie führen Mitarbeiter. Sie gewinnen Kunden. Sie treffen jeden Tag Entscheidungen, die Ihr Unternehmen voranbringen.
+>
+> Dass Sie nicht wissen, ob Ihr Geschäftsführergehalt optimal ist oder ob sich eine Holding lohnt, ist kein Versäumnis. Es ist schlicht nicht Ihr Fachgebiet.
+>
+> Genau dafür bezahlen Sie einen Steuerberater. Nicht fürs Buchen – fürs Mitdenken.
+>
+> Wenn das bei Ihnen gerade nicht passiert: Im kostenfreien Steuer-Hebel-Check zeigen wir Ihnen in 30 Minuten, welche Fragen in Ihrem Fall noch nie gestellt wurden.
+
+**Headline:** Mitdenken ist unser Job. Nicht Ihrer.
+**Beschreibung:** Für Unternehmer ab 500.000 € Umsatz
+
+**Creatives**
+- **A – Statisch 4:5:** Unternehmer im eigenen Betrieb, im Gespräch mit Mitarbeitern (Drehtag). Overlay: **„Steuern gestalten ist nicht Ihr Job.“** Klein: „Sondern unserer.“
+- **B – Video 9:16 (B-Roll Unternehmer + Voice-over Jan):** Schnitte: Halle, Meeting, Kunde am Telefon. VO: „Sie haben ein Unternehmen zu führen. Wer denkt eigentlich an Ihre Steuerlast?“
+
+---
+
+## Angle 6 – „Die 3 Fragen“ · *Framework-/Educational-Ad*
+
+**Primärtext**
+> 3 Fragen, die Ihnen Ihr Steuerberater dieses Jahr gestellt haben sollte:
+>
+> 1. „Passt Ihr Geschäftsführergehalt noch zu Ihrem Gewinn?“
+> 2. „Lohnt sich für Sie eine Holding – jetzt, bevor die Gewinne weiter steigen?“
+> 3. „Wie hoch wird Ihre Steuerlast dieses Jahr – und was können wir vor dem 31.12. noch tun?“
+>
+> Wurde Ihnen keine davon gestellt? Dann sind Sie nicht allein. Die meisten Kanzleien beantworten Fragen. Wenige stellen sie.
+>
+> Im kostenfreien Steuer-Hebel-Check gehen wir genau diese Fragen für Ihr Unternehmen durch – und Sie gehen mit Ihren 3 wichtigsten Hebeln raus.
+
+**Headline:** 3 Fragen, die Sie hören sollten
+**Beschreibung:** Kostenfreier Hebel-Check für Unternehmer
+
+**Creatives**
+- **A – Karussell 1:1:** Karte 1 „3 Fragen, die Ihr Steuerberater stellen sollte“ → 2–4 je eine Frage groß in Serifenschrift → 5 „Keine gehört? Hebel-Check sichern“.
+- **B – Statisch 4:5 (Checkliste):** Drei Kästchen, alle leer. Überschrift: „Wurde Ihnen dieses Jahr eine dieser Fragen gestellt?“
+
+---
+
+## Angle 7 – „Ich bin eigentlich zufrieden“ · *Einwandbehandlungs-Ad* (auch Retargeting)
+
+**Primärtext**
+> „Ich bin eigentlich zufrieden mit meiner Kanzlei.“
+>
+> Das hören wir oft. Und es ist absolut berechtigt.
+>
+> Aber „zufrieden“ heißt meistens: Es läuft ordentlich. Abschluss pünktlich, Erklärung abgegeben, keine Fehler.
+>
+> Was „zufrieden“ selten heißt: Jemand hat aktiv nach Gestaltungsspielraum gesucht.
+>
+> Deshalb ist der Steuer-Hebel-Check bewusst kein Wechselgespräch. Wir schauen 30 Minuten von außen auf Ihre Situation.
+>
+> Finden wir ungenutzte Hebel, kennen Sie sie. Finden wir keine, haben Sie die Bestätigung, dass Sie gut aufgestellt sind.
+>
+> In beiden Fällen gewinnen Sie. Kostenfrei.
+
+**Headline:** Zufrieden? Dann prüfen Sie es.
+**Beschreibung:** 30 Min. · kostenfrei · ohne Wechselpflicht
+
+**Creatives**
+- **A – Statisch 4:5 („Angebotskarte“):** Nachbau der Hero-Karte der Landingpage (weißes Dokument, rotes Label „Kostenfrei · 30 Minuten“, 4 Punkte, Ehrlichkeits-Versprechen). Wiedererkennung auf der Seite = höhere Conversion.
+- **B – Video 9:16 (Testimonial, nach Freigabe):** Mandant: „Ich war eigentlich zufrieden. Dann hat mir das Gespräch gezeigt, was nie angesprochen wurde.“
+
+---
+
+## Angle 8 – „Verwalter oder Gestalter“ · *Neuer-Weg-Ad*
+
+**Primärtext**
+> Es gibt zwei Arten von Steuerberatung.
+>
+> Die eine schaut in den Rückspiegel: Belege buchen, Abschluss erstellen, Erklärung abgeben. Was passiert ist, wird festgestellt.
+>
+> Die andere schaut nach vorn: Sie plant Ihre Steuerlast, bevor sie entsteht. Sie meldet sich, bevor Sie fragen müssen. Und Ihre Zahlen sind monatlich aktuell – nicht erst im Folgejahr.
+>
+> Bis zu einer gewissen Größe reicht die erste. Ab 500.000 € Umsatz kostet sie Sie Spielraum.
+>
+> Börnigen & Partners – 5× in Folge von DATEV als „Digitale Kanzlei“ ausgezeichnet – betreut inhabergeführte Unternehmen im Raum München nach dem zweiten Prinzip.
+>
+> Im kostenfreien Steuer-Hebel-Check sehen Sie den Unterschied in 30 Minuten.
 
 **Headline:** Verwalten oder gestalten?
-**Beschreibung:** Für Unternehmer ab 500.000 € Umsatz im Raum München
+**Beschreibung:** 5× DATEV „Digitale Kanzlei“
 
-**Creative:**
-- **Format A (Statisch, 4:5, Typo-Creative):** Zweigeteilte Fläche. Links hell/grau: „Ihre Kanzlei: **verwaltet**“ mit 3 grauen Punkten (Belege buchen · Abschluss · Erklärung). Rechts Anthrazit mit rotem Akzent: „Börnigen & Partners: **gestaltet**“ (GF-Gehalt · Holding · Liquiditätsplanung). Sehr reduziert, viel Weißraum – wirkt im Feed wie ein Fachbeitrag, nicht wie Werbung.
-- **Format B (Karussell, 1:1, 5 Karten):** „5 Fragen, die Ihnen Ihr Steuerberater stellen sollte“ – Karte 1 Titel, Karten 2–4 je eine Frage (z. B. „Ist Ihr Geschäftsführergehalt steuerlich optimal gewählt?“, „Lohnt sich für Sie eine Holding?“, „Wie hoch wird Ihre Steuerlast in diesem Jahr?“, „Ist Ihre Rechtsform noch die richtige?“), letzte Karte CTA „Keine dieser Fragen gehört? → Zweitmeinung einholen“.
-
----
-
-## Angle 4 – „Erreichbarkeit & Ansprechpartner“ (Frust im Alltag)
-
-**Kernidee:** Der häufigste Alltagsfrust: Antworten nach Wochen, wechselnde Sachbearbeiter, Papier. Positioniert die Digitalisierung (5× DATEV Digitale Kanzlei) als Nutzen – nicht als Selbstzweck.
-
-**Primärtext:**
-> „Ich bekomme Antworten erst, wenn es schon dringend ist.“
->
-> Diesen Satz hören wir von Unternehmern fast jede Woche. Dazu: jedes Jahr ein neuer Sachbearbeiter. Belege per Post. Zahlen, die erst Monate nach Jahresende kommen.
->
-> Für ein Unternehmen, das schnell entscheiden muss, ist das kein Service. Das ist eine Bremse.
->
-> Bei Börnigen & Partners haben Sie einen festen, persönlichen Ansprechpartner. Ihre Buchhaltung ist monatlich aktuell, digital in DATEV einsehbar – und Lohn, Buchhaltung und Beratung kommen aus einer Hand. Fünfmal in Folge wurden wir von DATEV als „Digitale Kanzlei“ ausgezeichnet.
->
-> Für Unternehmer im Raum München ab 500.000 € Umsatz: kostenfreies Erstgespräch, 30 Minuten, unverbindlich.
-
-**Headline:** Ein Ansprechpartner. Aktuelle Zahlen.
-**Beschreibung:** 5× ausgezeichnet als DATEV Digitale Kanzlei
-
-**Creative:**
-- **Format A (Statisch, 4:5):** Großes Zitat in Serifenschrift in Anführungszeichen auf hellem Grund: **„Ich bekomme Antworten erst, wenn es schon dringend ist.“** Darunter: „Klingt bekannt? Es geht auch anders.“ + DATEV-Badge „Digitale Kanzlei“ klein unten links, Logo rechts.
-- **Format B (Video, 9:16):** Split-Screen: links Pendelordner/Papierstapel und ein klingelndes, unbeantwortetes Telefon (grau, langsam), rechts Smartphone mit aktueller Auswertung + Berater im Video-Call (Farbe, ruhig). Text: „Ihre Kanzlei vs. eine Kanzlei, die mit Ihnen wächst.“
+**Creatives**
+- **A – Statisch 4:5 (Split):** Links grau „Ihre Steuerlast: festgestellt.“ Rechts Anthrazit mit Rot „Ihre Steuerlast: geplant.“
+- **B – Video 9:16 (Split-Screen):** Links Pendelordner, klingelndes Telefon, grau. Rechts Smartphone mit aktueller Auswertung, Berater im Video-Call. Text: „Rückspiegel vs. Windschutzscheibe.“
 
 ---
 
-## Angle 5 – „Zweitmeinung ohne Risiko“ (No-Brainer-Angebot, Retargeting & Zögerer)
+## Nachschub, sobald Material da ist
 
-**Kernidee:** Senkt die Hürde maximal: Es geht nicht um einen Wechsel, sondern um eine Zweitmeinung – wie beim Arzt. Ideal für Retargeting von Landingpage-Besuchern ohne Anfrage und für Unternehmer, die grundsätzlich zufrieden, aber unsicher sind.
+- **Fallstudien-Ad (Baulig #2):** „[Branche], [Umsatz], seit 8 Jahren bei derselben Kanzlei. Im Hebel-Check zeigte sich: …“ – braucht eine freigegebene, anonymisierte Mandantengeschichte. Keine Beträge, Ergebnis qualitativ („Holding gegründet“, „keine Nachzahlung mehr“).
+- **Heldenreise-Ad (Baulig #4):** Jan oder Petra Börnigen: Warum sie die Kanzlei digital und proaktiv aufgebaut haben. Am Drehtag aufnehmen.
+- **Behind-the-Scenes (Baulig #16):** 30 s aus dem Kanzleialltag – Mooswand mit Logo, Team, Bildschirm mit DATEV-Auswertung.
 
-**Primärtext:**
-> Bei einer wichtigen Diagnose holt man sich eine Zweitmeinung. Bei der eigenen Steuerlast fast nie.
->
-> Dabei geht es um Ihr Unternehmen, Ihr Vermögen und viele Entscheidungen, die sich später nicht mehr korrigieren lassen.
->
-> Deshalb bieten wir Unternehmern im Raum München eine kostenfreie steuerliche Zweitmeinung an:
->
-> ✔ Standortbestimmung: Wo stehen Sie steuerlich heute?
-> ✔ Ungenutzte Hebel: Was wurde bisher nicht angesprochen?
-> ✔ Klarer Fahrplan: Was würde ein Wechsel konkret bedeuten?
->
-> 30 Minuten. Vertraulich. Ohne Verpflichtung.
-> Und wenn Sie danach bei Ihrer Kanzlei bleiben: Dann wissen Sie wenigstens, dass Sie gut aufgestellt sind.
->
-> Für Unternehmen ab 500.000 € Jahresumsatz. Prüfen Sie in 2 Minuten, ob wir zueinander passen.
+## Creative-Regeln
 
-**Headline:** Ihre steuerliche Zweitmeinung – kostenfrei
-**Beschreibung:** 30 Minuten · vertraulich · unverbindlich
-
-**Creative:**
-- **Format A (Statisch, 4:5, „Angebotskarte“):** Nachbau der Angebotskarte aus dem Hero der Landingpage: weißes Dokument auf warm-grauem Grund, Label „Kostenfrei · 30 Minuten“, Titel „Ihre steuerliche Zweitmeinung“, die 3 nummerierten Punkte. Wirkt wie ein seriöses Angebot, nicht wie eine Anzeige. Wiedererkennung auf der Landingpage = höhere Conversion.
-- **Format B (Video, 9:16, Testimonial-Stil, nach Freigabe):** Bestandsmandant (z. B. Geschäftsführer eines Beratungsunternehmens) erzählt in 20 s: „Ich war eigentlich zufrieden mit meiner Kanzlei. Dann hat mir das Erstgespräch gezeigt, was alles nicht angesprochen wurde.“ Alternativ: Petra Börnigen erklärt das Format Zweitmeinung.
-
----
-
-## Allgemeine Creative-Regeln
-
-- **Farben:** Anthrazit `#1D1B1C`, Warmweiß `#F7F5F2`, Rot `#E31536` nur als Akzent (Unterstreichung, ein Wort, Button) – nie flächig. Wirkt seriös statt „Discount“.
-- **Schrift:** Headlines in einer Serifenschrift (wie auf der Landingpage: Source Serif), Fließtext Inter. Keine Emojis im Bild.
-- **Menschen statt Stock:** Echte Partner/Mitarbeitende vom Drehtag performen bei Steuerberatern deutlich besser als Stockfotos. Mind. 2 der 10 Creatives mit Jan oder Petra Börnigen.
-- **Text im Bild:** max. 12 Wörter. Ausnahme: Typo-Creatives (Angle 3/4), die bewusst wie ein Fachbeitrag wirken.
-- **Video:** Untertitel eingebrannt, Hook in den ersten 2 Sekunden, Logo erst am Ende, Länge 20–35 s.
-- **Kein:** „Steuern sparen!“-Marktschreierei, Geldscheine, Pfeile nach oben, konkrete Euro-Beträge, „nur heute“.
+- **Farben:** Anthrazit `#1D1B1C`, Warmweiß `#F7F5F2`, Rot `#E31536` nur als Akzent.
+- **Schrift:** Headlines Serif (Source Serif), Fließtext Inter. Keine Emojis im Bild.
+- **Menschen statt Stock:** Mind. 4 der 16 Creatives mit Jan oder Petra Börnigen (Portraits vor der Mooswand sind ideal).
+- **Text im Bild:** max. 12 Wörter (Ausnahme Typo-/Karussell-Creatives).
+- **Video:** Untertitel eingebrannt, Hook in den ersten 2 s, Logo erst am Ende, 15–30 s.
+- **Nie:** Euro-Beträge, „Steuern sparen!“, Geldscheine, Pfeile nach oben, „garantiert“, benannte Konkurrenz.

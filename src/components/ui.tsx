@@ -42,7 +42,7 @@ export function H2({ children, light, className = "" }: { children: React.ReactN
 }
 
 export function CtaButton({
-  children = "Kostenfreies Erstgespräch anfragen",
+  children = "Kostenfreien Hebel-Check sichern",
   variant = "red",
   className = "",
 }: {
@@ -68,7 +68,7 @@ export function CtaButton({
 export function CtaNote({ light }: { light?: boolean }) {
   return (
     <p className={`mt-4 text-sm ${light ? "text-white/60" : "text-muted"}`}>
-      2 Minuten Vorab-Check · kostenfrei · vertraulich · unverbindlich
+      2 Minuten Vorab-Check · kostenfrei · ohne Wechselpflicht
     </p>
   );
 }
