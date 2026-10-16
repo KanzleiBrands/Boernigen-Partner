@@ -25,7 +25,7 @@ npm run lint
 ## Vor dem Livegang mit der Kanzlei klären
 
 - [ ] Telefonnummer: Website nennt +49 89 189 3538 0, Impressum +49 89 950 3801 – welche gilt?
-- [ ] Portraits Jan & Petra Börnigen als `public/img/team/jan-boernigen.jpg` und `public/img/team/petra-boernigen.jpg` ablegen (Hochformat 4:5, ca. 800×1000 px) – erscheinen dann automatisch, sonst Initialen
+- [x] Portraits Jan & Petra Börnigen eingebaut (`public/img/team/`)
 - [ ] Partner-Status und Tool-Liste bestätigen: Personio Expert Partner, HRworks Partner – welche weiteren HR-/Bewerbermanagement- und Buchhaltungs-Tools sollen namentlich auf die Seite? (`src/components/Visuals.tsx`, `HR_TOOLS`)
 - [ ] Zusagen der neuen Copy bestätigen lassen: „Digital-Check“ im Gespräch, „Vorsysteme sparen Ihrer Buchhaltung Stunden“, „Ihre 3 wichtigsten Hebel“ im Gespräch, Nachzahlungs-Frühwarnung, Ehrlichkeits-Versprechen, „Kündigung/DATEV-Übernahme/Fristen übernehmen wir“, „jedes Mandat wird persönlich aufgenommen“
 - [ ] Mandanten-Zitate freigeben lassen (stammen aus dem Onboarding-Formular)
