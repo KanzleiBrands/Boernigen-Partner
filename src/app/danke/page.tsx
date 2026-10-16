@@ -10,9 +10,10 @@ export const metadata: Metadata = {
 
 const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL;
 
-export default async function DankePage({ searchParams }: { searchParams: Promise<{ v?: string }> }) {
-  const { v } = await searchParams;
-  const vorname = v?.slice(0, 40);
+export default async function DankePage({ searchParams }: { searchParams: Promise<{ n?: string }> }) {
+  // Voller Name statt nur Vorname – passt zur Anrede „Sie“ und kommt ohne Geschlechtsangabe aus
+  const { n } = await searchParams;
+  const name = n?.trim().slice(0, 80);
   return (
     <>
       <Header minimal />
@@ -20,8 +21,8 @@ export default async function DankePage({ searchParams }: { searchParams: Promis
         <Container className="py-16 sm:py-24">
           <div className="mx-auto max-w-3xl">
             <Eyebrow>Anfrage eingegangen</Eyebrow>
-            <h1 className="mt-6 font-serif text-4xl leading-tight font-medium text-balance text-ink sm:text-5xl">
-              Vielen Dank{vorname ? `, ${vorname}` : ""}. Wir melden uns persönlich bei Ihnen.
+            <h1 className="mt-6 text-4xl leading-tight font-semibold tracking-[-0.025em] text-balance text-ink sm:text-5xl">
+              Vielen Dank{name ? `, ${name}` : ""}. Wir melden uns persönlich bei Ihnen.
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-ink-700">
               Ihre Anfrage liegt bei uns. Ein Steuerberater aus unserem Team prüft Ihre Angaben und meldet sich in der
@@ -41,7 +42,7 @@ export default async function DankePage({ searchParams }: { searchParams: Promis
               {[
                 { icon: FileSearch, t: "Vorbereitung", d: "Wir sehen uns Ihre Angaben an und bereiten das Gespräch gezielt vor." },
                 { icon: PhoneCall, t: "Kontakt", d: "Wir rufen Sie an und stimmen einen Termin ab – Telefon, Video oder vor Ort." },
-                { icon: CalendarCheck, t: "Erstgespräch", d: "30 Minuten Zweitmeinung zu Ihrer Situation – kostenfrei und unverbindlich." },
+                { icon: CalendarCheck, t: "Erstgespräch", d: "30 Minuten, kostenlos: Sie erfahren, wo Sie Steuern und Zeit sparen können." },
               ].map(({ icon: Icon, t, d }) => (
                 <li key={t} className="border-t border-line pt-6">
                   <Icon className="size-6 text-red" aria-hidden />

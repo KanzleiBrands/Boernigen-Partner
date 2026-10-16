@@ -31,10 +31,18 @@ export function Eyebrow({ children, light }: { children: React.ReactNode; light?
   );
 }
 
-export function H2({ children, light, className = "" }: { children: React.ReactNode; light?: boolean; className?: string }) {
+export function H2({
+  children,
+  light,
+  className = "",
+}: {
+  children: React.ReactNode;
+  light?: boolean;
+  className?: string;
+}) {
   return (
     <h2
-      className={`font-serif text-3xl leading-[1.15] font-medium tracking-tight text-balance sm:text-4xl lg:text-[2.75rem] ${light ? "text-white" : "text-ink"} ${className}`}
+      className={`text-[2rem] leading-[1.08] font-semibold tracking-[-0.025em] text-balance sm:text-5xl lg:text-[3.4rem] ${light ? "text-white" : "text-ink"} ${className}`}
     >
       {children}
     </h2>
@@ -42,7 +50,7 @@ export function H2({ children, light, className = "" }: { children: React.ReactN
 }
 
 export function CtaButton({
-  children = "Kostenfreies Erstgespräch anfragen",
+  children = "Kostenloses Erstgespräch sichern",
   variant = "red",
   className = "",
 }: {
@@ -68,7 +76,7 @@ export function CtaButton({
 export function CtaNote({ light }: { light?: boolean }) {
   return (
     <p className={`mt-4 text-sm ${light ? "text-white/60" : "text-muted"}`}>
-      2 Minuten Vorab-Check · kostenfrei · vertraulich · unverbindlich
+      2 Minuten Fragebogen · kostenlos · ohne Wechselpflicht
     </p>
   );
 }

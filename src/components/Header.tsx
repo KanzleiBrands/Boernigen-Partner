@@ -23,7 +23,7 @@ export function Header({ minimal }: { minimal?: boolean }) {
               href={FUNNEL_HREF}
               className="hidden rounded-sm bg-ink px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-ink-700 sm:inline-flex"
             >
-              Erstgespräch anfragen
+              Erstgespräch sichern
             </Link>
           )}
         </div>

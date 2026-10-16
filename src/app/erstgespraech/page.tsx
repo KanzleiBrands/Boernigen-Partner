@@ -5,7 +5,7 @@ import { Funnel } from "@/components/Funnel";
 import { Container, KANZLEI } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Erstgespräch anfragen | Börnigen & Partners Steuerberater",
+  title: "Kostenloses Erstgespräch | Börnigen & Partners Steuerberater",
 };
 
 export default function ErstgespraechPage() {
@@ -19,9 +19,9 @@ export default function ErstgespraechPage() {
           </div>
           <aside className="space-y-6 lg:pt-4">
             <div>
-              <p className="text-xs font-semibold tracking-[0.16em] text-muted uppercase">Ihr Erstgespräch</p>
+              <p className="text-xs font-semibold tracking-[0.16em] text-muted uppercase">Ihr kostenloses Erstgespräch</p>
               <ul className="mt-4 space-y-3 text-[15px] text-ink-700">
-                {["30 Minuten mit einem Steuerberater", "Kostenfrei und unverbindlich", "Telefon, Video oder vor Ort", "Ehrliche Einschätzung – auch wenn wir nicht passen"].map((t) => (
+                {["30 Minuten mit einem Steuerberater", "Wo Sie Steuern sparen können – auch noch vor dem 31.12.", "Kostenlos, ohne Wechselpflicht", "Telefon, Video oder vor Ort"].map((t) => (
                   <li key={t} className="flex gap-3">
                     <Check className="mt-0.5 size-4 shrink-0 text-red" aria-hidden />
                     {t}

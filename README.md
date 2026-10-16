@@ -13,7 +13,7 @@ npm run lint
 | Seite | Zweck |
 |---|---|
 | `/` | Landingpage |
-| `/erstgespraech` | Vorab-Check (Vorqualifizierung, 8 Schritte) |
+| `/erstgespraech` | Vorab-Check (Vorqualifizierung, 6 Schritte) |
 | `/danke` | Bestätigung (+ optional Kalender) – Conversion-URL für Meta |
 | `/api/lead` | Nimmt Leads an und verteilt sie an OS-Webhook, Backup und E-Mail |
 
@@ -25,10 +25,11 @@ npm run lint
 ## Vor dem Livegang mit der Kanzlei klären
 
 - [ ] Telefonnummer: Website nennt +49 89 189 3538 0, Impressum +49 89 950 3801 – welche gilt?
-- [ ] Portraits Jan & Petra Börnigen vom Drehtag einsetzen (Platzhalter in `src/app/page.tsx`, Abschnitt „Partner“)
+- [x] Portraits Jan & Petra Börnigen eingebaut (`public/img/team/`)
+- [ ] Partner-Status und Tool-Liste bestätigen: Personio Expert Partner, HRworks Partner – welche weiteren HR-/Bewerbermanagement- und Buchhaltungs-Tools sollen namentlich auf die Seite? (`src/components/Visuals.tsx`, `HR_TOOLS`)
+- [ ] Zusagen der neuen Copy bestätigen lassen: „Digital-Check“ im Gespräch, „Vorsysteme sparen Ihrer Buchhaltung Stunden“, „Ihre 3 wichtigsten Hebel“ im Gespräch, Nachzahlungs-Frühwarnung, Ehrlichkeits-Versprechen, „Kündigung/DATEV-Übernahme/Fristen übernehmen wir“, „jedes Mandat wird persönlich aufgenommen“
 - [ ] Mandanten-Zitate freigeben lassen (stammen aus dem Onboarding-Formular)
 - [ ] Zusage „Rückmeldung innerhalb eines Werktags“ bestätigen
-- [ ] Bauträger ausgeschlossen (laut Onboarding) – so beibehalten?
-- [ ] GmbH & Co. KG wird wie KG ausgeschlossen – so gewollt?
 - [ ] Datenschutzerklärung der Hauptseite um das Anfrageformular und die Weitergabe an Kanzlei Brands OS / Resend ergänzen
-- [ ] Cookie-Consent + Meta-Pixel/Conversions API einbauen
+- [x] Meta-Pixel/Conversions API eingebaut (⚠️ ohne Einwilligungsabfrage, siehe Anleitung) – nur noch `NEXT_PUBLIC_META_PIXEL_ID` + `META_CAPI_TOKEN` in Vercel setzen ([Anleitung](docs/leads-webhook.md#meta-pixel--conversions-api-lead-event))
+- [ ] Datenschutzerklärung der Kanzlei um Meta-Pixel + Conversions API ergänzen

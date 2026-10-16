@@ -28,7 +28,7 @@ export function Footer() {
           <p>
             © {new Date().getFullYear()} {KANZLEI.name}
           </p>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
             <a href={`mailto:${KANZLEI.email}`} className="hover:text-white">
               {KANZLEI.email}
             </a>

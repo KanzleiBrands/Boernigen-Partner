@@ -1,233 +1,206 @@
-import {
-  ArrowDown,
-  BarChart3,
-  Building2,
-  Check,
-  Clock,
-  FileText,
-  Landmark,
-  Lock,
-  MessageSquareQuote,
-  Minus,
-  Plus,
-  Scale,
-  ShieldCheck,
-  TrendingUp,
-  Users,
-  X,
-} from "lucide-react";
+import { existsSync } from "node:fs";
+import path from "node:path";
+import { Check, Lock, Plus, ShieldCheck } from "lucide-react";
 import { Header } from "@/components/Header";
+import { StickyCta } from "@/components/StickyCta";
 import { Footer } from "@/components/Footer";
-import { Container, CtaButton, CtaNote, Eyebrow, FUNNEL_HREF, H2 } from "@/components/ui";
-import Link from "next/link";
+import { SelfCheck, type Pain } from "@/components/SelfCheck";
+import { YearEndCountdown } from "@/components/YearEndCountdown";
+import { YearComparison } from "@/components/YearComparison";
+import {
+  AdvisorMessage,
+  BookkeepingVisual,
+  CfoCockpit,
+  PayrollFlow,
+  StructureDiagram,
+  SwitchGraphic,
+} from "@/components/Visuals";
+import { Container, CtaButton, CtaNote, Eyebrow, H2 } from "@/components/ui";
 
-const pains = [
-  {
-    quote: "Ich bekomme Antworten erst, wenn es schon dringend ist.",
-    text: "Rückfragen dauern Wochen. Entscheidungen, die heute fallen müssen, treffen Sie ohne steuerliche Einschätzung.",
-  },
-  {
-    quote: "Die Nachzahlung hat mich kalt erwischt.",
-    text: "Steuerbescheid, Nachzahlung, angepasste Vorauszahlungen – und niemand hat Sie vorher darauf vorbereitet.",
-  },
-  {
-    quote: "Holding? Geschäftsführergehalt? Von meiner Kanzlei kam dazu nie etwas.",
-    text: "Gestaltungsmöglichkeiten werden nicht angesprochen. Ihre Kanzlei verwaltet die Vergangenheit, statt die Zukunft zu planen.",
-  },
-  {
-    quote: "Die BWA kommt so spät, dass sie mir nicht mehr hilft.",
-    text: "Für Bankgespräche, Investitionen und Personalentscheidungen fehlen Ihnen aktuelle, belastbare Zahlen.",
-  },
-  {
-    quote: "Jedes Jahr ein anderer Sachbearbeiter.",
-    text: "Sie erklären Ihr Unternehmen immer wieder von vorne – und niemand kennt Ihre Situation wirklich.",
-  },
-  {
-    quote: "Wir arbeiten digital. Unsere Kanzlei nicht.",
-    text: "Pendelordner, Belege per Post, E-Mail-Pingpong. Ihre Buchhaltung bremst Ihr Unternehmen, statt es zu unterstützen.",
-  },
+/*
+ * Copy-Prinzip: Apple-Stil – kurze Headlines (≤ 6 Wörter), ein Satz Erklärung, die Grafik erzählt den Rest.
+ * Mobil zuerst (80–90 % Social-Traffic). Angebot nach Hormozi: Ergebnis im Gespräch, kein Risiko, kein Aufwand.
+ * Berufsrecht (§ 57a StBerG): keine Euro-Beträge, keine Erfolgsgarantien.
+ */
+
+const pains: Pain[] = [
+  { quote: "Von meiner Kanzlei kam noch nie ein Vorschlag." },
+  { quote: "Die Nachzahlung hat mich kalt erwischt." },
+  { quote: "Antworten kommen erst, wenn es brennt." },
+  { quote: "Die BWA kommt, wenn sie nichts mehr nützt." },
+  { quote: "Lohn läuft über Excel und E-Mails." },
+  { quote: "Unsere Buchhaltung tippt noch ab." },
 ];
 
-const compare: [string, string, string][] = [
-  ["Zahlen", "Erst Monate nach Jahresende", "Monatlich aktuell – digital in DATEV einsehbar"],
-  ["Beratung", "Nur auf Nachfrage", "Proaktiv und unterjährig – bevor Entscheidungen fallen"],
-  ["Ansprechpartner", "Wechselnde Sachbearbeitung", "Ein fester, persönlicher Ansprechpartner"],
-  ["Lohn & HR", "Getrennt oder ausgelagert", "Aus einer Hand – mit Personio-Schnittstelle"],
-  ["Zusammenarbeit", "Pendelordner und Papier", "Volldigital: DATEV, Kanzleicloud, KI-gestützte Prozesse"],
-  ["Steuerlast", "Wird festgestellt", "Wird geplant und aktiv gestaltet"],
-];
-
-const services = [
+const offer = [
   {
-    icon: Users,
-    title: "Lohn & HR",
-    text: "Lohn- und Gehaltsabrechnung, Sachbezüge und Benefits – nahtlos angebunden an Personio und Ihre Zeiterfassung.",
+    t: "Wo Sie Steuern sparen können",
+    d: "Ihre 3 größten Ansatzpunkte – inklusive allem, was vor dem 31.12. noch geht.",
   },
-  {
-    icon: FileText,
-    title: "Finanzbuchhaltung",
-    text: "Digitale Belegverarbeitung über DATEV Unternehmen online. Ihre Zahlen sind monatlich aktuell – nicht erst im Folgejahr.",
-  },
-  {
-    icon: Landmark,
-    title: "Jahresabschluss & Steuern",
-    text: "Jahresabschlüsse, betriebliche und private Steuererklärungen – termingerecht und mit klarer Erläuterung.",
-  },
-  {
-    icon: Scale,
-    title: "Gestaltungsberatung",
-    text: "Geschäftsführergehalt, Ausschüttungspolitik, Holding- und Rechtsformfragen – vorausschauend statt rückblickend.",
-  },
-  {
-    icon: BarChart3,
-    title: "CFO-Service",
-    text: "Controlling, Liquiditätsplanung und Bankreporting. Ein Sparringspartner für Ihre unternehmerischen Entscheidungen.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Bewertung & Nachfolge",
-    text: "Unternehmensbewertung im eigenen Haus – für Nachfolge, Gesellschafterwechsel, Kauf oder Verkauf.",
-  },
-];
-
-const steps = [
-  {
-    title: "Vorab-Check",
-    time: "2 Minuten",
-    text: "Sie beantworten online einige kurze Fragen zu Ihrem Unternehmen. So bereiten wir das Gespräch gezielt vor.",
-  },
-  {
-    title: "Strategiegespräch",
-    time: "30 Minuten",
-    text: "Mit einem unserer Steuerberater – telefonisch, per Video oder vor Ort in Unterföhring. Vertraulich und unverbindlich.",
-  },
-  {
-    title: "Klares Angebot",
-    time: "wenige Tage",
-    text: "Sie erhalten eine transparente Übersicht über Leistungsumfang und Honorar. Ohne Kleingedrucktes.",
-  },
-  {
-    title: "Geordneter Wechsel",
-    time: "wir übernehmen",
-    text: "Datenübernahme, Abstimmung mit Ihrer bisherigen Kanzlei, laufende Fristen – wir koordinieren den Übergang.",
-  },
+  { t: "Warnung vor Nachzahlungen", d: "Droht eine Nachzahlung? Sie wissen es, bevor der Bescheid kommt." },
+  { t: "Wo Ihnen Zeit verloren geht", d: "Was sich bei Lohn und Buchhaltung automatisieren lässt." },
+  { t: "Was ein Wechsel bedeuten würde", d: "Falls sinnvoll: Ablauf, Zeitpunkt, Honorar. Schwarz auf weiß." },
 ];
 
 const faqs = [
   {
-    q: "Was kostet das Erstgespräch?",
-    a: "Nichts. Das Gespräch ist kostenfrei und unverbindlich. Sie gehen keinerlei Verpflichtung ein.",
+    q: "Ich bin eigentlich zufrieden. Lohnt sich das?",
+    a: "Gerade dann. Zufrieden heißt oft: Es läuft ordentlich – aber niemand gestaltet. Finden wir nichts, sagen wir Ihnen das ehrlich.",
+  },
+  { q: "Was kostet das Erstgespräch?", a: "Nichts. Kostenlos, unverbindlich, ohne Wechselpflicht." },
+  {
+    q: "Ist ein Wechsel nicht aufwendig?",
+    a: "Für Sie nicht. Kündigung, DATEV-Datenübernahme, Fristen und die Abstimmung mit Ihrer bisherigen Kanzlei übernehmen wir.",
   },
   {
-    q: "Muss ich danach direkt wechseln?",
-    a: "Nein. Viele Unternehmer nutzen das Gespräch als steuerliche Zweitmeinung. Ob und wann ein Wechsel für Sie sinnvoll ist, entscheiden Sie – auf Basis einer klaren Einschätzung.",
+    q: "Wir nutzen Personio, HRworks oder andere Tools. Passt das?",
+    a: "Ja. Wir binden Ihre HR- und Vorsysteme an, statt Sie zum Wechsel zu zwingen. Bei Personio sind wir Expert Partner, bei HRworks Partner.",
   },
   {
-    q: "Ist ein Wechsel auch während des laufenden Jahres möglich?",
-    a: "In aller Regel ja. Wir besprechen mit Ihnen den sinnvollsten Zeitpunkt – mit Blick auf Kündigungsfristen, laufende Abschlüsse und anstehende Fristen. Die Abstimmung mit Ihrer bisherigen Kanzlei übernehmen wir.",
-  },
-  {
-    q: "Was passiert mit meinen Daten in DATEV?",
-    a: "Arbeitet Ihre bisherige Kanzlei mit DATEV, lassen sich Stammdaten, Buchhaltung und Lohnhistorie strukturiert übernehmen. Sie müssen nichts neu aufbereiten.",
-  },
-  {
-    q: "Für wen ist das Angebot gedacht?",
-    a: "Für inhabergeführte Unternehmen und Selbstständige ab etwa 500.000 € Jahresumsatz im Großraum München. Bargeldintensive Branchen wie Gastronomie, Hotellerie oder Glücksspiel sowie Bauträger betreuen wir nicht.",
-  },
-  {
-    q: "Wir sind nicht direkt in München. Passt das trotzdem?",
-    a: "Ja. Wir betreuen Unternehmen im gesamten Umland – Termine finden bei Bedarf vor Ort, ansonsten bequem per Video statt. Durch die digitale Zusammenarbeit spielt die Entfernung im Alltag kaum eine Rolle.",
-  },
-  {
-    q: "Warum die Vorab-Fragen?",
-    a: "Wir wählen unsere Mandate bewusst aus, um jedem Mandanten die Betreuungsqualität zu bieten, die er erwartet. Die Fragen stellen sicher, dass das Gespräch für beide Seiten wertvoll ist – und dass Sie direkt mit dem passenden Berater sprechen.",
+    q: "Für wen ist das Angebot?",
+    a: "Für inhabergeführte Unternehmen ab ca. 500.000 € Umsatz im Raum München und Umland (ca. 150 km). Nicht für Gastronomie, Hotellerie und Glücksspiel.",
   },
 ];
 
+const partners = [
+  { ini: "JB", name: "Jan Börnigen", title: "Dipl.-Kfm., Steuerberater", img: "/img/team/jan-boernigen.jpg" },
+  { ini: "PB", name: "Petra Börnigen", title: "Dipl.-Kffr., Steuerberaterin", img: "/img/team/petra-boernigen.jpg" },
+];
+// Portrait nur zeigen, wenn die Datei in public/img/team liegt – sonst Initialen als Platzhalter
+const hasImage = (src: string) => existsSync(path.join(process.cwd(), "public", src));
+
+/** Zentrierte Abschnittsüberschrift im Apple-Stil. */
+function Head({
+  eyebrow,
+  title,
+  sub,
+  light,
+}: {
+  eyebrow: string;
+  title: React.ReactNode;
+  sub?: string;
+  light?: boolean;
+}) {
+  return (
+    <div className="mx-auto max-w-2xl text-center">
+      <p className="text-sm font-semibold text-red">{eyebrow}</p>
+      <H2 light={light} className="mt-3">
+        {title}
+      </H2>
+      {sub && (
+        <p
+          className={`mx-auto mt-5 max-w-xl text-lg leading-relaxed text-pretty sm:text-xl ${light ? "text-white/70" : "text-muted"}`}
+        >
+          {sub}
+        </p>
+      )}
+    </div>
+  );
+}
+
+/** Leistungsblock: Text + Grafik, auf Desktop abwechselnd links/rechts. */
+function Pillar({
+  eyebrow,
+  title,
+  sub,
+  points,
+  visual,
+  flip,
+  tint,
+}: {
+  eyebrow: string;
+  title: string;
+  sub: string;
+  points: string[];
+  visual: React.ReactNode;
+  flip?: boolean;
+  tint?: boolean;
+}) {
+  return (
+    <section className={`py-16 sm:py-28 ${tint ? "bg-paper" : ""}`}>
+      <Container className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+        <div className={flip ? "lg:order-2" : ""}>
+          <p className="text-sm font-semibold text-red">{eyebrow}</p>
+          <H2 className="mt-3">{title}</H2>
+          <p className="mt-5 max-w-lg text-lg leading-relaxed text-muted sm:text-xl">{sub}</p>
+          <ul className="mt-7 space-y-3">
+            {points.map((p) => (
+              <li key={p} className="flex gap-3 text-[17px] text-ink">
+                <Check className="mt-1 size-5 shrink-0 text-red" aria-hidden />
+                {p}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className={flip ? "lg:order-1" : ""}>{visual}</div>
+      </Container>
+    </section>
+  );
+}
+
 export default function Home() {
+  const avatar = hasImage(partners[0].img) ? partners[0].img : undefined;
   return (
     <>
       <Header />
       <main>
         {/* HERO */}
-        <section className="relative overflow-hidden bg-paper">
+        <section id="hero" className="relative overflow-hidden bg-paper">
           <div
-            className="pointer-events-none absolute top-[-20%] right-[-12%] hidden size-[640px] rounded-full bg-red/[0.06] lg:block"
+            className="pointer-events-none absolute -top-40 -right-40 size-[520px] rounded-full bg-red/[0.07] blur-2xl"
             aria-hidden
           />
-          <Container className="relative grid gap-12 py-14 sm:py-20 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-16 lg:py-24">
+          <Container className="relative grid gap-10 pt-10 pb-14 sm:py-20 lg:grid-cols-[1.35fr_0.65fr] lg:items-center lg:gap-10 xl:grid-cols-[1.15fr_0.85fr] xl:gap-16 lg:py-24">
             <div>
-              <Eyebrow>Für Unternehmer im Raum München · ab 500.000 € Umsatz</Eyebrow>
-              <h1 className="mt-6 font-serif text-[2.4rem] leading-[1.08] font-medium tracking-tight text-balance text-ink sm:text-5xl lg:text-[3.6rem]">
-                Ihr Unternehmen ist gewachsen. <span className="text-red">Ihre Steuerberatung auch?</span>
+              <Eyebrow>Für Unternehmer ab 500.000 € Umsatz · Raum München</Eyebrow>
+              <h1 className="mt-5 text-[2.6rem] leading-[1.02] font-semibold tracking-[-0.035em] text-balance text-ink sm:text-[3.25rem] lg:text-[3.2rem] xl:text-[3.6rem]">
+                <span className="text-red">Weniger Steuern.</span> Weniger Papierkram. Mehr Zeit für Ihr Unternehmen.
               </h1>
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-700 text-pretty">
-                Wenn Zahlen erst im Folgejahr kommen, Rückfragen Wochen dauern und von Ihrer Kanzlei kein einziger
-                Gestaltungsvorschlag kommt, zahlen Sie dafür – mit Steuern, Zeit und Unsicherheit.
+              <p className="mt-5 max-w-lg text-lg leading-relaxed text-ink-700 sm:text-xl">
+                Wir planen Ihre Steuern, bevor sie anfallen, automatisieren Lohn und Buchhaltung und melden uns, bevor
+                es teuer wird.
               </p>
-              <p className="mt-4 max-w-xl text-lg leading-relaxed text-ink-700 text-pretty">
-                Börnigen &amp; Partners betreut inhabergeführte Unternehmen ganzheitlich: Lohn, Buchhaltung,
-                Jahresabschluss – und eine Beratung, die mitdenkt, bevor Entscheidungen fallen.
-              </p>
-              <div className="mt-9">
-                <CtaButton>Kostenfreies Erstgespräch anfragen</CtaButton>
+              <div className="mt-8">
+                <CtaButton className="w-full sm:w-auto">Kostenloses Erstgespräch sichern</CtaButton>
                 <CtaNote />
               </div>
             </div>
-
-            {/* Angebot als No-Brainer */}
-            <aside className="relative rounded-sm border border-line bg-white p-7 shadow-[0_30px_60px_-30px_rgba(29,27,28,0.25)] sm:p-9">
-              <div className="absolute -top-3 left-7 rounded-sm bg-ink px-3 py-1 text-[11px] font-semibold tracking-[0.16em] text-white uppercase">
-                Kostenfrei · 30 Minuten
-              </div>
-              <h2 className="font-serif text-2xl leading-snug font-medium text-ink">Ihre steuerliche Zweitmeinung</h2>
-              <p className="mt-2 text-[15px] leading-relaxed text-muted">
-                Im Erstgespräch schauen wir mit dem Blick von außen auf Ihre Situation:
-              </p>
-              <ol className="mt-6 space-y-5">
+            <div className="relative mx-auto w-full max-w-sm lg:max-w-md">
+              <AdvisorMessage avatar={avatar} />
+              <div className="mt-3 grid grid-cols-3 gap-2 text-center">
                 {[
-                  ["Standortbestimmung", "Rechtsform, Geschäftsführergehalt, Ausschüttungen, Rücklagen – wo stehen Sie heute?"],
-                  ["Ungenutzte Hebel", "Welche Gestaltungsmöglichkeiten bisher nicht angesprochen wurden."],
-                  ["Klarer Fahrplan", "Was ein Wechsel konkret bedeutet: Ablauf, Zeitpunkt, Aufwand für Sie."],
-                ].map(([t, d], i) => (
-                  <li key={t} className="flex gap-4">
-                    <span className="flex size-8 shrink-0 items-center justify-center rounded-full border border-red/30 font-serif text-sm text-red">
-                      {i + 1}
-                    </span>
-                    <div>
-                      <p className="font-semibold text-ink">{t}</p>
-                      <p className="mt-0.5 text-[15px] leading-relaxed text-muted">{d}</p>
-                    </div>
-                  </li>
+                  ["5×", "DATEV Digitale Kanzlei"],
+                  ["30 Min.", "Klarheit"],
+                  ["0 €", "Erstgespräch"],
+                ].map(([a, b]) => (
+                  <div key={b} className="rounded-2xl bg-white px-2 py-3 ring-1 ring-line">
+                    <p className="text-xl font-semibold tracking-tight text-ink">{a}</p>
+                    <p className="mt-0.5 text-[11px] leading-tight text-muted">{b}</p>
+                  </div>
                 ))}
-              </ol>
-              <p className="mt-7 border-t border-line pt-5 text-[15px] leading-relaxed text-ink-700">
-                <strong className="font-semibold">Auch wenn Sie danach bei Ihrer Kanzlei bleiben:</strong> Sie wissen,
-                wo Sie steuerlich stehen.
-              </p>
-            </aside>
+              </div>
+            </div>
           </Container>
         </section>
 
         {/* TRUST */}
         <section className="border-y border-line bg-white">
-          <Container className="grid grid-cols-2 gap-x-6 gap-y-8 py-9 md:grid-cols-4 md:items-center">
-            <div className="col-span-2 flex items-center gap-4 md:col-span-1">
+          <Container className="grid grid-cols-2 gap-x-4 gap-y-5 py-7 sm:py-9 md:grid-cols-4 md:items-center">
+            <div className="flex items-center gap-3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/img/datev-digitale-kanzlei-2023.png"
-                alt="DATEV-Auszeichnung Digitale Kanzlei 2023"
-                className="size-16 shrink-0"
+                alt="DATEV Digitale Kanzlei 2023"
+                className="size-12 shrink-0"
               />
               <p className="text-sm leading-snug text-ink-700">
-                <strong className="block text-base text-ink">5× in Folge</strong>
-                als „Digitale Kanzlei“ von DATEV ausgezeichnet
+                <strong className="block text-ink">5× in Folge</strong>DATEV Digitale Kanzlei
               </p>
             </div>
             {[
-              ["DATEV SmartExpert", "zertifizierte Expertise"],
-              ["27 Mitarbeitende", "persönlich, kein Callcenter"],
-              ["Unterföhring & Haar", "zwei Standorte im Raum München"],
+              ["Personio", "Expert Partner"],
+              ["HRworks", "Partner"],
+              ["DATEV", "SmartExpert"],
             ].map(([a, b]) => (
               <p key={a} className="text-sm leading-snug text-ink-700 md:border-l md:border-line md:pl-6">
                 <strong className="block text-base text-ink">{a}</strong>
@@ -237,307 +210,291 @@ export default function Home() {
           </Container>
         </section>
 
-        {/* PAIN */}
-        <section className="py-20 sm:py-28">
+        {/* SELBSTTEST */}
+        <section className="py-16 sm:py-28">
           <Container>
-            <div className="max-w-3xl">
-              <Eyebrow>Erkennen Sie sich wieder?</Eyebrow>
-              <H2 className="mt-5">
-                Die meisten Unternehmer wechseln nicht, weil ihre Kanzlei Fehler macht. Sondern weil sie nicht mehr
-                mitwächst.
-              </H2>
-            </div>
-            <div className="mt-14 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
-              {pains.map((p) => (
-                <div key={p.quote} className="bg-white p-7 sm:p-8">
-                  <MessageSquareQuote className="size-5 text-red" aria-hidden />
-                  <p className="mt-4 font-serif text-xl leading-snug text-ink">„{p.quote}“</p>
-                  <p className="mt-3 text-[15px] leading-relaxed text-muted">{p.text}</p>
-                </div>
-              ))}
-            </div>
-            <p className="mt-10 max-w-3xl text-lg leading-relaxed text-ink-700">
-              Trifft mehr als einer dieser Punkte zu, ist das kein Zeichen schlechter Unternehmensführung. Es ist ein
-              Zeichen, dass Ihr Unternehmen seiner Kanzlei <strong className="font-semibold">entwachsen</strong> ist.
-            </p>
+            <Head
+              eyebrow="Ehrlicher Selbsttest"
+              title="Kommt Ihnen das bekannt vor?"
+              sub="Jeder dieser Punkte kostet Sie Geld und Zeit – Jahr für Jahr mehr. Tippen Sie an, was zutrifft."
+            />
+            <SelfCheck pains={pains} />
           </Container>
         </section>
 
-        {/* KOSTEN DES NICHTSTUNS */}
-        <section className="hairlines relative bg-ink py-20 text-white sm:py-28">
+        {/* STEUERN PLANEN – Jahresvergleich */}
+        <section className="bg-paper py-16 sm:py-28">
           <Container>
-            <div className="max-w-3xl">
-              <Eyebrow light>Was eine passive Kanzlei wirklich kostet</Eyebrow>
-              <H2 light className="mt-5">
-                Steuerliche Gestaltung wirkt nur nach vorne. Jedes Jahr ohne Plan ist ein Jahr, das Sie nicht
-                zurückbekommen.
-              </H2>
+            <Head
+              eyebrow="Steuern"
+              title="Steuern planen statt Nachzahlungen erleben."
+              sub="Gleiches Unternehmen, gleicher Umsatz. Der einzige Unterschied: ein Steuerberater, der vorausdenkt."
+            />
+            <YearComparison />
+            <div className="mt-10 text-center">
+              <CtaButton className="w-full sm:w-auto">Ich will Option B – Erstgespräch sichern</CtaButton>
+              <p className="mt-3 text-xs text-grey">Schematische Darstellung typischer Abläufe.</p>
             </div>
-            <div className="mt-14 grid gap-10 md:grid-cols-3">
+          </Container>
+        </section>
+
+        {/* STRUKTUR */}
+        <Pillar
+          eyebrow="Steuerliche Gestaltung"
+          title="Mehr vom Gewinn behalten."
+          sub="Mit der richtigen Struktur – Holding, Geschäftsführergehalt, Rechtsform – bleibt Ihnen mehr von dem, was Sie verdienen. Wir prüfen, was zu Ihnen passt."
+          points={[
+            "Gewinne in der Holding reinvestieren",
+            "Geschäftsführervergütung optimal aufgestellt",
+            "Verkauf und Nachfolge vorbereitet",
+          ]}
+          visual={<StructureDiagram />}
+        />
+
+        {/* LOHN */}
+        <Pillar
+          tint
+          flip
+          eyebrow="Lohn & HR"
+          title="Lohnabrechnung ohne Excel und E-Mail-Chaos."
+          sub="Arbeitszeiten, Urlaub, neue Mitarbeiter: Ihr Personalsystem schickt alles direkt an uns. Wir rechnen ab – pünktlich und ohne Abtippfehler."
+          points={["Personio Expert Partner", "HRworks Partner", "Weitere HR-Tools angebunden"]}
+          visual={<PayrollFlow />}
+        />
+
+        {/* BUCHHALTUNG */}
+        <Pillar
+          eyebrow="Finanzbuchhaltung"
+          title="Buchhaltung, die Ihrem Team Stunden spart."
+          sub="Belege und Kontoauszüge fließen automatisch zu uns. Ihre Buchhaltungskraft tippt nicht mehr ab – und hat Zeit für Aufgaben, die Ihr Unternehmen voranbringen."
+          points={[
+            "Belege und Bankdaten fließen automatisch",
+            "Zahlen monatlich aktuell",
+            "Ihre Buchhaltungskraft wird entlastet",
+          ]}
+          visual={<BookkeepingVisual />}
+        />
+
+        {/* CFO */}
+        <Pillar
+          tint
+          flip
+          eyebrow="CFO-Service – Ihr externer Finanzchef"
+          title="Ein Finanzchef an Ihrer Seite. Ohne ihn einzustellen."
+          sub="Große Unternehmen haben einen CFO, der Geld, Steuern und Planung im Blick hat. Diesen Blick bekommen Sie bei uns dazu – damit Sie sich auf Ihr Geschäft konzentrieren können."
+          points={[
+            "Sie wissen jederzeit, wie viel Geld Ihnen bleibt",
+            "Wir melden uns mit Vorschlägen, bevor Sie fragen",
+            "Ein fester Ansprechpartner, der Ihr Unternehmen kennt",
+          ]}
+          visual={<CfoCockpit />}
+        />
+
+        {/* STICHTAG */}
+        <section className="bg-ink py-16 text-white sm:py-28">
+          <Container className="text-center">
+            <Head
+              light
+              eyebrow="Der Stichtag"
+              title="Viele Steuervorteile verfallen am 31. Dezember."
+              sub="Was bis zum Jahresende nicht geregelt ist, lässt sich danach nicht mehr ändern. Dann zahlen Sie, was herauskommt."
+            />
+            <div className="mt-10">
+              <YearEndCountdown />
+            </div>
+            <ul className="mx-auto mt-10 grid max-w-3xl gap-3 text-left sm:grid-cols-3">
               {[
-                {
-                  icon: Scale,
-                  t: "Verpasster Gestaltungsspielraum",
-                  d: "Geschäftsführervergütung, Ausschüttungen, Holding, Investitionszeitpunkte: Diese Hebel lassen sich nur planen, bevor das Geschäftsjahr endet – nicht danach.",
-                },
-                {
-                  icon: Clock,
-                  t: "Liquidität unter Druck",
-                  d: "Nachzahlungen und angepasste Vorauszahlungen treffen Sie unvorbereitet. Kapital, das Sie für Wachstum eingeplant hatten, fließt ungeplant ab.",
-                },
-                {
-                  icon: ShieldCheck,
-                  t: "Entscheiden ohne Grundlage",
-                  d: "Ohne aktuelle Zahlen werden Einstellungen, Investitionen und Bankgespräche zum Bauchgefühl – genau dort, wo Sie Sicherheit brauchen.",
-                },
-              ].map(({ icon: Icon, t, d }) => (
-                <div key={t} className="border-t border-white/15 pt-7">
-                  <Icon className="size-6 text-red" aria-hidden />
-                  <h3 className="mt-5 text-lg font-semibold">{t}</h3>
-                  <p className="mt-3 leading-relaxed text-white/65">{d}</p>
-                </div>
+                "Ihr Gehalt & Bonus als Geschäftsführer",
+                "Der Zeitpunkt größerer Anschaffungen",
+                "Gewinne entnehmen oder im Unternehmen lassen",
+              ].map((t, i) => (
+                <li key={t} className="flex items-center gap-3 rounded-2xl bg-white/[0.06] px-4 py-4">
+                  <span className="text-sm font-semibold text-red">0{i + 1}</span>
+                  <span className="font-medium">{t}</span>
+                </li>
               ))}
-            </div>
-            <div className="mt-14">
-              <CtaButton>Jetzt Zweitmeinung einholen</CtaButton>
+            </ul>
+            <div className="mt-10">
+              <CtaButton className="w-full sm:w-auto">Erstgespräch vor dem 31.12. sichern</CtaButton>
               <CtaNote light />
             </div>
           </Container>
         </section>
 
-        {/* VERGLEICH */}
-        <section className="py-20 sm:py-28">
+        {/* ANGEBOT */}
+        <section className="py-16 sm:py-28">
           <Container>
-            <div className="max-w-3xl">
-              <Eyebrow>Verwalten oder gestalten</Eyebrow>
-              <H2 className="mt-5">Der Unterschied liegt nicht im Jahresabschluss. Sondern in allem davor.</H2>
-            </div>
-            <div className="mt-12 overflow-hidden rounded-sm border border-line">
-              <div className="hidden grid-cols-[1fr_1.3fr_1.5fr] bg-paper text-xs font-semibold tracking-[0.14em] uppercase sm:grid">
-                <div className="p-5" />
-                <div className="p-5 text-muted">Klassische Kanzlei</div>
-                <div className="bg-ink p-5 text-white">Börnigen &amp; Partners</div>
-              </div>
-              {compare.map(([k, a, b]) => (
-                <div key={k} className="grid border-t border-line first:border-t-0 sm:grid-cols-[1fr_1.3fr_1.5fr] sm:first:border-t">
-                  <div className="px-5 pt-5 font-semibold text-ink sm:p-5">{k}</div>
-                  <div className="flex items-start gap-3 px-5 pt-3 text-muted sm:p-5">
-                    <X className="mt-0.5 size-4 shrink-0 text-grey" aria-hidden />
-                    {a}
-                  </div>
-                  <div className="flex items-start gap-3 px-5 pt-2 pb-5 text-ink sm:bg-paper/60 sm:p-5">
-                    <Check className="mt-0.5 size-4 shrink-0 text-red" aria-hidden />
-                    {b}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </Container>
-        </section>
-
-        {/* LEISTUNGEN */}
-        <section className="bg-paper py-20 sm:py-28">
-          <Container>
-            <div className="grid gap-6 lg:grid-cols-[1fr_1fr] lg:items-end">
-              <div>
-                <Eyebrow>Leistungen</Eyebrow>
-                <H2 className="mt-5">Alles aus einer Hand. Oder genau der Teil, den Sie brauchen.</H2>
-              </div>
-              <p className="text-lg leading-relaxed text-ink-700 lg:pb-2">
-                Ob Komplettbetreuung oder einzelne Bausteine: Sie erhalten eine Kanzlei, in der Lohn, Buchhaltung und
-                Beratung ineinandergreifen – ohne Schnittstellenverluste.
-              </p>
-            </div>
-            <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {services.map(({ icon: Icon, title, text }) => (
-                <div key={title} className="rounded-sm border border-line bg-white p-7 transition-shadow hover:shadow-lg">
-                  <Icon className="size-6 text-red" aria-hidden />
-                  <h3 className="mt-5 text-lg font-semibold text-ink">{title}</h3>
-                  <p className="mt-2 leading-relaxed text-muted">{text}</p>
-                </div>
-              ))}
-            </div>
-          </Container>
-        </section>
-
-        {/* ABLAUF */}
-        <section className="py-20 sm:py-28">
-          <Container>
-            <div className="max-w-3xl">
-              <Eyebrow>So einfach ist der Wechsel</Eyebrow>
-              <H2 className="mt-5">Sie entscheiden. Den Rest koordinieren wir.</H2>
-            </div>
-            <ol className="mt-14 grid gap-10 md:grid-cols-4 md:gap-6">
-              {steps.map((s, i) => (
-                <li key={s.title} className="relative">
-                  <div className="flex items-center gap-4">
-                    <span className="font-serif text-5xl leading-none text-red/90">{i + 1}</span>
-                    <span className="h-px flex-1 bg-line" aria-hidden />
-                  </div>
-                  <h3 className="mt-6 text-lg font-semibold text-ink">{s.title}</h3>
-                  <p className="mt-1 text-xs font-semibold tracking-[0.14em] text-grey uppercase">{s.time}</p>
-                  <p className="mt-3 leading-relaxed text-muted">{s.text}</p>
-                </li>
-              ))}
-            </ol>
-          </Container>
-        </section>
-
-        {/* FÜR WEN */}
-        <section className="bg-paper py-20 sm:py-28">
-          <Container>
-            <div className="max-w-3xl">
-              <Eyebrow>Qualität durch Auswahl</Eyebrow>
-              <H2 className="mt-5">Wir nehmen nicht jedes Mandat an. Aus Verantwortung gegenüber unseren Mandanten.</H2>
-            </div>
-            <div className="mt-12 grid gap-5 md:grid-cols-2">
-              <div className="rounded-sm border border-line bg-white p-8">
-                <p className="flex items-center gap-3 font-semibold text-ink">
-                  <span className="flex size-7 items-center justify-center rounded-full bg-red text-white">
-                    <Plus className="size-4" aria-hidden />
-                  </span>
-                  Wir passen gut zusammen, wenn …
+            <Head
+              eyebrow="Ihr kostenloses Erstgespräch"
+              title="30 Minuten, die sich für Sie lohnen."
+              sub="Sie erfahren, wo Sie Steuern und Zeit verschenken – auch wenn Sie danach nicht wechseln."
+            />
+            <div className="mx-auto mt-10 max-w-3xl rounded-3xl bg-white p-6 shadow-[0_40px_80px_-40px_rgba(29,27,28,0.35)] ring-1 ring-line sm:p-10">
+              <ol className="grid gap-6 sm:grid-cols-2">
+                {offer.map(({ t, d }, i) => (
+                  <li key={t} className="flex gap-4">
+                    <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-red text-sm font-semibold text-white">
+                      {i + 1}
+                    </span>
+                    <div>
+                      <p className="font-semibold text-ink">{t}</p>
+                      <p className="mt-1 text-[15px] leading-relaxed text-muted">{d}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+              <div className="mt-8 flex gap-3 rounded-2xl bg-paper p-4 text-[15px] leading-relaxed text-ink-700">
+                <ShieldCheck className="mt-0.5 size-5 shrink-0 text-red" aria-hidden />
+                <p>
+                  <strong className="font-semibold text-ink">Ehrlichkeits-Versprechen:</strong> Sind Sie gut
+                  aufgestellt, sagen wir Ihnen das. Und Sie bleiben mit gutem Gefühl bei Ihrer Kanzlei.
                 </p>
-                <ul className="mt-6 space-y-3.5 text-ink-700">
-                  {[
-                    "Sie ein inhabergeführtes Unternehmen ab ca. 500.000 € Jahresumsatz führen",
-                    "Sie als GmbH, UG, Holding, Einzelunternehmer oder Freiberufler tätig sind",
-                    "Ihr Unternehmen im Großraum München bzw. im Umkreis von ca. 150 km sitzt",
-                    "Sie digital zusammenarbeiten möchten – oder dazu bereit sind",
-                    "Sie einen Berater suchen, der unternehmerisch mitdenkt",
-                  ].map((t) => (
-                    <li key={t} className="flex gap-3">
-                      <Check className="mt-1 size-4 shrink-0 text-red" aria-hidden />
-                      {t}
-                    </li>
-                  ))}
-                </ul>
               </div>
-              <div className="rounded-sm border border-line bg-white p-8">
-                <p className="flex items-center gap-3 font-semibold text-ink">
-                  <span className="flex size-7 items-center justify-center rounded-full bg-paper-200 text-muted">
-                    <Minus className="size-4" aria-hidden />
-                  </span>
-                  Wir sind nicht die richtige Kanzlei, wenn …
-                </p>
-                <ul className="mt-6 space-y-3.5 text-muted">
-                  {[
-                    "Sie einen bargeldintensiven Betrieb führen (z. B. Gastronomie, Hotellerie, Glücksspiel)",
-                    "Sie als Bauträger tätig sind",
-                    "Sie ausschließlich den günstigsten Preis suchen",
-                    "Sie Belege lieber einmal im Jahr im Schuhkarton abgeben",
-                  ].map((t) => (
-                    <li key={t} className="flex gap-3">
-                      <X className="mt-1 size-4 shrink-0 text-grey" aria-hidden />
-                      {t}
-                    </li>
-                  ))}
-                </ul>
+              <div className="mt-8 text-center">
+                <CtaButton className="w-full sm:w-auto">Kostenloses Erstgespräch sichern</CtaButton>
+                <CtaNote />
               </div>
             </div>
           </Container>
         </section>
 
-        {/* PARTNER */}
-        <section className="py-20 sm:py-28">
-          <Container className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                ["JB", "Jan Börnigen", "Dipl.-Kfm., Steuerberater"],
-                ["PB", "Petra Börnigen", "Dipl.-Kffr., Steuerberaterin"],
-              ].map(([ini, name, title]) => (
+        {/* PARTNER + STIMMEN */}
+        <section className="bg-paper py-16 sm:py-28">
+          <Container>
+            <Head
+              eyebrow="Ihre Steuerberater"
+              title="Feste Ansprechpartner, die Ihr Unternehmen kennen."
+              sub="Kein Callcenter, kein ständig wechselnder Sachbearbeiter. Sie sprechen mit Steuerberatern, die Ihre Zahlen kennen."
+            />
+            <div className="mx-auto mt-10 grid max-w-xl grid-cols-2 gap-3 sm:gap-5">
+              {partners.map(({ ini, name, title, img }) => (
                 <figure key={name}>
-                  {/* Platzhalter bis zum Drehtag: hier Portraitfoto einsetzen (4:5) */}
-                  <div className="flex aspect-[4/5] items-center justify-center rounded-sm bg-gradient-to-br from-paper-200 to-paper">
-                    <span className="font-serif text-6xl text-ink/15">{ini}</span>
-                  </div>
-                  <figcaption className="mt-3">
+                  {hasImage(img) ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={img}
+                      alt={`${name}, ${title}`}
+                      className="aspect-[4/5] w-full rounded-3xl object-cover object-top"
+                    />
+                  ) : (
+                    <div className="flex aspect-[4/5] items-center justify-center rounded-3xl bg-gradient-to-br from-paper-200 to-white">
+                      <span className="text-5xl font-semibold text-ink/15">{ini}</span>
+                    </div>
+                  )}
+                  <figcaption className="mt-3 text-center">
                     <p className="font-semibold text-ink">{name}</p>
                     <p className="text-sm text-muted">{title}</p>
                   </figcaption>
                 </figure>
               ))}
             </div>
-            <div>
-              <Eyebrow>Geschäftsführende Partner</Eyebrow>
-              <H2 className="mt-5">Partnerschaft statt Dienstleistung.</H2>
-              <blockquote className="mt-8 border-l-2 border-red pl-6 font-serif text-xl leading-relaxed text-ink-700 sm:text-2xl">
-                „Wir begleiten Unternehmer nicht nur steuerlich – sondern unternehmerisch. Wir sagen, was Sache ist:
-                keine unnötige Komplexität, keine leeren Versprechen.“
-              </blockquote>
-              <p className="mt-8 leading-relaxed text-muted">
-                Als digitale Kanzlei mit Standorten in Unterföhring und Haar verbinden wir fundierte Fachkompetenz mit
-                modernen Prozessen. Wir automatisieren, was automatisierbar ist – damit sich unsere Berater auf das
-                konzentrieren, was wirklich zählt: Ihre unternehmerischen Entscheidungen. Zwei Standorte, ein
-                überschaubares Team, persönliche Ansprechpartner. Kein Callcenter, keine anonyme Großkanzlei.
-              </p>
-            </div>
-          </Container>
-        </section>
-
-        {/* STIMMEN */}
-        <section className="bg-paper py-20 sm:py-24">
-          <Container>
-            <Eyebrow>Aus unserer Mandantschaft</Eyebrow>
-            <div className="mt-10 grid gap-5 md:grid-cols-3">
+            <blockquote className="mx-auto mt-10 max-w-2xl text-center text-xl leading-relaxed font-medium text-ink sm:text-2xl">
+              „Wir sagen Unternehmern, was Sache ist. Und zwar bevor die Entscheidung fällt.“
+            </blockquote>
+            <div className="mt-12 grid gap-3 md:grid-cols-3">
               {[
-                "Endlich eine Kanzlei, die mitdenkt – ein Wegbegleiter zum Erfolg.",
-                "Mehr als nur Steuern. Ein Ansprechpartner für Steuern und HR – das spart enorm Zeit.",
-                "Vom Start-up bis zum international tätigen Unternehmen: Wir wurden in jeder Phase begleitet.",
+                "Endlich eine Kanzlei, die mitdenkt.",
+                "Ein Ansprechpartner für Steuern und HR – das spart enorm Zeit.",
+                "In jeder Phase begleitet – vom Start-up bis international.",
               ].map((q) => (
-                <figure key={q} className="rounded-sm border border-line bg-white p-8">
-                  <span className="font-serif text-5xl leading-none text-red">“</span>
-                  <blockquote className="mt-2 font-serif text-lg leading-relaxed text-ink">{q}</blockquote>
+                <figure key={q} className="rounded-3xl bg-white p-6 ring-1 ring-line">
+                  <blockquote className="text-[17px] leading-relaxed text-ink">„{q}“</blockquote>
+                  <figcaption className="mt-2 text-sm text-grey">Stimme aus unserer Mandantschaft</figcaption>
                 </figure>
               ))}
             </div>
           </Container>
         </section>
 
-        {/* FAQ */}
-        <section className="py-20 sm:py-28">
-          <Container className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
-            <div>
-              <Eyebrow>Häufige Fragen</Eyebrow>
-              <H2 className="mt-5">Bevor Sie anfragen.</H2>
-              <p className="mt-6 leading-relaxed text-muted">
-                Ihre Frage ist nicht dabei? Stellen Sie sie direkt im Erstgespräch – dafür ist es da.
-              </p>
+        {/* WECHSEL */}
+        <section className="py-16 sm:py-28">
+          <Container>
+            <Head
+              eyebrow="Steuerberater wechseln"
+              title="Wechseln ist einfacher, als Sie denken."
+              sub="Wir übernehmen alles. Ihr Aufwand: ein Gespräch und eine Unterschrift."
+            />
+            <div className="mx-auto mt-10 max-w-4xl">
+              <SwitchGraphic />
             </div>
-            <div className="divide-y divide-line border-y border-line">
+          </Container>
+        </section>
+
+        {/* FÜR WEN */}
+        <section className="bg-paper py-16 sm:py-24">
+          <Container>
+            <Head eyebrow="Nicht für jeden" title="Für Unternehmer, die wachsen." />
+            <ul className="mx-auto mt-10 flex max-w-3xl flex-wrap justify-center gap-2">
+              {[
+                "Ab 500.000 € Umsatz",
+                "Inhabergeführt",
+                "Raum München + 150 km",
+                "GmbH, Holding, Einzelunternehmen",
+                "Digital – oder bereit dazu",
+              ].map((t) => (
+                <li
+                  key={t}
+                  className="flex items-center gap-2 rounded-full bg-white px-4 py-2.5 text-[15px] font-medium text-ink ring-1 ring-line"
+                >
+                  <Check className="size-4 text-red" aria-hidden />
+                  {t}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-6 text-center text-sm text-grey">Nicht für Gastronomie, Hotellerie und Glücksspiel.</p>
+          </Container>
+        </section>
+
+        {/* FAQ */}
+        <section className="py-16 sm:py-28">
+          <Container>
+            <Head eyebrow="Fragen" title="Kurz beantwortet." />
+            <div className="mx-auto mt-10 max-w-2xl divide-y divide-line border-y border-line">
               {faqs.map((f) => (
                 <details key={f.q} className="group py-5">
-                  <summary className="flex cursor-pointer items-start justify-between gap-6 text-lg font-semibold text-ink">
+                  <summary className="flex cursor-pointer items-start justify-between gap-6 text-[17px] font-semibold text-ink">
                     {f.q}
-                    <Plus className="faq-icon mt-1 size-5 shrink-0 text-red transition-transform duration-200" aria-hidden />
+                    <Plus
+                      className="faq-icon mt-0.5 size-5 shrink-0 text-red transition-transform duration-200"
+                      aria-hidden
+                    />
                   </summary>
-                  <p className="mt-3 pr-10 leading-relaxed text-muted">{f.a}</p>
+                  <p className="mt-3 pr-8 leading-relaxed text-muted">{f.a}</p>
                 </details>
               ))}
             </div>
           </Container>
         </section>
 
-        {/* FINAL CTA */}
-        <section className="hairlines relative overflow-hidden bg-ink py-20 text-white sm:py-28">
+        {/* FINAL */}
+        <section className="relative overflow-hidden bg-ink py-16 text-white sm:py-28">
           <div
-            className="pointer-events-none absolute -bottom-40 -left-40 size-[480px] rounded-full bg-red/10"
+            className="pointer-events-none absolute -bottom-40 -left-40 size-[480px] rounded-full bg-red/15 blur-2xl"
             aria-hidden
           />
-          <Container className="relative text-center">
-            <Building2 className="mx-auto size-8 text-red" aria-hidden />
-            <H2 light className="mx-auto mt-6 max-w-3xl">
-              30 Minuten, die Ihnen zeigen, was Ihre Steuerberatung leisten könnte.
-            </H2>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/70">
-              Kostenfrei, vertraulich und ohne Verpflichtung. Beantworten Sie einige kurze Fragen – wir melden uns
-              innerhalb eines Werktags mit einem Terminvorschlag.
-            </p>
-            <div className="mt-10 flex flex-col items-center">
-              <CtaButton>Erstgespräch anfragen</CtaButton>
-              <p className="mt-5 flex items-center gap-2 text-sm text-white/55">
+          <Container className="relative">
+            <Head light eyebrow="Ihre Entscheidung" title="Option A oder Option B?" />
+            <div className="mx-auto mt-10 grid max-w-3xl gap-3 md:grid-cols-2">
+              <div className="rounded-3xl p-6 ring-1 ring-white/15">
+                <p className="text-sm font-semibold text-white/50">Option A</p>
+                <p className="mt-2 text-xl font-semibold">Alles bleibt, wie es ist.</p>
+                <p className="mt-2 leading-relaxed text-white/60">Und Sie erfahren nie, was möglich gewesen wäre.</p>
+              </div>
+              <div className="rounded-3xl bg-red p-6">
+                <p className="text-sm font-semibold text-white/80">Option B</p>
+                <p className="mt-2 text-xl font-semibold">30 Minuten Klarheit.</p>
+                <p className="mt-2 leading-relaxed text-white/90">
+                  Kostenloses Erstgespräch. Sie wissen, wo Sie sparen können – dann entscheiden Sie.
+                </p>
+              </div>
+            </div>
+            <div className="mt-10 text-center">
+              <CtaButton variant="light" className="w-full sm:w-auto">
+                Option B: Kostenloses Erstgespräch sichern
+              </CtaButton>
+              <p className="mt-4 flex items-center justify-center gap-2 text-sm text-white/55">
                 <Lock className="size-3.5" aria-hidden />
-                Ihre Angaben werden vertraulich behandelt und unterliegen der Verschwiegenheitspflicht.
+                Vertraulich · Verschwiegenheitspflicht nach § 57 StBerG
               </p>
             </div>
           </Container>
@@ -545,16 +502,8 @@ export default function Home() {
       </main>
       <Footer />
 
-      {/* Mobile Sticky-CTA */}
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-white/95 p-3 backdrop-blur sm:hidden">
-        <Link
-          href={FUNNEL_HREF}
-          className="flex w-full items-center justify-center gap-2 rounded-sm bg-red py-3.5 text-[15px] font-semibold text-white"
-        >
-          Kostenfreies Erstgespräch anfragen
-          <ArrowDown className="size-4 -rotate-90" aria-hidden />
-        </Link>
-      </div>
+      {/* Mobile Sticky-CTA – erst nach dem Hero */}
+      <StickyCta heroId="hero" />
     </>
   );
 }

@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { ArrowLeft, ArrowRight, Check, Loader2, Lock, Phone } from "lucide-react";
 import { QUESTIONS, isDisqualified, type Answers, type Option } from "@/lib/funnel";
 import { getTracking, newLeadId, send } from "@/lib/outbox";
+import { getMetaCookies } from "@/lib/meta-cookies";
 import { KANZLEI } from "@/components/ui";
 
 const STATE_KEY = "bup_funnel_state";
@@ -123,9 +124,12 @@ export function Funnel() {
       consentText: CONSENT_TEXT,
       tracking: getTracking(),
       website: honeypot,
+      // Für die Conversions API (Zuordnung zum Anzeigen-Klick)
+      meta: { ...getMetaCookies(), eventSourceUrl: window.location.href },
     };
     const r = await send(leadId, body);
     if (r === "ok") {
+      // Standard-Event „Lead“ – gleiche eventID wie das Server-Event (Conversions API) → Meta dedupliziert
       window.fbq?.("track", "Lead", {}, { eventID: leadId });
       window.dataLayer?.push({ event: "lead_submitted", lead_id: leadId });
       try {
@@ -133,7 +137,7 @@ export function Funnel() {
       } catch {
         /* ignorieren */
       }
-      router.push(`/danke?v=${encodeURIComponent(kontakt.vorname)}`);
+      router.push(`/danke?n=${encodeURIComponent(`${kontakt.vorname} ${kontakt.nachname}`)}`);
       return;
     }
     setStatus(r);
@@ -158,7 +162,7 @@ export function Funnel() {
 
       {q ? (
         <div key={q.id} className="animate-[fadeIn_.35s_ease-out]">
-          <h1 className="font-serif text-3xl leading-tight font-medium text-balance text-ink sm:text-[2.2rem]">
+          <h1 className="text-[1.75rem] leading-tight font-semibold tracking-[-0.02em] text-balance text-ink sm:text-[2.2rem]">
             {q.title}
           </h1>
           {q.subtitle && <p className="mt-3 text-muted">{q.subtitle}</p>}
@@ -219,7 +223,7 @@ export function Funnel() {
           <p className="inline-flex items-center gap-2 rounded-sm bg-red-50 px-3 py-1.5 text-sm font-medium text-red-600">
             <Check className="size-4" aria-hidden /> Ihr Unternehmen passt zu unserem Betreuungsprofil.
           </p>
-          <h1 className="mt-5 font-serif text-3xl leading-tight font-medium text-balance text-ink sm:text-[2.2rem]">
+          <h1 className="mt-5 text-[1.75rem] leading-tight font-semibold tracking-[-0.02em] text-balance text-ink sm:text-[2.2rem]">
             Wohin dürfen wir Ihren Terminvorschlag senden?
           </h1>
           <p className="mt-3 text-muted">
@@ -324,7 +328,7 @@ export function Funnel() {
                 "Erneut senden"
               ) : (
                 <>
-                  Erstgespräch jetzt anfragen <ArrowRight className="size-4" aria-hidden />
+                  Kostenloses Erstgespräch anfragen <ArrowRight className="size-4" aria-hidden />
                 </>
               )}
             </button>
@@ -368,7 +372,7 @@ function Disqualified({ option, onBack }: { option: Option; onBack: () => void }
   const umsatz = option.value === "unter-500k";
   return (
     <div className="animate-[fadeIn_.35s_ease-out]">
-      <h1 className="font-serif text-3xl leading-tight font-medium text-balance text-ink sm:text-[2.2rem]">
+      <h1 className="text-[1.75rem] leading-tight font-semibold tracking-[-0.02em] text-balance text-ink sm:text-[2.2rem]">
         Vielen Dank für Ihr Interesse.
       </h1>
       <p className="mt-5 text-lg leading-relaxed text-ink-700">

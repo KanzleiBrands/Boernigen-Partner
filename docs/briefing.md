@@ -25,16 +25,19 @@ Quellen: Kundenonboarding-Formular, Kampagnen-Briefing (Mandatsakquise), bup-ste
 | Mitarbeitende | 27 |
 | Auszeichnungen | DATEV „Digitale Kanzlei“ 2019–2023 (5× in Folge), DATEV SmartExpert |
 | Tools | DATEV, DATEV Unternehmen online, Kanzleicloud, Personio, KI-gestützte Prozesse |
-| Schwerpunkt | Inhabergeführte GmbH/UG, Beratungs- und Dienstleistungsunternehmen; nicht: Bauträger, Gastro |
+| Schwerpunkt | Inhabergeführte GmbH/UG, Beratungs- und Dienstleistungsunternehmen; nicht: Gastro |
 | USPs | Volldigital · HR/Lohn aus einer Hand (Personio) · Unternehmensbewertung im Haus · CFO-Service · bewusste Mandantenauswahl · persönliche Ansprechpartner |
 | No-Gos | unpersönlich/anonym wirken, Versprechen ohne Substanz, technisch überheblich, arrogant |
 | CI | Rot #E31536, Anthrazit #231F20, Grau #94989A (aus Logo) |
 
 ## Getroffene Entscheidungen
 
-- Angebot verpackt als **„Steuerliche Zweitmeinung“** (kostenfrei, 30 Min.) – senkt die Hürde, weil kein Wechsel-Bekenntnis nötig ist.
+- Angebot (seit 16.10.2026): **„Steuer-Hebel-Check“** (kostenfrei, 30 Min.) statt „Steuerliche Zweitmeinung“ (zu langweilig). Aufgebaut nach Hormozi (Value Equation, Risikoumkehr) und Baulig-Evergreen-Strukturen. Inhalt: 3 wichtigste Hebel, Nachzahlungs-Frühwarnung, Wechsel-Fahrplan, Ehrlichkeits-Versprechen.
+- Zeitdruck über den echten Stichtag 31.12. (Countdown auf der Landingpage).
+- Seite seit 16.10.2026 im Apple-Stil, mobil zuerst (80–90 % Social-Traffic): kurze Headlines, je Leistung eine Grafik – Steuern (Jahresvergleich), Struktur (Holding-Diagramm), Lohn (Personio/HRworks → Abrechnung), Buchhaltung (Arbeitstag vorher/nachher), CFO (Cockpit).
+- Zusätzliche Stärken laut Kunden-Manager: Personio Expert Partner, HRworks Partner, Lohn direkt aus HR-Systemen, digitale Vorsysteme in der FiBu, Gestaltungsberatung und steuerliche Strukturoptimierung. Ziel der Seite: nur das Erstgespräch verkaufen – im Gespräch ist die Abschlussquote sehr hoch.
 - Keine konkreten Ersparnis-Beträge in Seite und Ads (§ 57a StBerG – sachliche Werbung).
-- Bauträger zusätzlich ausgeschlossen (laut Onboarding), GmbH & Co. KG wie KG ausgeschlossen ⚠️ bestätigen.
+- Bauträger und GmbH & Co. KG sind ausdrücklich **zugelassen** (Entscheidung Kanzlei Brands, 14.10.2026). Ausgeschlossen bleiben reine KG und OHG.
 - PLZ außerhalb des Zielgebiets ist kein Ausschluss, sondern Merkmal `im_zielgebiet` im Lead.
 - Disqualifizierte Besucher geben keine Kontaktdaten ein; es wird kein Lead gesendet.
 
