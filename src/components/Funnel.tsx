@@ -328,7 +328,7 @@ export function Funnel() {
                 "Erneut senden"
               ) : (
                 <>
-                  Erstgespräch jetzt anfragen <ArrowRight className="size-4" aria-hidden />
+                  Kostenfreien Hebel-Check anfragen <ArrowRight className="size-4" aria-hidden />
                 </>
               )}
             </button>

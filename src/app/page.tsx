@@ -158,7 +158,7 @@ export default function Home() {
                 müssen.
               </p>
               <div className="mt-8">
-                <CtaButton className="w-full sm:w-auto">Kostenfreien Hebel-Check sichern</CtaButton>
+                <CtaButton className="w-full sm:w-auto">Kostenfrei meine Steuer-Hebel finden</CtaButton>
                 <CtaNote />
               </div>
             </div>
@@ -229,7 +229,7 @@ export default function Home() {
             />
             <YearComparison />
             <div className="mt-10 text-center">
-              <CtaButton className="w-full sm:w-auto">Ich will Jahr B</CtaButton>
+              <CtaButton className="w-full sm:w-auto">Option B: Steuern optimieren, bevor sie entstehen</CtaButton>
               <p className="mt-3 text-xs text-grey">Schematische Darstellung typischer Abläufe.</p>
             </div>
           </Container>
@@ -304,7 +304,7 @@ export default function Home() {
               ))}
             </ul>
             <div className="mt-10">
-              <CtaButton className="w-full sm:w-auto">Vor Jahresende sichern</CtaButton>
+              <CtaButton className="w-full sm:w-auto">Hebel vor dem 31.12. sichern</CtaButton>
               <CtaNote light />
             </div>
           </Container>
@@ -340,7 +340,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="mt-8 text-center">
-                <CtaButton className="w-full sm:w-auto">Hebel-Check sichern</CtaButton>
+                <CtaButton className="w-full sm:w-auto">Kostenfrei meine 3 Hebel erfahren</CtaButton>
                 <CtaNote />
               </div>
             </div>
@@ -458,22 +458,22 @@ export default function Home() {
             aria-hidden
           />
           <Container className="relative">
-            <Head light eyebrow="Ihre Entscheidung" title="Zwei Möglichkeiten." />
+            <Head light eyebrow="Ihre Entscheidung" title="Option A oder Option B?" />
             <div className="mx-auto mt-10 grid max-w-3xl gap-3 md:grid-cols-2">
               <div className="rounded-3xl p-6 ring-1 ring-white/15">
-                <p className="text-sm font-semibold text-white/50">Option 1</p>
+                <p className="text-sm font-semibold text-white/50">Option A</p>
                 <p className="mt-2 text-xl font-semibold">Alles bleibt, wie es ist.</p>
                 <p className="mt-2 leading-relaxed text-white/60">Und Sie erfahren nie, was möglich gewesen wäre.</p>
               </div>
               <div className="rounded-3xl bg-red p-6">
-                <p className="text-sm font-semibold text-white/80">Option 2</p>
+                <p className="text-sm font-semibold text-white/80">Option B</p>
                 <p className="mt-2 text-xl font-semibold">30 Minuten Klarheit.</p>
                 <p className="mt-2 leading-relaxed text-white/90">Ihre 3 Hebel. Kostenfrei. Dann entscheiden Sie.</p>
               </div>
             </div>
             <div className="mt-10 text-center">
               <CtaButton variant="light" className="w-full sm:w-auto">
-                Hebel-Check sichern
+                Option B: Steuern planen statt bezahlen
               </CtaButton>
               <p className="mt-4 flex items-center justify-center gap-2 text-sm text-white/55">
                 <Lock className="size-3.5" aria-hidden />
@@ -491,7 +491,7 @@ export default function Home() {
           href={FUNNEL_HREF}
           className="flex w-full items-center justify-center gap-2 rounded-xl bg-red py-3.5 text-[15px] font-semibold text-white"
         >
-          Kostenfreien Hebel-Check sichern
+          Kostenfrei Steuer-Hebel finden
           <ArrowRight className="size-4" aria-hidden />
         </Link>
       </div>

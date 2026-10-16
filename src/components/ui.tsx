@@ -50,7 +50,7 @@ export function H2({
 }
 
 export function CtaButton({
-  children = "Kostenfreien Hebel-Check sichern",
+  children = "Kostenfrei meine Steuer-Hebel finden",
   variant = "red",
   className = "",
 }: {

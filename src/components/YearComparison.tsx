@@ -33,7 +33,7 @@ type Lane = {
 const lanes: Lane[] = [
   {
     key: "alt",
-    label: "Jahr A",
+    label: "Option A",
     title: "Kanzlei, die verwaltet",
     scene: "Donnerstag, 7:40 Uhr. Ein Brief vom Finanzamt: Nachzahlung. Ihre Kanzlei? Im Urlaub.",
     line: [
@@ -55,7 +55,7 @@ const lanes: Lane[] = [
   },
   {
     key: "neu",
-    label: "Jahr B",
+    label: "Option B",
     title: "Börnigen & Partners",
     scene: "14. November. Ihr Berater meldet sich: „Zwei Hebel ziehen wir noch vor dem 31.12.“",
     line: [

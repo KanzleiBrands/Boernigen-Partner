@@ -63,7 +63,7 @@ export function SelfCheck({ pains }: { pains: Pain[] }) {
         <p className="flex-1 text-lg leading-snug font-semibold">{verdict}</p>
         {n >= 2 && (
           <CtaButton variant="light" className="w-full sm:w-auto">
-            Hebel-Check sichern
+            Ungenutzte Hebel aufdecken
           </CtaButton>
         )}
       </div>
