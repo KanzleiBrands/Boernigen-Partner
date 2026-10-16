@@ -1,4 +1,6 @@
+import { after } from "next/server";
 import { buildPayload, deliverLead } from "@/lib/leads";
+import { sendMetaLead } from "@/lib/meta-capi";
 import { QUESTIONS, inRegion, isDisqualified, leadScore, type Answers } from "@/lib/funnel";
 
 export const maxDuration = 30;
@@ -86,6 +88,21 @@ export async function POST(request: Request) {
   if (!result.delivered) {
     // Kein Kanal hat den Lead – der Browser behält ihn und versucht es erneut
     return Response.json({ ok: false, error: "Übertragung fehlgeschlagen." }, { status: 502 });
+  }
+
+  // Standard-Event „Lead“ an Meta (Conversions API) – nur mit Marketing-Einwilligung, nach der Antwort
+  const m = body.meta as Record<string, unknown> | undefined;
+  if (m && typeof m === "object") {
+    after(() =>
+      sendMetaLead(payload, {
+        fbp: str(m.fbp, 200) || undefined,
+        // _fbc fehlt, wenn erst nach dem Anzeigen-Klick zugestimmt wurde → aus der gemerkten fbclid bilden
+        fbc: str(m.fbc, 300) || (tracking.fbclid ? `fb.1.${Date.now()}.${tracking.fbclid}` : undefined),
+        eventSourceUrl: str(m.eventSourceUrl, 500) || undefined,
+        clientIp: request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || undefined,
+        userAgent: ua ?? undefined,
+      }),
+    );
   }
 
   seen.set(leadId, Date.now());

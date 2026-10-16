@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { ArrowLeft, ArrowRight, Check, Loader2, Lock, Phone } from "lucide-react";
 import { QUESTIONS, isDisqualified, type Answers, type Option } from "@/lib/funnel";
 import { getTracking, newLeadId, send } from "@/lib/outbox";
+import { getConsent, getMetaCookies } from "@/lib/consent";
 import { KANZLEI } from "@/components/ui";
 
 const STATE_KEY = "bup_funnel_state";
@@ -123,9 +124,15 @@ export function Funnel() {
       consentText: CONSENT_TEXT,
       tracking: getTracking(),
       website: honeypot,
+      // Für die Conversions API – nur mit Marketing-Einwilligung
+      meta:
+        getConsent() === "granted"
+          ? { ...getMetaCookies(), eventSourceUrl: window.location.href }
+          : undefined,
     };
     const r = await send(leadId, body);
     if (r === "ok") {
+      // Standard-Event „Lead“ – gleiche eventID wie das Server-Event (Conversions API) → Meta dedupliziert
       window.fbq?.("track", "Lead", {}, { eventID: leadId });
       window.dataLayer?.push({ event: "lead_submitted", lead_id: leadId });
       try {

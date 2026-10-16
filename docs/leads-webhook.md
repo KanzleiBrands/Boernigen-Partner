@@ -115,8 +115,31 @@ const ok = Math.abs(Date.now() / 1000 - Number(ts)) < 300 &&
 4. Ausfalltest: `LEAD_WEBHOOK_URL` testweise auf eine falsche URL setzen → Lead muss trotzdem per Mail + Backup ankommen und die Alarm-Mail ausgelöst werden.
 5. Disqualifizierung testen (z. B. „Unter 500.000 €“): Es dürfen **keine** Kontaktdaten abgefragt und **kein** Lead gesendet werden.
 
-## Meta-Tracking (Conversion-Optimierung)
+## Meta-Pixel & Conversions API (Lead-Event)
 
-- Der Funnel feuert nach erfolgreicher Übertragung `fbq('track', 'Lead', {}, { eventID: lead_id })` – **sofern der Meta-Pixel auf der Seite geladen ist**. Der Pixel ist noch nicht eingebaut, weil dafür ein Cookie-Consent-Banner nötig ist (TTDSG/DSGVO). Empfehlung: Consent-Tool (z. B. Usercentrics/Cookiebot) + Pixel, zusätzlich serverseitig die Conversions API mit derselben `lead_id` als `event_id` (Deduplizierung).
+Eingebaut und aktiv, sobald die Variablen gesetzt sind. Ohne `NEXT_PUBLIC_META_PIXEL_ID` gibt es weder Cookie-Banner noch Tracking.
+
+| Variable | Wo finden | Hinweis |
+|---|---|---|
+| `NEXT_PUBLIC_META_PIXEL_ID` | Events Manager → Datenquellen → Pixel → Einstellungen („Pixel-ID“, nur Ziffern) | Wird beim Build eingebaut → nach dem Setzen **neu deployen** |
+| `META_CAPI_TOKEN` | Events Manager → Pixel → Einstellungen → „Conversions API“ → „Zugriffsschlüssel generieren“ | Geheim; in Vercel als „Sensitive“ anlegen |
+| `META_TEST_EVENT_CODE` | Events Manager → Pixel → „Events testen“ (z. B. `TEST12345`) | Nur zum Testen; danach löschen und neu deployen |
+
+**Ablauf**
+1. Besucher sieht den Cookie-Hinweis. Pixel (`PageView`) lädt **nur nach „Akzeptieren“** (TTDSG/DSGVO). Entscheidung änderbar über „Cookie-Einstellungen“ im Footer.
+2. Nach erfolgreicher Anfrage (Server hat den Lead gesichert):
+   - Browser: `fbq('track', 'Lead', {}, { eventID: lead_id })`
+   - Server: Conversions API `Lead` mit `event_id = lead_id`, gehashter E-Mail/Telefon/Name/PLZ, IP, User-Agent, `_fbp`/`_fbc` (fehlt `_fbc`, wird es aus der gemerkten `fbclid` gebildet).
+   - Meta dedupliziert beide über die gleiche ID → **ein** Lead im Werbeanzeigenmanager.
+3. Ohne Einwilligung: kein Pixel, kein Server-Event. Disqualifizierte Besucher lösen nie `Lead` aus.
+4. Fehler bei Meta beeinflussen die Lead-Übertragung nicht (Log `[meta-capi]` in Vercel).
+
+**Testen:** `META_TEST_EVENT_CODE` setzen, neu deployen, Seite öffnen, akzeptieren, Test-Anfrage senden → im Events Manager unter „Events testen“ erscheinen `PageView` und `Lead` (Browser **und** Server, „Dedupliziert“). Dann Code entfernen und neu deployen.
+
+**Kampagne:** Optimierungsereignis `Lead` auf diesem Pixel wählen.
+
+## Weitere Hinweise Meta
+
+- Die Datenschutzerklärung der Kanzlei muss Meta-Pixel und Conversions API nennen (siehe Checkliste in der README).
 - Disqualifizierte Besucher lösen `lead_disqualified` im `dataLayer` aus, **nicht** `Lead` – so lernt Meta nur auf passende Unternehmer.
 - Wer zusätzlich Meta-Lead-Formulare (Instant Forms) nutzt: Diese Leads kommen nicht über diese Seite. Dafür in Make/Zapier „Facebook Lead Ads → Webhook OS“ einrichten und dasselbe JSON-Format verwenden.

@@ -3,6 +3,7 @@ import "@fontsource-variable/inter";
 import "@fontsource-variable/source-serif-4";
 import "./globals.css";
 import { LeadKeeper } from "@/components/LeadKeeper";
+import { MetaPixel } from "@/components/MetaPixel";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://boernigen-partner.vercel.app"),
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body>
         {children}
         <LeadKeeper />
+        <MetaPixel />
       </body>
     </html>
   );
