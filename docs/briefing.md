@@ -34,6 +34,8 @@ Quellen: Kundenonboarding-Formular, Kampagnen-Briefing (Mandatsakquise), bup-ste
 
 - Angebot (seit 16.10.2026): **„Steuer-Hebel-Check“** (kostenfrei, 30 Min.) statt „Steuerliche Zweitmeinung“ (zu langweilig). Aufgebaut nach Hormozi (Value Equation, Risikoumkehr) und Baulig-Evergreen-Strukturen. Inhalt: 3 wichtigste Hebel, Nachzahlungs-Frühwarnung, Wechsel-Fahrplan, Ehrlichkeits-Versprechen.
 - Zeitdruck über den echten Stichtag 31.12. (Countdown auf der Landingpage).
+- Seite seit 16.10.2026 im Apple-Stil, mobil zuerst (80–90 % Social-Traffic): kurze Headlines, je Leistung eine Grafik – Steuern (Jahresvergleich), Struktur (Holding-Diagramm), Lohn (Personio/HRworks → Abrechnung), Buchhaltung (Arbeitstag vorher/nachher), CFO (Cockpit).
+- Zusätzliche Stärken laut Kunden-Manager: Personio Expert Partner, HRworks Partner, Lohn direkt aus HR-Systemen, digitale Vorsysteme in der FiBu, Gestaltungsberatung und steuerliche Strukturoptimierung. Ziel der Seite: nur das Erstgespräch verkaufen – im Gespräch ist die Abschlussquote sehr hoch.
 - Keine konkreten Ersparnis-Beträge in Seite und Ads (§ 57a StBerG – sachliche Werbung).
 - Bauträger und GmbH & Co. KG sind ausdrücklich **zugelassen** (Entscheidung Kanzlei Brands, 14.10.2026). Ausgeschlossen bleiben reine KG und OHG.
 - PLZ außerhalb des Zielgebiets ist kein Ausschluss, sondern Merkmal `im_zielgebiet` im Lead.

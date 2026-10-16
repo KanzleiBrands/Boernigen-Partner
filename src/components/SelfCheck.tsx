@@ -4,9 +4,9 @@ import { useState } from "react";
 import { Check } from "lucide-react";
 import { CtaButton } from "@/components/ui";
 
-export type Pain = { quote: string; text: string };
+export type Pain = { quote: string };
 
-/** Interaktiver Selbsttest: Besucher hakt ab, was auf ihn zutrifft – Ergebnis zieht zum CTA. */
+/** Interaktiver Selbsttest: Besucher tippt an, was zutrifft – das Ergebnis zieht zum CTA. */
 export function SelfCheck({ pains }: { pains: Pain[] }) {
   const [checked, setChecked] = useState<Set<number>>(new Set());
   const n = checked.size;
@@ -20,57 +20,51 @@ export function SelfCheck({ pains }: { pains: Pain[] }) {
 
   const verdict =
     n === 0
-      ? { t: "Haken Sie ab, was auf Sie zutrifft.", d: "Ehrlich sein lohnt sich – niemand außer Ihnen sieht das Ergebnis." }
+      ? "Niemand außer Ihnen sieht das Ergebnis."
       : n === 1
-        ? { t: "1 Warnsignal.", d: "Noch kein Grund zur Sorge – aber ein Grund, einmal genauer hinzusehen." }
+        ? "Ein Warnsignal. Ein Grund, genauer hinzusehen."
         : n <= 3
-          ? {
-              t: `${n} Warnsignale. Ihr Unternehmen ist Ihrer Kanzlei wahrscheinlich entwachsen.`,
-              d: "Hier liegt mit hoher Wahrscheinlichkeit Gestaltungsspielraum brach. Der Steuer-Hebel-Check zeigt Ihnen, wo.",
-            }
-          : {
-              t: `${n} Warnsignale. Sie zahlen für Verwaltung – und verschenken Gestaltung.`,
-              d: "Jeder Monat, der so weiterläuft, kostet Sie Spielraum, den Sie nicht zurückbekommen. Lassen Sie uns sprechen.",
-            };
+          ? "Ihr Unternehmen ist Ihrer Kanzlei entwachsen."
+          : "Sie zahlen für Verwaltung – und verschenken Gestaltung.";
 
   return (
-    <div className="mt-14 grid gap-8 lg:grid-cols-[1.5fr_1fr] lg:items-start">
-      <ul className="grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-2">
+    <div className="mx-auto mt-10 max-w-3xl">
+      <ul className="grid gap-2.5 sm:grid-cols-2">
         {pains.map((p, i) => {
           const on = checked.has(i);
           return (
-            <li key={p.quote} className="bg-white">
+            <li key={p.quote}>
               <button
                 type="button"
                 aria-pressed={on}
                 onClick={() => toggle(i)}
-                className={`flex h-full w-full gap-4 p-6 text-left transition-colors sm:p-7 ${on ? "bg-red-50" : "hover:bg-paper"}`}
+                className={`flex min-h-16 w-full items-center gap-4 rounded-2xl px-5 py-4 text-left text-[17px] font-medium transition-all active:scale-[0.99] ${on ? "bg-ink text-white" : "bg-white text-ink ring-1 ring-line hover:ring-ink/30"}`}
               >
                 <span
-                  className={`mt-1 flex size-6 shrink-0 items-center justify-center rounded-sm border-2 transition-colors ${on ? "border-red bg-red text-white" : "border-line bg-white"}`}
+                  className={`flex size-6 shrink-0 items-center justify-center rounded-full transition-colors ${on ? "bg-red text-white" : "ring-2 ring-line"}`}
                   aria-hidden
                 >
                   {on && <Check className="size-4" strokeWidth={3} />}
                 </span>
-                <span>
-                  <span className="block font-serif text-lg leading-snug text-ink">„{p.quote}“</span>
-                  <span className="mt-2 block text-[15px] leading-relaxed text-muted">{p.text}</span>
-                </span>
+                „{p.quote}“
               </button>
             </li>
           );
         })}
       </ul>
-      <div className="rounded-sm bg-ink p-8 text-white lg:sticky lg:top-28">
-        <p className="text-xs font-semibold tracking-[0.16em] text-white/60 uppercase">Ihr Ergebnis</p>
-        <p className="mt-3 font-serif text-6xl leading-none" aria-live="polite">
+      <div
+        className={`mt-5 flex flex-col items-center gap-4 rounded-3xl p-6 text-center transition-colors sm:flex-row sm:text-left ${n >= 2 ? "bg-red text-white" : "bg-paper text-ink"}`}
+        aria-live="polite"
+      >
+        <p className="text-5xl font-semibold tracking-tight tabular-nums">
           {n}
-          <span className="text-2xl text-white/40"> / {pains.length}</span>
+          <span className={`text-xl ${n >= 2 ? "text-white/60" : "text-grey"}`}>/{pains.length}</span>
         </p>
-        <p className="mt-5 text-lg leading-snug font-semibold">{verdict.t}</p>
-        <p className="mt-3 leading-relaxed text-white/70">{verdict.d}</p>
+        <p className="flex-1 text-lg leading-snug font-semibold">{verdict}</p>
         {n >= 2 && (
-          <CtaButton className="mt-7 w-full">Hebel-Check sichern</CtaButton>
+          <CtaButton variant="light" className="w-full sm:w-auto">
+            Hebel-Check sichern
+          </CtaButton>
         )}
       </div>
     </div>
