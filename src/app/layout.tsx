@@ -6,7 +6,7 @@ import { LeadKeeper } from "@/components/LeadKeeper";
 import { MetaPixel } from "@/components/MetaPixel";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://boernigen-partner.vercel.app"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://boernigen-partner.kanzleianfrage.de"),
   title: "Steuerberater für Unternehmer im Raum München | Börnigen & Partners",
   description:
     "Für Unternehmer im Raum München ab 500.000 € Umsatz: Weniger Steuern, weniger Papierkram. Kostenloses Erstgespräch: In 30 Minuten wissen Sie, wo Sie Steuern und Zeit sparen können.",

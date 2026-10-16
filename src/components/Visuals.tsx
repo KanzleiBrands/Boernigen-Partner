@@ -131,10 +131,10 @@ export function PayrollFlow() {
 /* ---------- Buchhaltung: Arbeitstag der Buchhaltungskraft vorher/nachher ---------- */
 
 const DAY_BEFORE = [
-  { t: "Suchen", w: 24 },
-  { t: "Abtippen", w: 30 },
+  { t: "Suchen", w: 22 },
+  { t: "Abtippen", w: 28 },
   { t: "Rückfragen", w: 26 },
-  { t: "Mehrwert", w: 20, good: true },
+  { t: "Mehrwert", w: 24, good: true },
 ];
 const DAY_AFTER = [
   { t: "Prüfen", w: 20 },
@@ -150,7 +150,7 @@ function DayBar({ parts, label }: { parts: { t: string; w: number; good?: boolea
           <div
             key={p.t}
             style={{ width: `${p.w}%` }}
-            className={`flex items-center justify-center border-r border-white/60 px-1 text-center leading-tight last:border-r-0 ${p.good ? "bg-red text-white" : "bg-paper-200 text-muted"}`}
+            className={`flex items-center justify-center border-r border-white/60 px-0.5 text-center leading-tight last:border-r-0 ${p.good ? "bg-red text-white" : "bg-paper-200 text-muted"}`}
           >
             <span className="line-clamp-2">{p.t}</span>
           </div>
@@ -309,7 +309,7 @@ export function StructureDiagram() {
           </div>
           <div className="rounded-2xl bg-white px-3 py-3 text-center ring-1 ring-line">
             <p className="text-sm font-semibold text-ink">Beteiligung</p>
-            <p className="text-[11px] text-grey">Immobilie, Neues</p>
+            <p className="text-[11px] text-grey">Immobilie, neues Projekt</p>
           </div>
         </div>
       </div>

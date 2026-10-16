@@ -48,7 +48,7 @@ const lanes: Lane[] = [
     events: [
       { m: 4, y: 118, t: "Mai", d: "Die BWA kommt – zu spät für Entscheidungen." },
       { m: 10.25, y: 125, t: "November", d: "Nachzahlung plus höhere Vorauszahlungen.", alert: true },
-      { m: 11.2, y: 167, t: "31.12.", d: "Niemand hat angerufen. Die Steuervorteile sind verfallen.", alert: true },
+      { m: 11.2, y: 167, t: "Jahresende", d: "Niemand hat angerufen. Die Steuervorteile sind verfallen.", alert: true },
     ],
     old: true,
     closing: "Sie bezahlen, was herauskommt.",
@@ -72,7 +72,7 @@ const lanes: Lane[] = [
     events: [
       { m: 1, y: 140, t: "Jeden Monat", d: "Zahlen aktuell. Sie sehen, wo Sie stehen." },
       { m: 5.7, y: 107, t: "Juni", d: "Steuerlast hochgerechnet. Keine Überraschung." },
-      { m: 10.4, y: 65, t: "November", d: "Alles geregelt: Tantieme, Investition, Ausschüttung." },
+      { m: 10.4, y: 65, t: "November", d: "Tantieme, Investition und Ausschüttung sind geregelt." },
     ],
     old: false,
     closing: "Sie planen, was Sie zahlen.",

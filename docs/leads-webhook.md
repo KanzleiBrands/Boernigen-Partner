@@ -31,7 +31,7 @@ Antwort 502, wenn alle Kanäle scheitern → Lead bleibt im Browser und wird bei
 | `MAIL_FROM` | nur mit Mail | z. B. `Kanzlei Brands <leads@kanzlei-brands.de>` |
 | `ALERT_EMAIL` | empfohlen | Postfach bei Kanzlei Brands, das bei Webhook-Fehlern alarmiert wird |
 | `NEXT_PUBLIC_BOOKING_URL` | optional | Kalender-Link (z. B. Calendly/OS-Terminbuchung) – wird auf `/danke` eingebettet |
-| `NEXT_PUBLIC_SITE_URL` | optional | Live-Domain, z. B. `https://erstgespraech.bup-steuerberater.de` |
+| `NEXT_PUBLIC_SITE_URL` | optional | Live-Domain, Standard: `https://boernigen-partner.kanzleianfrage.de` |
 
 **Minimal-Setup:** nur `LEAD_WEBHOOK_URL`. Das OS informiert die Kanzlei selbst per Mail. Ist `LEAD_EMAIL` gesetzt, aber `RESEND_API_KEY` fehlt, schlägt die Mail auf der Produktivumgebung bewusst fehl (statt „erfolgreich“ zu melden).
 

@@ -150,10 +150,10 @@ export default function Home() {
             className="pointer-events-none absolute -top-40 -right-40 size-[520px] rounded-full bg-red/[0.07] blur-2xl"
             aria-hidden
           />
-          <Container className="relative grid gap-10 pt-10 pb-14 sm:py-20 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-16 lg:py-24">
+          <Container className="relative grid gap-10 pt-10 pb-14 sm:py-20 lg:grid-cols-[1.35fr_0.65fr] lg:items-center lg:gap-10 xl:grid-cols-[1.15fr_0.85fr] xl:gap-16 lg:py-24">
             <div>
               <Eyebrow>Für Unternehmer ab 500.000 € Umsatz · Raum München</Eyebrow>
-              <h1 className="mt-5 text-[2.6rem] leading-[1.02] font-semibold tracking-[-0.035em] text-balance text-ink sm:text-[3.25rem] lg:text-[3.4rem] xl:text-[3.6rem]">
+              <h1 className="mt-5 text-[2.6rem] leading-[1.02] font-semibold tracking-[-0.035em] text-balance text-ink sm:text-[3.25rem] lg:text-[3.2rem] xl:text-[3.6rem]">
                 <span className="text-red">Weniger Steuern.</span> Weniger Papierkram. Mehr Zeit für Ihr Unternehmen.
               </h1>
               <p className="mt-5 max-w-lg text-lg leading-relaxed text-ink-700 sm:text-xl">
@@ -399,7 +399,7 @@ export default function Home() {
               ].map((q) => (
                 <figure key={q} className="rounded-3xl bg-white p-6 ring-1 ring-line">
                   <blockquote className="text-[17px] leading-relaxed text-ink">„{q}“</blockquote>
-                  <figcaption className="mt-2 text-sm text-grey">Mandant von Börnigen &amp; Partners</figcaption>
+                  <figcaption className="mt-2 text-sm text-grey">Stimme aus unserer Mandantschaft</figcaption>
                 </figure>
               ))}
             </div>
