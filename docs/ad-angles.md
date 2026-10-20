@@ -1,7 +1,7 @@
 # Meta-Kampagne „Kostenloses Erstgespräch“ – Ad Angles & Creatives
 
 **Kunde:** Börnigen & Partners Steuerberatungsgesellschaft mbH (Unterföhring / Haar)
-**Angebot:** Kostenloses Erstgespräch, 30 Minuten – klare Nutzensprache, keine Fachbegriffe wie „Hebel“ oder „CFO“ ohne Erklärung. Ergebnis: wo Sie Steuern sparen können (3 größte Ansatzpunkte), Nachzahlungs-Frühwarnung, Wechsel-Fahrplan. Ehrlichkeits-Versprechen: „Sind Sie gut aufgestellt, sagen wir Ihnen das.“
+**Angebot:** Kostenloses Erstgespräch, 20 Minuten – klare Nutzensprache, keine Fachbegriffe wie „Hebel“ oder „CFO“ ohne Erklärung. Ergebnis: wo Sie Steuern sparen können (3 größte Ansatzpunkte), Nachzahlungs-Frühwarnung, Wechsel-Fahrplan. Ehrlichkeits-Versprechen: „Sind Sie gut aufgestellt, sagen wir Ihnen das.“
 **Zielgruppe:** Inhaber/Geschäftsführer ab 500.000 € Umsatz, München + ca. 150 km
 **Funnel:** Ad → `/` → Vorab-Check `/erstgespraech` → `/danke` (Pixel-Event `Lead`)
 
@@ -10,7 +10,7 @@
 **Hormozi – Value Equation:** Wert = Traumergebnis × Eintrittswahrscheinlichkeit ÷ (Wartezeit × Aufwand).
 - *Traumergebnis:* Steuerlast planen statt erleiden, keine Überraschungen, ein Berater, der sich meldet.
 - *Wahrscheinlichkeit:* 5× DATEV „Digitale Kanzlei“, Partner mit Gesicht, Mandantenstimmen, konkreter Mechanismus („3 größte Sparpotenziale“).
-- *Wartezeit:* Ergebnis schon im 30-Minuten-Gespräch – nicht erst nach dem Wechsel.
+- *Wartezeit:* Ergebnis schon im 20-Minuten-Gespräch – nicht erst nach dem Wechsel.
 - *Aufwand:* 2-Minuten-Check, Wechsel übernehmen wir komplett.
 - *Risikoumkehr:* kostenfrei, ohne Wechselpflicht, Ehrlichkeits-Versprechen.
 - *Hook-Regel:* Erste Zeile = ein Gedanke, den der Unternehmer schon selbst hatte. Call-out der Zielgruppe in den ersten 3 Sekunden („Unternehmer ab 500.000 € Umsatz“).
@@ -48,16 +48,16 @@
 >
 > Wenn Sie jetzt nachdenken müssen, ist das die Antwort.
 >
-> Im kostenlosen Erstgespräch zeigen wir Ihnen in 30 Minuten Ihre 3 größten Ansatzpunkte, um Steuern zu sparen. Sind Sie bereits gut aufgestellt, sagen wir Ihnen auch das.
+> Im kostenlosen Erstgespräch zeigen wir Ihnen in 20 Minuten Ihre 3 größten Ansatzpunkte, um Steuern zu sparen. Sind Sie bereits gut aufgestellt, sagen wir Ihnen auch das.
 >
 > 👉 In 2 Minuten prüfen, ob Ihr Unternehmen passt.
 
 **Headline:** Wann kam der letzte Vorschlag?
-**Beschreibung:** Kostenloses Erstgespräch · 30 Min.
+**Beschreibung:** Kostenloses Erstgespräch · 20 Min.
 
 **Creatives**
 - **A – Statisch 4:5 (Typo):** Weißer Grund, große Serifenschrift: **„Wann hat Ihr Steuerberater Ihnen zuletzt etwas vorgeschlagen?“** Darunter klein und rot: „Ohne dass Sie gefragt haben.“ Logo unten rechts.
-- **B – Video 9:16 (Jan Börnigen, 20 s):** Hook in Sekunde 0–2, direkt in die Kamera: „Wann hat Ihr Steuerberater Ihnen zuletzt etwas vorgeschlagen?“ – 2 s Pause, Blick halten. „Wenn Sie überlegen müssen … dann lassen Sie Geld liegen. Holen Sie sich ein kostenloses Erstgespräch. 30 Minuten, kostenfrei.“
+- **B – Video 9:16 (Jan Börnigen, 20 s):** Hook in Sekunde 0–2, direkt in die Kamera: „Wann hat Ihr Steuerberater Ihnen zuletzt etwas vorgeschlagen?“ – 2 s Pause, Blick halten. „Wenn Sie überlegen müssen … dann lassen Sie Geld liegen. Holen Sie sich ein kostenloses Erstgespräch. 20 Minuten, kostenfrei.“
 
 ---
 
@@ -130,7 +130,7 @@
 > ✔ DATEV-Daten, Buchhaltung, Lohnhistorie – werden strukturiert übernommen.
 > ✔ Laufende Fristen und Abschlüsse – koordinieren wir.
 >
-> Ihr Aufwand: 2 Minuten Vorab-Check und ein 30-Minuten-Gespräch.
+> Ihr Aufwand: 2 Minuten Vorab-Check und ein 20-Minuten-Gespräch.
 >
 > Aufwendig ist etwas anderes: Jahr für Jahr Gestaltungsspielraum zu verschenken, weil Wechseln „zu viel Arbeit“ wäre.
 >
@@ -156,7 +156,7 @@
 >
 > Genau dafür bezahlen Sie einen Steuerberater. Nicht fürs Buchen – fürs Mitdenken.
 >
-> Wenn das bei Ihnen gerade nicht passiert: Im kostenlosen Erstgespräch zeigen wir Ihnen in 30 Minuten, welche Fragen in Ihrem Fall noch nie gestellt wurden.
+> Wenn das bei Ihnen gerade nicht passiert: Im kostenlosen Erstgespräch zeigen wir Ihnen in 20 Minuten, welche Fragen in Ihrem Fall noch nie gestellt wurden.
 
 **Headline:** Mitdenken ist unser Job. Nicht Ihrer.
 **Beschreibung:** Für Unternehmer ab 500.000 € Umsatz
@@ -200,17 +200,17 @@
 >
 > Was „zufrieden“ selten heißt: Jemand hat aktiv nach Gestaltungsspielraum gesucht.
 >
-> Deshalb ist unser Erstgespräch bewusst kein Verkaufsgespräch. Wir schauen 30 Minuten von außen auf Ihre Situation.
+> Deshalb ist unser Erstgespräch bewusst kein Verkaufsgespräch. Wir schauen 20 Minuten von außen auf Ihre Situation.
 >
 > Finden wir Sparpotenzial, kennen Sie es. Finden wir keine, haben Sie die Bestätigung, dass Sie gut aufgestellt sind.
 >
 > In beiden Fällen gewinnen Sie. Kostenfrei.
 
 **Headline:** Zufrieden? Dann prüfen Sie es.
-**Beschreibung:** 30 Min. · kostenfrei · ohne Wechselpflicht
+**Beschreibung:** 20 Min. · kostenfrei · ohne Wechselpflicht
 
 **Creatives**
-- **A – Statisch 4:5 („Angebotskarte“):** Nachbau der Hero-Karte der Landingpage (weißes Dokument, rotes Label „Kostenfrei · 30 Minuten“, 4 Punkte, Ehrlichkeits-Versprechen). Wiedererkennung auf der Seite = höhere Conversion.
+- **A – Statisch 4:5 („Angebotskarte“):** Nachbau der Hero-Karte der Landingpage (weißes Dokument, rotes Label „Kostenfrei · 20 Minuten“, 4 Punkte, Ehrlichkeits-Versprechen). Wiedererkennung auf der Seite = höhere Conversion.
 - **B – Video 9:16 (Testimonial, nach Freigabe):** Mandant: „Ich war eigentlich zufrieden. Dann hat mir das Gespräch gezeigt, was nie angesprochen wurde.“
 
 ---
@@ -228,7 +228,7 @@
 >
 > Börnigen & Partners – 5× in Folge von DATEV als „Digitale Kanzlei“ ausgezeichnet – betreut inhabergeführte Unternehmen im Raum München nach dem zweiten Prinzip.
 >
-> Im kostenlosen Erstgespräch sehen Sie den Unterschied in 30 Minuten.
+> Im kostenlosen Erstgespräch sehen Sie den Unterschied in 20 Minuten.
 
 **Headline:** Verwalten oder gestalten?
 **Beschreibung:** 5× DATEV „Digitale Kanzlei“

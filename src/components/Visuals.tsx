@@ -335,7 +335,7 @@ export function SwitchGraphic() {
       <div className="flex flex-col rounded-3xl bg-white p-6 ring-1 ring-line sm:p-7">
         <p className="text-xs font-semibold tracking-[0.16em] text-muted uppercase">Ihr Teil</p>
         <div className="mt-5 flex flex-1 flex-col justify-end gap-2">
-          {["2 Minuten Fragebogen", "30 Minuten Gespräch", "Eine Unterschrift"].map((t) => (
+          {["2 Minuten Fragebogen", "20 Minuten Gespräch", "Eine Unterschrift"].map((t) => (
             <div
               key={t}
               className="flex items-center gap-3 rounded-xl bg-paper px-4 py-3 text-[15px] font-medium text-ink"

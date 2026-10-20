@@ -32,7 +32,7 @@ Quellen: Kundenonboarding-Formular, Kampagnen-Briefing (Mandatsakquise), bup-ste
 
 ## Getroffene Entscheidungen
 
-- Angebot (seit 16.10.2026): **„Steuer-Hebel-Check“** (kostenfrei, 30 Min.) statt „Steuerliche Zweitmeinung“ (zu langweilig). Aufgebaut nach Hormozi (Value Equation, Risikoumkehr) und Baulig-Evergreen-Strukturen. Inhalt: 3 wichtigste Hebel, Nachzahlungs-Frühwarnung, Wechsel-Fahrplan, Ehrlichkeits-Versprechen.
+- Angebot (seit 16.10.2026): **„Steuer-Hebel-Check“** (kostenfrei, 20 Min.) statt „Steuerliche Zweitmeinung“ (zu langweilig). Aufgebaut nach Hormozi (Value Equation, Risikoumkehr) und Baulig-Evergreen-Strukturen. Inhalt: 3 wichtigste Hebel, Nachzahlungs-Frühwarnung, Wechsel-Fahrplan, Ehrlichkeits-Versprechen.
 - Zeitdruck über den echten Stichtag 31.12. (Countdown auf der Landingpage).
 - Seite seit 16.10.2026 im Apple-Stil, mobil zuerst (80–90 % Social-Traffic): kurze Headlines, je Leistung eine Grafik – Steuern (Jahresvergleich), Struktur (Holding-Diagramm), Lohn (Personio/HRworks → Abrechnung), Buchhaltung (Arbeitstag vorher/nachher), CFO (Cockpit).
 - Zusätzliche Stärken laut Kunden-Manager: Personio Expert Partner, HRworks Partner, Lohn direkt aus HR-Systemen, digitale Vorsysteme in der FiBu, Gestaltungsberatung und steuerliche Strukturoptimierung. Ziel der Seite: nur das Erstgespräch verkaufen – im Gespräch ist die Abschlussquote sehr hoch.
