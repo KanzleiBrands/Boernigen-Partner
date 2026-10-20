@@ -38,7 +38,7 @@ Quellen: Kundenonboarding-Formular, Kampagnen-Briefing (Mandatsakquise), bup-ste
 - Zusätzliche Stärken laut Kunden-Manager: Personio Expert Partner, HRworks Partner, Lohn direkt aus HR-Systemen, digitale Vorsysteme in der FiBu, Gestaltungsberatung und steuerliche Strukturoptimierung. Ziel der Seite: nur das Erstgespräch verkaufen – im Gespräch ist die Abschlussquote sehr hoch.
 - Keine konkreten Ersparnis-Beträge in Seite und Ads (§ 57a StBerG – sachliche Werbung).
 - Bauträger und GmbH & Co. KG sind ausdrücklich **zugelassen** (Entscheidung Kanzlei Brands, 14.10.2026). Ausgeschlossen bleiben reine KG und OHG.
-- PLZ außerhalb des Zielgebiets ist kein Ausschluss, sondern Merkmal `im_zielgebiet` im Lead.
+- PLZ wird seit 20.10.2026 nicht mehr abgefragt (kürzeres Formular). `im_zielgebiet` ist daher `null`; das Zielgebiet steuert die Meta-Ausrichtung (München + 150 km).
 - Disqualifizierte Besucher geben keine Kontaktdaten ein; es wird kein Lead gesendet.
 
 ## Stand & offene Punkte

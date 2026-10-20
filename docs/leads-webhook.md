@@ -60,7 +60,7 @@ Beispiel-Body (echter Testlauf):
   "email": "max@example.com", "telefon": "0171 1234567",
   "kontakt": {
     "vorname": "Max", "nachname": "Muster", "firma": "Muster Consulting GmbH",
-    "email": "max@example.com", "telefon": "0171 1234567", "plz": "81675",
+    "email": "max@example.com", "telefon": "0171 1234567",
     "erreichbarkeit": "Vormittags (8–12 Uhr)"
   },
   "nachricht": "Holding geplant",
@@ -72,7 +72,7 @@ Beispiel-Body (echter Testlauf):
     "anlass":      { "wert": ["erreichbarkeit", "nicht-proaktiv"], "label": "Antworten dauern zu lange, Keine proaktiven Gestaltungsvorschläge" }
   },
   "score": { "punkte": 8, "klasse": "A" },
-  "im_zielgebiet": true,
+  "im_zielgebiet": null,
   "tracking": {
     "utm_source": "meta", "utm_campaign": "bup-erstgespraech", "utm_content": "angle1-video",
     "fbclid": "…", "landing_url": "https://…", "referrer": "…", "user_agent": "…"
@@ -129,7 +129,7 @@ Eingebaut und aktiv, sobald die Variablen gesetzt sind. Ohne `NEXT_PUBLIC_META_P
 1. Jede Seite: Pixel lädt und feuert `PageView`.
 2. Nach erfolgreicher Anfrage (Server hat den Lead gesichert):
    - Browser: `fbq('track', 'Lead', {}, { eventID: lead_id })`
-   - Server: Conversions API `Lead` mit `event_id = lead_id`, gehashter E-Mail/Telefon/Name/PLZ, IP, User-Agent, `_fbp`/`_fbc` (fehlt `_fbc`, wird es aus der gemerkten `fbclid` gebildet).
+   - Server: Conversions API `Lead` mit `event_id = lead_id`, gehashter E-Mail/Telefon/Name, IP, User-Agent, `_fbp`/`_fbc` (fehlt `_fbc`, wird es aus der gemerkten `fbclid` gebildet).
    - Meta dedupliziert beide über die gleiche ID → **ein** Lead im Werbeanzeigenmanager.
 3. Disqualifizierte Besucher lösen nie `Lead` aus.
 4. Fehler bei Meta beeinflussen die Lead-Übertragung nicht (Log `[meta-capi]` in Vercel).

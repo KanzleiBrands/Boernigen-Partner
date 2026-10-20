@@ -124,7 +124,7 @@ export function inRegion(plz: string | undefined) {
   return REGION_PREFIXES.some((prefix) => p.startsWith(prefix));
 }
 
-/** Einfaches Scoring für die Priorisierung im Vertrieb (A/B/C). Max. 10 Punkte. */
+/** Einfaches Scoring für die Priorisierung im Vertrieb (A/B/C). Max. 9 Punkte (+1 mit PLZ im Zielgebiet). */
 export function leadScore(answers: Answers, plz?: string) {
   let s = 0;
   s += { "500k-1m": 2, "1m-2-5m": 3, "2-5m-10m": 4, "ueber-10m": 4 }[answers.umsatz as string] ?? 0;
@@ -133,5 +133,5 @@ export function leadScore(answers: Answers, plz?: string) {
   const a = ((answers.anlass as string[] | undefined) ?? []).filter((v) => v !== "kein-stb");
   s += Math.min(a.length, 2);
   if (inRegion(plz)) s += 1;
-  return { punkte: s, klasse: s >= 7 ? "A" : s >= 5 ? "B" : "C" } as const;
+  return { punkte: s, klasse: s >= 6 ? "A" : s >= 4 ? "B" : "C" } as const;
 }

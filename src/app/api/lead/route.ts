@@ -53,7 +53,7 @@ export async function POST(request: Request) {
     firma: str(c.firma, 160),
     email: str(c.email, 160),
     telefon: str(c.telefon, 40),
-    plz: str(c.plz, 5),
+    plz: str(c.plz, 5) || undefined, // Feld nicht mehr im Formular; ältere gespeicherte Anfragen können es noch enthalten
     erreichbarkeit: str(c.erreichbarkeit, 80) || undefined,
   };
   if (
@@ -79,7 +79,7 @@ export async function POST(request: Request) {
     kontakt,
     nachricht: str(body.nachricht, 2000) || undefined,
     score: leadScore(answers, kontakt.plz),
-    imZielgebiet: inRegion(kontakt.plz),
+    imZielgebiet: kontakt.plz ? inRegion(kontakt.plz) : null,
     tracking,
     consentText: str(body.consentText, 600),
   });
