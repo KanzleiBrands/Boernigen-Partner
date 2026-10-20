@@ -170,7 +170,7 @@ export default function Home() {
               <div className="mt-3 grid grid-cols-3 gap-2 text-center">
                 {[
                   ["5×", "DATEV Digitale Kanzlei"],
-                  ["30 Min.", "Klarheit"],
+                  ["20 Min.", "Klarheit"],
                   ["0 €", "Erstgespräch"],
                 ].map(([a, b]) => (
                   <div key={b} className="rounded-2xl bg-white px-2 py-3 ring-1 ring-line">
@@ -326,7 +326,7 @@ export default function Home() {
           <Container>
             <Head
               eyebrow="Ihr kostenloses Erstgespräch"
-              title="30 Minuten, die sich für Sie lohnen."
+              title="20 Minuten, die sich für Sie lohnen."
               sub="Sie erfahren, wo Sie Steuern und Zeit verschenken – auch wenn Sie danach nicht wechseln."
             />
             <div className="mx-auto mt-10 max-w-3xl rounded-3xl bg-white p-6 shadow-[0_40px_80px_-40px_rgba(29,27,28,0.35)] ring-1 ring-line sm:p-10">
@@ -482,7 +482,7 @@ export default function Home() {
               </div>
               <div className="rounded-3xl bg-red p-6">
                 <p className="text-sm font-semibold text-white/80">Option B</p>
-                <p className="mt-2 text-xl font-semibold">30 Minuten Klarheit.</p>
+                <p className="mt-2 text-xl font-semibold">20 Minuten Klarheit.</p>
                 <p className="mt-2 leading-relaxed text-white/90">
                   Kostenloses Erstgespräch. Sie wissen, wo Sie sparen können – dann entscheiden Sie.
                 </p>

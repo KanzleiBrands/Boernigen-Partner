@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://boernigen-partner.kanzleianfrage.de"),
   title: "Steuerberater für Unternehmer im Raum München | Börnigen & Partners",
   description:
-    "Für Unternehmer im Raum München ab 500.000 € Umsatz: Weniger Steuern, weniger Papierkram. Kostenloses Erstgespräch: In 30 Minuten wissen Sie, wo Sie Steuern und Zeit sparen können.",
+    "Für Unternehmer im Raum München ab 500.000 € Umsatz: Weniger Steuern, weniger Papierkram. Kostenloses Erstgespräch: In 20 Minuten wissen Sie, wo Sie Steuern und Zeit sparen können.",
   openGraph: {
     type: "website",
     locale: "de_DE",
