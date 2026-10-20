@@ -40,7 +40,7 @@ export async function sendMetaLead(p: LeadPayload, ctx: MetaContext) {
     ph: [sha256(normPhone(k.telefon))],
     fn: [sha256(norm(k.vorname))],
     ln: [sha256(norm(k.nachname))],
-    zp: [sha256(norm(k.plz))],
+    zp: k.plz ? [sha256(norm(k.plz))] : undefined,
     country: [sha256("de")],
     external_id: [sha256(p.lead_id)],
     client_ip_address: ctx.clientIp,

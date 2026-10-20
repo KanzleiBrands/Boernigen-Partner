@@ -22,13 +22,13 @@ export type LeadPayload = {
     firma: string;
     email: string;
     telefon: string;
-    plz: string;
+    plz?: string;
     erreichbarkeit?: string;
   };
   nachricht?: string;
   qualifizierung: Record<string, { wert: string | string[]; label: string }>;
   score: { punkte: number; klasse: "A" | "B" | "C" };
-  im_zielgebiet: boolean;
+  im_zielgebiet: boolean | null; // null = unbekannt (keine PLZ abgefragt)
   tracking: Record<string, string>;
   einwilligung: { datenschutz: true; zeitpunkt: string; text: string };
 };
@@ -76,7 +76,7 @@ export function buildPayload(input: {
   kontakt: LeadPayload["kontakt"];
   nachricht?: string;
   score: LeadPayload["score"];
-  imZielgebiet: boolean;
+  imZielgebiet: boolean | null;
   tracking: Record<string, string>;
   consentText: string;
 }): LeadPayload {
@@ -142,7 +142,7 @@ export async function deliverLead(p: LeadPayload) {
     ["Unternehmen", k.firma],
     ["E-Mail", k.email],
     ["Telefon", k.telefon],
-    ["PLZ", `${k.plz}${p.im_zielgebiet ? "" : " (außerhalb Zielgebiet)"}`],
+    ["PLZ", k.plz ? `${k.plz}${p.im_zielgebiet ? "" : " (außerhalb Zielgebiet)"}` : undefined],
     ["Erreichbarkeit", k.erreichbarkeit],
     ["Jahresumsatz", q.umsatz?.label],
     ["Rechtsform", q.rechtsform?.label],

@@ -18,11 +18,10 @@ type Kontakt = {
   firma: string;
   email: string;
   telefon: string;
-  plz: string;
   erreichbarkeit: string;
 };
 
-const emptyKontakt: Kontakt = { vorname: "", nachname: "", firma: "", email: "", telefon: "", plz: "", erreichbarkeit: "" };
+const emptyKontakt: Kontakt = { vorname: "", nachname: "", firma: "", email: "", telefon: "", erreichbarkeit: "" };
 
 declare global {
   interface Window {
@@ -105,7 +104,6 @@ export function Funnel() {
       kontakt.firma.trim() &&
       /^\S+@\S+\.\S+$/.test(kontakt.email) &&
       kontakt.telefon.replace(/\D/g, "").length >= 6 &&
-      /^\d{5}$/.test(kontakt.plz) &&
       consent,
     [kontakt, consent],
   );
@@ -236,16 +234,7 @@ export function Funnel() {
             <Field className="sm:col-span-2" label="Unternehmen" name="firma" autoComplete="organization" value={kontakt.firma} onChange={(v) => setKontakt({ ...kontakt, firma: v })} />
             <Field label="E-Mail" name="email" type="email" autoComplete="email" value={kontakt.email} onChange={(v) => setKontakt({ ...kontakt, email: v })} />
             <Field label="Telefon" name="telefon" type="tel" autoComplete="tel" value={kontakt.telefon} onChange={(v) => setKontakt({ ...kontakt, telefon: v })} />
-            <Field
-              label="PLZ Unternehmenssitz"
-              name="plz"
-              inputMode="numeric"
-              autoComplete="postal-code"
-              maxLength={5}
-              value={kontakt.plz}
-              onChange={(v) => setKontakt({ ...kontakt, plz: v.replace(/\D/g, "").slice(0, 5) })}
-            />
-            <label className="block">
+            <label className="block sm:col-span-2">
               <span className="text-sm font-medium text-ink-700">Am besten erreichbar</span>
               <select
                 value={kontakt.erreichbarkeit}
@@ -275,7 +264,11 @@ export function Funnel() {
             <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
           </div>
 
-          <label className="mt-6 flex cursor-pointer items-start gap-3 text-sm leading-relaxed text-muted">
+          <p className="mt-3 text-xs text-grey">
+            <span className="text-red">*</span> Pflichtfeld
+          </p>
+
+          <label className="mt-5 flex cursor-pointer items-start gap-3 text-sm leading-relaxed text-muted">
             <input
               type="checkbox"
               checked={consent}
@@ -288,6 +281,10 @@ export function Funnel() {
                 Datenschutzerklärung
               </a>
               .
+              <span className="text-red" aria-hidden>
+                {" "}
+                *
+              </span>
             </span>
           </label>
 
@@ -356,7 +353,13 @@ function Field({
 } & Omit<React.InputHTMLAttributes<HTMLInputElement>, "onChange" | "value">) {
   return (
     <label className={`block ${className}`}>
-      <span className="text-sm font-medium text-ink-700">{label}</span>
+      <span className="text-sm font-medium text-ink-700">
+        {label}
+        <span className="text-red" aria-hidden>
+          {" "}
+          *
+        </span>
+      </span>
       <input
         {...rest}
         value={value}
