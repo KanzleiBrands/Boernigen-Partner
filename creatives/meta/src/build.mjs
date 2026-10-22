@@ -227,17 +227,24 @@ function c4(f) {
   </div>`;
 }
 
+// Gesichter (Stirn bis Kinn, Anteil am Originalfoto). Design-Regel: Text, Logo und Overlays liegen NIE auf einem
+// Gesicht – build prüft das gegen diese Box (+ Sicherheitsabstand) und bricht sonst ab.
+const PETRA_FACE = { x: 0.34, y: 0.2, w: 0.4, h: 0.3, ratio: 2100 / 1400 };
+const faceBox = (face, left, top, width) =>
+  `<div class="deco face" style="position:absolute; left:${left + face.x * width}px; top:${top + face.y * width * face.ratio}px; width:${face.w * width}px; height:${face.h * width * face.ratio}px"></div>`;
+
 // ---------- 5 · Future Projection: „Ihr Steuerberater meldet sich zuerst“ ----------
 function c5(f) {
   const v = (a, b) => (f === "story" ? b : a);
   // Foto oben, Gesicht frei; Nachricht unter dem Kinn, Text auf dunklem Verlauf
   return `
   <div class="frame" style="background:#1b1819; color:#fff">
-    <img class="deco" src="${A("petra.jpg")}" style="position:absolute; left:0; top:${v(-210, -20)}px; width:1080px">
+    <img class="deco" src="${A("petra.jpg")}" style="position:absolute; left:0; top:${v(-260, -60)}px; width:1110px">
+    ${faceBox(PETRA_FACE, 0, v(-260, -60), 1110)}
     <div class="deco" style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(20,18,19,.5) 0%, rgba(20,18,19,0) ${v(14, 20)}%, rgba(20,18,19,0) ${v(40, 42)}%, rgba(20,18,19,.9) ${v(64, 62)}%, #1b1819 ${v(100, 85)}%)"></div>
     <div style="position:relative; display:flex; flex-direction:column; flex:1">
       <img class="logo" src="${A("logo-white.svg")}">
-      <div style="margin-top:${v(470, 450)}px; align-self:flex-end; width:${v(640, 680)}px; background:rgba(255,255,255,.95); color:var(--ink); border-radius:32px; padding:24px 28px 28px; box-shadow:0 30px 60px -20px rgba(0,0,0,.55)">
+      <div class="overlay" style="margin-top:${v(490, 520)}px; align-self:flex-end; width:${v(640, 680)}px; background:rgba(255,255,255,.95); color:var(--ink); border-radius:32px; padding:24px 28px 28px; box-shadow:0 30px 60px -20px rgba(0,0,0,.55)">
         <div style="display:flex; align-items:center; gap:14px">
           <div style="width:52px; height:52px; border-radius:14px; background:var(--red); display:grid; place-items:center; color:#fff; font-weight:800; font-size:21px">B&amp;P</div>
           <div style="flex:1"><div style="font-size:24px; font-weight:700">Petra Börnigen, Steuerberaterin</div><div style="font-size:20px; color:var(--grey)">Nachricht · jetzt</div></div>
@@ -283,6 +290,22 @@ for (const [fmt, d] of Object.entries(FORMATS)) {
       return Math.max(...els.map((e) => e.getBoundingClientRect().bottom)) - limit;
     }, d.h - d.bottom);
     if (over > 1) console.warn(`  ! ${name} ${fmt}: ${Math.round(over)}px über der Safe-Zone`);
+    const onFace = await page.evaluate((pad) => {
+      const hits = [];
+      for (const face of document.querySelectorAll(".face")) {
+        const f = face.getBoundingClientRect();
+        for (const e of document.querySelectorAll(".frame *")) {
+          if (e.closest(".deco")) continue;
+          const ownText = [...e.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim());
+          if (!ownText && e.tagName !== "IMG" && !e.classList.contains("overlay")) continue;
+          const r = e.getBoundingClientRect();
+          if (r.left < f.right + pad && r.right > f.left - pad && r.top < f.bottom + pad && r.bottom > f.top - pad)
+            hits.push((e.textContent || e.className).trim().slice(0, 40));
+        }
+      }
+      return hits;
+    }, 40);
+    if (onFace.length) throw new Error(`${name} ${fmt}: Element liegt auf dem Gesicht → ${onFace.join(" | ")}`);
     await page.screenshot({ path: out });
     console.log(out);
   }
