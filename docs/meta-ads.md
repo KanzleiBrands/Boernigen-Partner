@@ -1,0 +1,161 @@
+# Meta-Ads „Kostenloses Erstgespräch“: die 5 stärksten Angles
+
+Passend zur Landingpage https://boernigen-partner.kanzleianfrage.de. Jeder Angle hat einen Primärtext nach einer Baulig-Evergreen-Struktur, eine Überschrift, eine Beschreibung und zwei Creatives (Feed 4:5, Story 9:16).
+
+- **Creatives:** `creatives/meta/feed/*-4x5.png` (1080×1350) und `creatives/meta/story/*-9x16.png` (1080×1920).
+- **Neu rendern:** `node creatives/meta/src/build.mjs`. Die Texte der Creatives stehen in `creatives/meta/src/build.mjs`.
+- **Story-Safe-Zones:** In den Stories bleiben oben 250 px und unten 340 px frei von Text. Dort liegen bei Meta das Profil und der CTA-Sticker.
+- **CTA-Button bei Meta:** „Mehr dazu“.
+- **Link:** `https://boernigen-partner.kanzleianfrage.de/?utm_source=meta&utm_medium=paid&utm_campaign=bup-erstgespraech&utm_content={{ad.name}}`
+- **Berufsrecht (§ 57a StBerG):** Die Anzeigen nennen keine Ersparnis-Beträge, geben keine Garantien und setzen keinen benannten Kollegen herab. „Ihr Steuerberater“ meint immer die Situation des Lesers.
+
+| #   | Angle                                | Baulig-Struktur   | Look                   | Wann am stärksten                     |
+| --- | ------------------------------------ | ----------------- | ---------------------- | ------------------------------------- |
+| 1   | Der letzte Vorschlag                 | Realtalk          | hell, E-Mail-Verlauf   | ganzjährig                            |
+| 2   | Die Nachzahlung                      | Agitation         | dunkel, Steuerbescheid | Okt–Dez und Jan–Apr (Bescheid-Saison) |
+| 3   | 31. Dezember                         | Zeitdruck         | rot, Abreißkalender    | Okt–Dez, höchstes Budget              |
+| 4   | Lohn ohne Excel-Chaos                | Neuer Weg         | weiß, vorher/nachher   | ganzjährig, für Firmen mit Team       |
+| 5   | Ihr Steuerberater meldet sich zuerst | Future Projection | Foto Petra Börnigen    | ganzjährig, gut für Retargeting       |
+
+**Testplan:**
+
+- Eine Kampagne, eine Anzeigengruppe (Advantage+ Audience, München + 150 km, 30–65 Jahre) mit allen 5 Angles. Meta liefert pro Anzeige Feed und Story über die Platzierungs-Anpassung aus.
+- Nach 7–10 Tagen die Verlierer anhand der Kosten pro Lead **und** der Lead-Qualität im OS abschalten.
+- Vom Gewinner neue Hooks testen, also die erste Zeile und die Headline variieren.
+
+---
+
+## 1 · „Der letzte Vorschlag“ · Realtalk-Ad
+
+**Struktur:** Hook → Unbequeme Wahrheit → Spiegel vorhalten → Hilfe-Angebot → CTA
+
+**Primärtext**
+
+> Wann hat Ihr Steuerberater Ihnen zuletzt etwas vorgeschlagen?
+>
+> Nicht nachgefragt. Nicht Belege angefordert. Vorgeschlagen.
+>
+> Viele Unternehmer ab 500.000 € Umsatz bekommen von ihrer Kanzlei vor allem drei Dinge: Rückfragen, den Jahresabschluss und die Rechnung. Das ist ordentliche Arbeit, aber es ist Verwaltung. Gestaltet wird da nichts.
+>
+> Scrollen Sie mal durch Ihre E-Mails mit dem Steuerbüro. Finden Sie eine Nachricht, die mit „Wir haben uns Ihre Zahlen angeschaut und schlagen vor …“ beginnt? Wenn nicht, verschenken Sie wahrscheinlich jedes Jahr Möglichkeiten: beim Geschäftsführergehalt, bei Investitionen, bei der Gewinnverwendung.
+>
+> Bei Börnigen & Partners melden wir uns, bevor es zu spät ist. Mit Hochrechnung, konkreten Vorschlägen und einem festen Ansprechpartner, der Ihr Unternehmen kennt.
+>
+> In 20 Minuten zeigen wir Ihnen, wo Sie stehen. Kostenlos und unverbindlich. Und wenn Sie gut aufgestellt sind, sagen wir Ihnen auch das.
+>
+> 👉 Jetzt kostenloses Erstgespräch sichern
+
+**Überschrift:** Wann kam der letzte Vorschlag?
+**Beschreibung:** Kostenloses Erstgespräch · 20 Minuten
+
+| Feed 4:5                            | Story 9:16                            |
+| ----------------------------------- | ------------------------------------- |
+| `feed/01-letzter-vorschlag-4x5.png` | `story/01-letzter-vorschlag-9x16.png` |
+
+---
+
+## 2 · „Die Nachzahlung“ · Agitation-Ad
+
+**Struktur:** Hook → Problemaufblähung → Spannungsaufbau → Lösungs-Teaser → CTA
+
+**Primärtext**
+
+> Die Nachzahlung ist nicht das Problem. Sondern, dass Sie niemand vorher gewarnt hat.
+>
+> Sie kennen das: Der Steuerbescheid kommt, die Nachzahlung ist höher als gedacht. Und weil das Finanzamt davon ausgeht, dass es so weitergeht, steigen gleich auch noch die Vorauszahlungen. Zweimal Liquidität weg, ohne Vorwarnung.
+>
+> Das Ärgerliche daran: Die Zahlen lagen schon Monate vorher auf dem Tisch. Eine Hochrechnung im Herbst hätte gezeigt, was kommt. Und vor dem 31.12. hätte man noch gegensteuern können.
+>
+> Genau so arbeiten wir bei Börnigen & Partners: Wir rechnen Ihr Jahr vor dem Jahresende hoch, sagen Ihnen, was auf Sie zukommt, und zeigen, was Sie noch tun können. Keine Überraschungen mehr im Briefkasten.
+>
+> Im kostenlosen Erstgespräch (20 Minuten) sehen wir uns Ihre Situation an und sagen Ihnen ehrlich, wo Sie stehen.
+>
+> 👉 Für Unternehmer ab 500.000 € Umsatz im Raum München. Jetzt Termin sichern.
+
+**Überschrift:** Nächstes Jahr vorher Bescheid wissen
+**Beschreibung:** Hochrechnung vor dem 31.12.
+
+| Feed 4:5                      | Story 9:16                      |
+| ----------------------------- | ------------------------------- |
+| `feed/02-nachzahlung-4x5.png` | `story/02-nachzahlung-9x16.png` |
+
+---
+
+## 3 · „31. Dezember“ · Zeitdruck-Ad
+
+**Struktur:** Hook → Spannungsaufbau → Dringlichkeitsgrund → Handlungsaufforderung → CTA
+
+**Primärtext**
+
+> Viele Steuervorteile verfallen am 31. Dezember.
+>
+> Nicht, weil sie jemand streicht, sondern weil sie bis dahin niemand nutzt.
+>
+> Ob Geschäftsführergehalt und Tantieme, vorgezogene Investitionen oder die Frage, wie viel Gewinn im Unternehmen bleibt und wie viel ausgeschüttet wird: Vieles davon lässt sich nur im laufenden Jahr gestalten. Am 1. Januar ist das Thema für dieses Jahr erledigt, egal wie gut die Idee gewesen wäre.
+>
+> Die gute Nachricht: Bis zum Jahresende ist noch Zeit. Aber nicht mehr viel, und Ihr Steuerberater braucht ein paar Wochen Vorlauf.
+>
+> Lassen Sie jetzt prüfen, was in Ihrem Unternehmen bis zum 31.12. noch möglich ist. Im kostenlosen Erstgespräch (20 Minuten) gehen wir Ihre Situation durch und sagen Ihnen konkret, wo Sie ansetzen können.
+>
+> 👉 Für Unternehmer ab 500.000 € Umsatz. Jetzt Termin sichern, solange es noch geht.
+
+**Überschrift:** Jetzt noch prüfen lassen
+**Beschreibung:** Kostenloses Erstgespräch · 20 Minuten
+
+| Feed 4:5                      | Story 9:16                      |
+| ----------------------------- | ------------------------------- |
+| `feed/03-31-dezember-4x5.png` | `story/03-31-dezember-9x16.png` |
+
+---
+
+## 4 · „Lohn ohne Excel-Chaos“ · Neuer-Weg-Ad
+
+**Struktur:** Hook → Alter vs. neuer Weg → Neuer Ansatz → Proof → CTA
+
+**Primärtext**
+
+> Lohnabrechnung ohne Excel-Listen und E-Mail-Pingpong. Geht das?
+>
+> **So läuft es heute in vielen Firmen:** Stunden in Excel sammeln, per Mail ans Lohnbüro schicken, Rückfragen beantworten, Fehler korrigieren und im nächsten Monat alles wieder von vorn. Das kostet Ihr Team jeden Monat Stunden.
+>
+> **So geht es auch:** Ihr Team pflegt Arbeitszeiten, Urlaub und Krankheit einmal im HR-Tool, zum Beispiel in Personio oder HRworks. Die Daten gehen automatisch an uns, wir rechnen ab, fertig. Kein Abtippen, keine Listen, keine Korrekturabrechnungen.
+>
+> Wir sind Personio Expert Partner, HRworks Partner und von DATEV fünfmal als „Digitale Kanzlei“ ausgezeichnet. Wir richten das mit Ihnen ein, nicht Sie mit uns.
+>
+> Im kostenlosen Erstgespräch (20 Minuten) schauen wir uns Ihren Lohn-Prozess an und zeigen Ihnen, wie viel davon wegfallen kann. Und auf Wunsch auch, wo Sie steuerlich noch Möglichkeiten haben.
+>
+> 👉 Für Unternehmer ab 500.000 € Umsatz im Raum München. Jetzt Termin sichern.
+
+**Überschrift:** Lohn ohne Excel und E-Mail-Chaos
+**Beschreibung:** Personio & HRworks Partner
+
+| Feed 4:5                          | Story 9:16                          |
+| --------------------------------- | ----------------------------------- |
+| `feed/04-lohn-ohne-chaos-4x5.png` | `story/04-lohn-ohne-chaos-9x16.png` |
+
+---
+
+## 5 · „Ihr Steuerberater meldet sich zuerst“ · Future-Projection-Ad
+
+**Struktur:** Hook → Traumbild → Machbarkeits-Teaser → Überleitung → CTA
+
+**Primärtext**
+
+> Stellen Sie sich vor, Ihr Steuerberater meldet sich zuerst.
+>
+> November, Dienstagmorgen. Eine Nachricht: „Ihre Hochrechnung ist fertig. Mit zwei Maßnahmen vor dem 31.12. sparen Sie noch Steuern. Passt Ihnen Donnerstag?“
+>
+> Sie müssen nichts hinterherlaufen und keinen Bescheid fürchten. Sie wissen das ganze Jahr, wo Ihr Unternehmen steht, und haben jemanden an Ihrer Seite, der mitdenkt wie ein eigener Finanzchef, ohne dass Sie einen einstellen müssen.
+>
+> Das ist kein Wunschdenken, sondern unser Standard. Bei Börnigen & Partners haben Sie feste Ansprechpartner, die Ihr Unternehmen kennen, digitale Abläufe ohne Papierkram und Vorschläge, bevor es zu spät ist.
+>
+> Der erste Schritt dahin dauert 20 Minuten: ein kostenloses Erstgespräch mit Jan oder Petra Börnigen. Sie erfahren, wo Sie stehen, ganz ohne Wechselpflicht.
+>
+> 👉 Für Unternehmer ab 500.000 € Umsatz im Raum München. Jetzt Termin sichern.
+
+**Überschrift:** Ihr Steuerberater meldet sich zuerst
+**Beschreibung:** Kostenloses Erstgespräch · 20 Minuten
+
+| Feed 4:5                             | Story 9:16                             |
+| ------------------------------------ | -------------------------------------- |
+| `feed/05-meldet-sich-zuerst-4x5.png` | `story/05-meldet-sich-zuerst-9x16.png` |

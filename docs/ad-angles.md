@@ -1,5 +1,7 @@
 # Meta-Kampagne „Kostenloses Erstgespräch“ – Ad Angles & Creatives
 
+> **Aktuelle Auswahl für Meta:** die 5 stärksten Angles mit fertigen Texten und Creatives stehen in [`docs/meta-ads.md`](meta-ads.md).
+
 **Kunde:** Börnigen & Partners Steuerberatungsgesellschaft mbH (Unterföhring / Haar)
 **Angebot:** Kostenloses Erstgespräch, 20 Minuten – klare Nutzensprache, keine Fachbegriffe wie „Hebel“ oder „CFO“ ohne Erklärung. Ergebnis: wo Sie Steuern sparen können (3 größte Ansatzpunkte), Nachzahlungs-Frühwarnung, Wechsel-Fahrplan. Ehrlichkeits-Versprechen: „Sind Sie gut aufgestellt, sagen wir Ihnen das.“
 **Zielgruppe:** Inhaber/Geschäftsführer ab 500.000 € Umsatz, München + ca. 150 km
