@@ -263,33 +263,47 @@ function c5(f) {
   </div>`;
 }
 
-// ---------- 6 · Anti-Mainstream: „Blick nach vorn“ (Jans Positionierung) ----------
+// ---------- 6 · Anti-Mainstream: „Blick nach vorn“ (Jans Positionierung, Nutzen je Entscheidung) ----------
 function c6(f) {
   const v = (a, b) => (f === "story" ? b : a);
   const back = ["Jahresabschluss", "Steuererklärung", "Bescheid"];
-  const ahead = ["Investition", "Zukauf", "Verkauf", "Nachfolge", "Wachstum"];
-  const pill = (t, on) => `
-    <div style="display:flex; align-items:center; gap:12px; border-radius:16px; padding:${v("14px 18px", "16px 20px")}; font-size:${v(26, 28)}px; font-weight:${on ? 700 : 500};
-      background:${on ? "#fff" : "rgba(255,255,255,.06)"}; color:${on ? "var(--ink)" : "rgba(255,255,255,.42)"}; ${on ? "box-shadow:0 14px 30px -14px rgba(227,21,54,.55)" : "border:2px dashed rgba(255,255,255,.14)"}">
-      <span style="color:${on ? "var(--red)" : "rgba(255,255,255,.3)"}; font-weight:800">${on ? "→" : "←"}</span>${t}
-    </div>`;
+  const ahead = [
+    ["Investition", "Steuerfolgen kennen, bevor Sie unterschreiben"],
+    ["Zukauf & Verkauf", "Mehr vom Kaufpreis und Erlös behalten"],
+    ["Nachfolge", "Rechtzeitig und steuerlich sauber geregelt"],
+    ["Wachstum", "Wissen, wie viel Geld Ihnen bleibt"],
+  ];
   return `
   <div class="frame" style="background:radial-gradient(90% 60% at 85% 75%, rgba(227,21,54,.28) 0%, rgba(227,21,54,0) 60%), var(--ink); color:#fff">
     <img class="logo" src="${A("logo-white.svg")}">
-    <h1 style="font-size:${v(76, 84)}px; margin-top:${v(48, 64)}px; color:rgba(255,255,255,.38)">Wir erklären nicht, was war.</h1>
-    <h1 style="font-size:${v(76, 84)}px; margin-top:${v(10, 14)}px">Wir beraten, was als <span style="color:var(--red)">Nächstes</span> kommt.</h1>
-    <div style="margin-top:${v(52, 80)}px; display:grid; grid-template-columns:1fr 104px 1fr; gap:${v(14, 16)}px; align-items:stretch">
+    <div style="margin-top:${v(40, 56)}px; align-self:flex-start; background:var(--red); color:#fff; font-size:${v(40, 46)}px; font-weight:800; letter-spacing:-0.02em; padding:${v("10px 22px", "12px 26px")}; border-radius:16px; transform:rotate(-1.5deg)">Unzufrieden mit Ihrem Steuerberater?</div>
+    <h1 style="font-size:${v(68, 80)}px; margin-top:${v(28, 40)}px; color:rgba(255,255,255,.38)">Wir erklären nicht, was war.</h1>
+    <h1 style="font-size:${v(68, 80)}px; margin-top:${v(6, 12)}px">Wir beraten, was als <span style="color:var(--red)">Nächstes</span> kommt.</h1>
+    <div style="margin-top:${v(44, 72)}px; display:grid; grid-template-columns:0.72fr 92px 1.35fr; gap:${v(12, 14)}px; align-items:stretch">
       <div>
-        <div class="eyebrow" style="font-size:21px; color:rgba(255,255,255,.4)">Blick zurück</div>
-        <div style="display:flex; flex-direction:column; gap:${v(12, 16)}px; margin-top:18px">${back.map((t) => pill(t, false)).join("")}</div>
+        <div class="eyebrow" style="font-size:20px; color:rgba(255,255,255,.4)">Blick zurück</div>
+        <div style="display:flex; flex-direction:column; gap:${v(12, 16)}px; margin-top:16px">${back
+          .map(
+            (t) => `
+          <div style="border-radius:14px; padding:${v("13px 16px", "15px 18px")}; font-size:${v(23, 25)}px; font-weight:500; color:rgba(255,255,255,.42); background:rgba(255,255,255,.06); border:2px dashed rgba(255,255,255,.14)">${t}</div>`,
+          )
+          .join("")}</div>
       </div>
       <div style="display:flex; flex-direction:column; align-items:center">
-        <div style="background:var(--red); color:#fff; font-size:19px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; padding:6px 14px; border-radius:999px">Heute</div>
+        <div style="background:var(--red); color:#fff; font-size:18px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; padding:6px 12px; border-radius:999px">Heute</div>
         <div style="flex:1; width:4px; margin-top:10px; border-radius:4px; background:linear-gradient(180deg, var(--red), rgba(227,21,54,.15))"></div>
       </div>
       <div>
-        <div class="eyebrow" style="font-size:21px; color:var(--red)">Blick nach vorn</div>
-        <div style="display:flex; flex-direction:column; gap:${v(12, 16)}px; margin-top:18px">${ahead.map((t) => pill(t, true)).join("")}</div>
+        <div class="eyebrow" style="font-size:20px; color:var(--red)">Ihr Nutzen: Blick nach vorn</div>
+        <div style="display:flex; flex-direction:column; gap:${v(10, 14)}px; margin-top:16px">${ahead
+          .map(
+            ([t, sub]) => `
+          <div style="display:flex; gap:12px; align-items:flex-start; border-radius:16px; padding:${v("12px 16px", "15px 18px")}; background:#fff; color:var(--ink); box-shadow:0 14px 30px -14px rgba(227,21,54,.55)">
+            <span class="check" style="background:var(--red); width:30px; height:30px; margin-top:2px">${tick()}</span>
+            <div><div style="font-size:${v(24, 26)}px; font-weight:800; letter-spacing:-0.01em">${t}</div><div style="font-size:${v(20, 22)}px; color:#5f5a57; margin-top:2px; line-height:1.25">${sub}</div></div>
+          </div>`,
+          )
+          .join("")}</div>
       </div>
     </div>
     <div class="spacer"></div>
@@ -297,42 +311,45 @@ function c6(f) {
   </div>`;
 }
 
-// ---------- 7 · Wertebasiert: Jan Börnigen, selbst Finanzchef ----------
+// ---------- 7 · Wertebasiert: Jan Börnigen, selbst Finanzchef – Nutzen für den Mandanten vorn ----------
 const JAN_FACE = { x: 0.37, y: 0.15, w: 0.43, h: 0.33, ratio: 2100 / 1400 };
 function c7(f) {
   const v = (a, b) => (f === "story" ? b : a);
   const top = v(-250, -40);
-  const steps = [
-    ["Finanzchef einer Konzerneinheit", false],
-    ["Controlling & M&A in einem Medienkonzern", false],
-    ["Heute: Steuerberater für Unternehmer", true],
+  const gains = [
+    "Steuerfolgen kennen, bevor Sie entscheiden",
+    "Zahlen, auf die Sie sich verlassen können",
+    "Sparring auf Augenhöhe – ohne CFO-Gehalt",
   ];
   return `
   <div class="frame" style="background:#1b1819; color:#fff">
     <img class="deco" src="${A("jan.jpg")}" style="position:absolute; left:0; top:${top}px; width:1080px">
     ${faceBox(JAN_FACE, 0, top, 1080)}
-    <div class="deco" style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(20,18,19,.45) 0%, rgba(20,18,19,0) ${v(14, 20)}%, rgba(20,18,19,0) ${v(40, 42)}%, rgba(20,18,19,.9) ${v(66, 64)}%, #1b1819 ${v(100, 85)}%)"></div>
+    <div class="deco" style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(20,18,19,.45) 0%, rgba(20,18,19,0) ${v(14, 20)}%, rgba(20,18,19,0) ${v(40, 42)}%, rgba(20,18,19,.9) ${v(64, 62)}%, #1b1819 ${v(98, 85)}%)"></div>
     <div style="position:relative; display:flex; flex-direction:column; flex:1">
       <img class="logo" src="${A("logo-white.svg")}">
-      <div class="overlay" style="margin-top:${v(468, 480)}px; align-self:flex-start; width:${v(600, 640)}px; background:rgba(255,255,255,.95); color:var(--ink); border-radius:30px; padding:24px 28px 26px; box-shadow:0 30px 60px -20px rgba(0,0,0,.55)">
-        <div style="font-size:24px; font-weight:800">Jan Börnigen <span style="font-weight:500; color:var(--grey); font-size:21px">· Dipl.-Kfm., Steuerberater</span></div>
-        <div style="margin-top:14px; display:flex; flex-direction:column; gap:10px; border-left:3px solid var(--line); padding-left:18px; margin-left:6px">
-          ${steps
+      <div class="overlay" style="margin-top:${v(468, 480)}px; align-self:flex-start; width:${v(640, 680)}px; background:rgba(255,255,255,.96); color:var(--ink); border-radius:30px; padding:22px 26px 24px; box-shadow:0 30px 60px -20px rgba(0,0,0,.55)">
+        <div style="font-size:23px; font-weight:800">Jan Börnigen, Steuerberater</div>
+        <div style="font-size:20px; color:#5f5a57; margin-top:2px">Zuvor Finanzchef einer Konzerneinheit, Controlling &amp; M&amp;A</div>
+        <div style="height:2px; background:var(--line); margin:14px 0 12px"></div>
+        <div class="eyebrow" style="font-size:18px; color:var(--red)">Was Sie davon haben</div>
+        <div style="display:flex; flex-direction:column; gap:8px; margin-top:10px">
+          ${gains
             .map(
-              ([t, now]) => `
-            <div style="position:relative; font-size:${v(23, 25)}px; font-weight:${now ? 700 : 500}; color:${now ? "var(--ink)" : "#5f5a57"}">
-              <span style="position:absolute; left:-29px; top:8px; width:${now ? 18 : 14}px; height:${now ? 18 : 14}px; margin-left:${now ? -2 : 0}px; border-radius:50%; background:${now ? "var(--red)" : "#cfcac4"}"></span>${t}
+              (t) => `
+            <div style="display:flex; gap:12px; align-items:center; font-size:${v(23, 25)}px; font-weight:600">
+              <span class="check" style="background:var(--red); width:28px; height:28px">${tick()}</span>${t}
             </div>`,
             )
             .join("")}
         </div>
       </div>
       <div class="spacer"></div>
-      <div style="font-size:${v(26, 28)}px; font-weight:700; color:var(--red); margin-bottom:12px">Investition, Zukauf, Verkauf, Nachfolge?</div>
-      <h1 style="font-size:${v(60, 70)}px; margin-bottom:${v(32, 40)}px">
-        „Ich habe solche Entscheidungen nicht nur beraten. Ich habe sie <span style="color:var(--red)">verantwortet.</span>“
+      <div style="align-self:flex-start; background:var(--red); color:#fff; font-size:${v(30, 34)}px; font-weight:800; letter-spacing:-0.01em; padding:8px 18px; border-radius:12px; margin-bottom:16px">Verkauf, Zukauf oder Nachfolge geplant?</div>
+      <h1 style="font-size:${v(68, 76)}px; margin-bottom:${v(30, 40)}px">
+        Ihr nächster Steuerberater war selbst <span style="color:var(--red)">Finanzchef.</span>
       </h1>
-      ${footer({ dark: true })}
+      ${footer({ dark: true, cta: "Erstgespräch mit Jan Börnigen sichern", fine: "Kostenlos · unverbindlich · 20 Minuten · ab 500.000 € Umsatz" })}
     </div>
   </div>`;
 }
