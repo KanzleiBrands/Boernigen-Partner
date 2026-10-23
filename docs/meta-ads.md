@@ -17,7 +17,7 @@ Passend zur Landingpage https://boernigen-partner.kanzleianfrage.de. Jeder Angle
 | 4   | Lohn ohne Excel-Chaos                 | Neuer Weg (#12)        | weiß, vorher/nachher               | ganzjährig, für Firmen mit Team             |
 | 5   | Ihr Steuerberater meldet sich zuerst  | Future Projection (#9) | Foto Petra Börnigen                | ganzjährig, gut für Retargeting             |
 | 6   | Blick nach vorn (Jans Positionierung) | Anti-Mainstream (#15)  | dunkel, Blick zurück vs. nach vorn | ganzjährig, Abgrenzung zu anderen Kanzleien |
-| 7   | Selbst Finanzchef gewesen             | Wertebasiert (#8)      | Foto Jan Börnigen, Werdegang       | ganzjährig, gut für Retargeting             |
+| 7   | Nächster Steuerberater: Ex-Finanzchef | Wertebasiert (#8)      | Foto Jan Börnigen, Werdegang       | ganzjährig, gut für Retargeting             |
 
 **Testplan:**
 
@@ -211,24 +211,26 @@ Basiert auf Jan Börnigens Positionierung (E-Mail vom 23.10.). Grenzt die Kanzle
 
 **Struktur:** Hook → Konfrontation → Neuer Gedanke → Beispiel / Beweis → CTA
 
-| Baulig-Baustein       | Text                                                                                                                                                                                                                                                                                         |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Hook**              | Vergessen Sie den Blick in den Rückspiegel. Wir erklären nicht, was war. Wir beraten, was als Nächstes kommt.                                                                                                                                                                                |
-| **Konfrontation**     | Die meisten Steuerberater liefern den Blick zurück: Abschluss, Erklärung, Bescheid. Das ist notwendig. Aber es hilft nicht bei der Frage, die Sie als Unternehmer wirklich beschäftigt: Was tun wir jetzt? Wie steuere ich mein Unternehmen?                                                 |
-| **Neuer Gedanke**     | Der Unterschied liegt im Zeitpunkt. Die steuerlichen Folgen einer Entscheidung gehören auf den Tisch, bevor Sie entscheiden, nicht ein Jahr später in den Bescheid.                                                                                                                          |
-| **Beispiel / Beweis** | Jan Börnigen war Finanzchef einer Konzerneinheit und später im Controlling und M&A eines Medienkonzerns. Er hat Entscheidungen vorbereitet, umgesetzt und verantwortet. Diese Perspektive bringen wir in die Beratung ein: strategisch, mit Zahlen und mit den steuerlichen Folgen im Blick. |
-| **CTA**               | Weiterentwicklung, Investition, Zukauf, Verkauf oder Nachfolge? Lernen Sie echte Steuerberatung statt Verwaltung kennen. 👉 Jetzt unverbindliches Erstgespräch sichern: kostenlos, 20 Minuten, für Unternehmer ab 500.000 € Umsatz im Raum München.                                          |
+| Baulig-Baustein       | Text                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Hook**              | Unzufrieden mit Ihrem Steuerberater? Vielleicht, weil er Ihnen erklärt, was war, aber nicht, was als Nächstes kommt. Bei uns ist es umgekehrt.                                                                                                                                                                                                                                                                                                        |
+| **Konfrontation**     | Die meisten Steuerberater liefern den Blick zurück: Abschluss, Erklärung, Bescheid. Das ist notwendig. Aber es hilft nicht bei der Frage, die Sie als Unternehmer wirklich beschäftigt: Was tun wir jetzt? Wie steuere ich mein Unternehmen?                                                                                                                                                                                                          |
+| **Neuer Gedanke**     | Der Unterschied liegt im Zeitpunkt. Die steuerlichen Folgen einer Entscheidung gehören auf den Tisch, bevor Sie entscheiden, nicht ein Jahr später in den Bescheid. Für Sie heißt das: Bei einer Investition kennen Sie die Steuerfolgen, bevor Sie unterschreiben. Beim Zukauf oder Verkauf bleibt mehr vom Kaufpreis und Erlös. Die Nachfolge ist rechtzeitig und steuerlich sauber geregelt. Und Sie wissen jederzeit, wie viel Geld Ihnen bleibt. |
+| **Beispiel / Beweis** | Jan Börnigen war Finanzchef einer Konzerneinheit und später im Controlling und M&A eines Medienkonzerns. Er hat Entscheidungen vorbereitet, umgesetzt und verantwortet. Diese Perspektive bringen wir in die Beratung ein: strategisch, mit Zahlen und mit den steuerlichen Folgen im Blick.                                                                                                                                                          |
+| **CTA**               | Weiterentwicklung, Investition, Zukauf, Verkauf oder Nachfolge? Lernen Sie echte Steuerberatung statt Verwaltung kennen. 👉 Jetzt unverbindliches Erstgespräch sichern: kostenlos, 20 Minuten, für Unternehmer ab 500.000 € Umsatz im Raum München.                                                                                                                                                                                                   |
 
 **Primärtext zum Kopieren**
 
 ```text
-Vergessen Sie den Blick in den Rückspiegel.
+Unzufrieden mit Ihrem Steuerberater?
 
-Wir erklären nicht, was war. Wir beraten, was als Nächstes kommt.
+Vielleicht, weil er Ihnen erklärt, was war, aber nicht, was als Nächstes kommt. Bei uns ist es umgekehrt.
 
 Die meisten Steuerberater liefern den Blick zurück: Abschluss, Erklärung, Bescheid. Das ist notwendig. Aber es hilft nicht bei der Frage, die Sie als Unternehmer wirklich beschäftigt: Was tun wir jetzt? Wie steuere ich mein Unternehmen?
 
 Der Unterschied liegt im Zeitpunkt. Die steuerlichen Folgen einer Entscheidung gehören auf den Tisch, bevor Sie entscheiden, nicht ein Jahr später in den Bescheid.
+
+Für Sie heißt das: Bei einer Investition kennen Sie die Steuerfolgen, bevor Sie unterschreiben. Beim Zukauf oder Verkauf bleibt mehr vom Kaufpreis und Erlös. Die Nachfolge ist rechtzeitig und steuerlich sauber geregelt. Und Sie wissen jederzeit, wie viel Geld Ihnen bleibt.
 
 Jan Börnigen war Finanzchef einer Konzerneinheit und später im Controlling und M&A eines Medienkonzerns. Er hat Entscheidungen vorbereitet, umgesetzt und verantwortet. Diese Perspektive bringen wir in die Beratung ein: strategisch, mit Zahlen und mit den steuerlichen Folgen im Blick.
 
@@ -243,28 +245,32 @@ Weiterentwicklung, Investition, Zukauf, Verkauf oder Nachfolge? Lernen Sie echte
 
 ---
 
-## 7 · „Selbst Finanzchef gewesen“ · Wertebasierte Ad (Baulig #8)
+## 7 · „Ihr nächster Steuerberater war selbst Finanzchef“ · Wertebasierte Ad (Baulig #8)
 
 In Jans Ich-Form, passend zum Foto im Creative. Läuft über die Unternehmensseite, deshalb mit Namen unterschrieben.
 
 **Struktur:** Hook → Story oder Beispiel → Brücke zum Angebot → Wertebestätigung → CTA
 
-| Baulig-Baustein         | Text                                                                                                                                                                                                                                                                     |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Hook**                | Mir war es immer wichtig, die Folgen einer Entscheidung zu kennen, bevor ich sie treffe. Nicht erst danach.                                                                                                                                                              |
-| **Story oder Beispiel** | Als Finanzchef einer Konzerneinheit und später im Controlling und M&A eines Medienkonzerns habe ich Entscheidungen vorbereitet, durchgeführt und verantwortet. Bei Investitionen, Zukäufen und Verkäufen reicht es nicht, im Nachhinein zu erklären, was passiert ist.   |
-| **Brücke zum Angebot**  | Genau diese Perspektive bringe ich heute als Steuerberater in die Beratung von Unternehmern ein: strategisch, mit Zahlen und mit den steuerlichen Folgen im Blick, bevor Sie entscheiden.                                                                                |
-| **Wertebestätigung**    | Wenn Sie einen Steuerberater suchen, der nicht nur erklärt, was war, sondern mit Ihnen plant, was als Nächstes kommt, dann passen wir zusammen.                                                                                                                          |
-| **CTA**                 | Weiterentwicklung, Investition, Zukauf, Verkauf, Nachfolge? Reden wir darüber, wie wir Ihr Unternehmen voranbringen, im kostenlosen Erstgespräch (20 Minuten). 👉 Für Unternehmer ab 500.000 € Umsatz im Raum München. Jetzt Termin sichern. Jan Börnigen, Steuerberater |
+| Baulig-Baustein         | Text                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Hook**                | Verkauf, Zukauf oder Nachfolge geplant – und Ihr Steuerberater schaut nur auf das letzte Jahr? Mir war es immer wichtig, die Folgen einer Entscheidung zu kennen, bevor ich sie treffe. Nicht erst danach.                                                                                                                                                                                                                   |
+| **Story oder Beispiel** | Als Finanzchef einer Konzerneinheit und später im Controlling und M&A eines Medienkonzerns habe ich Entscheidungen vorbereitet, durchgeführt und verantwortet. Bei Investitionen, Zukäufen und Verkäufen reicht es nicht, im Nachhinein zu erklären, was passiert ist.                                                                                                                                                       |
+| **Brücke zum Angebot**  | Genau diese Perspektive bringe ich heute als Steuerberater in die Beratung von Unternehmern ein: strategisch, mit Zahlen und mit den steuerlichen Folgen im Blick, bevor Sie entscheiden. Für Sie heißt das: Sie kennen die steuerlichen Folgen, bevor Sie entscheiden. Sie haben Zahlen, auf die Sie sich verlassen können. Und Sie haben einen Sparringspartner auf Augenhöhe, ohne einen Finanzchef einstellen zu müssen. |
+| **Wertebestätigung**    | Wenn Sie einen Steuerberater suchen, der nicht nur erklärt, was war, sondern mit Ihnen plant, was als Nächstes kommt, dann passen wir zusammen.                                                                                                                                                                                                                                                                              |
+| **CTA**                 | Weiterentwicklung, Investition, Zukauf, Verkauf, Nachfolge? Reden wir darüber, wie wir Ihr Unternehmen voranbringen, im kostenlosen Erstgespräch (20 Minuten). 👉 Für Unternehmer ab 500.000 € Umsatz im Raum München. Jetzt Termin sichern. Jan Börnigen, Steuerberater                                                                                                                                                     |
 
 **Primärtext zum Kopieren**
 
 ```text
+Verkauf, Zukauf oder Nachfolge geplant – und Ihr Steuerberater schaut nur auf das letzte Jahr?
+
 Mir war es immer wichtig, die Folgen einer Entscheidung zu kennen, bevor ich sie treffe. Nicht erst danach.
 
 Als Finanzchef einer Konzerneinheit und später im Controlling und M&A eines Medienkonzerns habe ich Entscheidungen vorbereitet, durchgeführt und verantwortet. Bei Investitionen, Zukäufen und Verkäufen reicht es nicht, im Nachhinein zu erklären, was passiert ist.
 
 Genau diese Perspektive bringe ich heute als Steuerberater in die Beratung von Unternehmern ein: strategisch, mit Zahlen und mit den steuerlichen Folgen im Blick, bevor Sie entscheiden.
+
+Für Sie heißt das: Sie kennen die steuerlichen Folgen, bevor Sie entscheiden. Sie haben Zahlen, auf die Sie sich verlassen können. Und Sie haben einen Sparringspartner auf Augenhöhe, ohne einen Finanzchef einstellen zu müssen.
 
 Wenn Sie einen Steuerberater suchen, der nicht nur erklärt, was war, sondern mit Ihnen plant, was als Nächstes kommt, dann passen wir zusammen.
 
@@ -275,6 +281,6 @@ Weiterentwicklung, Investition, Zukauf, Verkauf, Nachfolge? Reden wir darüber, 
 Jan Börnigen, Steuerberater
 ```
 
-- **Überschrift:** Ihr Steuerberater war selbst Finanzchef
+- **Überschrift:** Ihr nächster Steuerberater war selbst Finanzchef
 - **Beschreibung:** Erstgespräch mit Jan Börnigen · 20 Minuten
 - **Creatives:** `feed/07-selbst-finanzchef-4x5.png` · `story/07-selbst-finanzchef-9x16.png`
