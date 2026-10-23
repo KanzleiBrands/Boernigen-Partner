@@ -217,7 +217,7 @@ Basiert auf Jan Börnigens Positionierung (E-Mail vom 23.10.). Grenzt die Kanzle
 | **Konfrontation**     | Die meisten Steuerberater liefern den Blick zurück: Abschluss, Erklärung, Bescheid. Das ist notwendig. Aber es hilft nicht bei der Frage, die Sie als Unternehmer wirklich beschäftigt: Was tun wir jetzt? Wie steuere ich mein Unternehmen?                                                 |
 | **Neuer Gedanke**     | Der Unterschied liegt im Zeitpunkt. Die steuerlichen Folgen einer Entscheidung gehören auf den Tisch, bevor Sie entscheiden, nicht ein Jahr später in den Bescheid.                                                                                                                          |
 | **Beispiel / Beweis** | Jan Börnigen war Finanzchef einer Konzerneinheit und später im Controlling und M&A eines Medienkonzerns. Er hat Entscheidungen vorbereitet, umgesetzt und verantwortet. Diese Perspektive bringen wir in die Beratung ein: strategisch, mit Zahlen und mit den steuerlichen Folgen im Blick. |
-| **CTA**               | Weiterentwicklung, Investition, Zukauf, Verkauf oder Nachfolge? Reden wir darüber, wie Sie Ihr Unternehmen voranbringen. Im kostenlosen Erstgespräch, 20 Minuten. 👉 Für Unternehmer ab 500.000 € Umsatz im Raum München. Jetzt Termin sichern.                                              |
+| **CTA**               | Weiterentwicklung, Investition, Zukauf, Verkauf oder Nachfolge? Lernen Sie echte Steuerberatung statt Verwaltung kennen. 👉 Jetzt unverbindliches Erstgespräch sichern: kostenlos, 20 Minuten, für Unternehmer ab 500.000 € Umsatz im Raum München.                                          |
 
 **Primärtext zum Kopieren**
 
@@ -232,12 +232,12 @@ Der Unterschied liegt im Zeitpunkt. Die steuerlichen Folgen einer Entscheidung g
 
 Jan Börnigen war Finanzchef einer Konzerneinheit und später im Controlling und M&A eines Medienkonzerns. Er hat Entscheidungen vorbereitet, umgesetzt und verantwortet. Diese Perspektive bringen wir in die Beratung ein: strategisch, mit Zahlen und mit den steuerlichen Folgen im Blick.
 
-Weiterentwicklung, Investition, Zukauf, Verkauf oder Nachfolge? Reden wir darüber, wie Sie Ihr Unternehmen voranbringen. Im kostenlosen Erstgespräch, 20 Minuten.
+Weiterentwicklung, Investition, Zukauf, Verkauf oder Nachfolge? Lernen Sie echte Steuerberatung statt Verwaltung kennen.
 
-👉 Für Unternehmer ab 500.000 € Umsatz im Raum München. Jetzt Termin sichern.
+👉 Jetzt unverbindliches Erstgespräch sichern: kostenlos, 20 Minuten, für Unternehmer ab 500.000 € Umsatz im Raum München.
 ```
 
-- **Überschrift:** Wir beraten, was als Nächstes kommt
+- **Überschrift:** Echte Steuerberatung statt Verwaltung
 - **Beschreibung:** Kostenloses Erstgespräch · 20 Minuten
 - **Creatives:** `feed/06-blick-nach-vorn-4x5.png` · `story/06-blick-nach-vorn-9x16.png`
 
