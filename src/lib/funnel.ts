@@ -83,6 +83,7 @@ export const QUESTIONS: Question[] = [
       { value: "erreichbarkeit", label: "Antworten dauern zu lange" },
       { value: "nicht-proaktiv", label: "Keine proaktiven Gestaltungsvorschläge" },
       { value: "zahlen-zu-spaet", label: "Zahlen kommen zu spät für Entscheidungen" },
+      { value: "kein-sparring", label: "Bei Investition, Kauf, Verkauf oder Nachfolge fehlt ein Sparringspartner" },
       { value: "nachzahlungen", label: "Überraschende Steuernachzahlungen" },
       { value: "wechselnde-ap", label: "Wechselnde Ansprechpartner" },
       { value: "nicht-digital", label: "Zusammenarbeit ist nicht digital" },
