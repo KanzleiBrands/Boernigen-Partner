@@ -25,6 +25,18 @@ Passend zur Landingpage https://boernigen-partner.kanzleianfrage.de. Jeder Angle
 - Nach 7–10 Tagen die Verlierer anhand der Kosten pro Lead **und** der Lead-Qualität im OS abschalten.
 - Vom Gewinner neue Hooks testen, also die erste Zeile und die Headline variieren.
 
+**Hook-Varianten zum Testen:** Direkte Hooks wie „Unzufrieden mit Ihrem Steuerberater?“ funktionieren aktuell sehr gut. Pro Anzeige gibt es deshalb eine alternative erste Zeile für einen A/B-Test (in Meta als zweite Primärtext-Variante anlegen). Regel für alle Creatives und Texte: In der ersten Sekunde muss klar sein, dass es um den Steuerberater geht, und vor dem CTA muss stehen, was der Mandant davon hat.
+
+| #   | Alternative erste Zeile                                                                                       |
+| --- | ------------------------------------------------------------------------------------------------------------- |
+| 1   | Unzufrieden mit Ihrem Steuerberater? Dann fragen Sie sich mal: Wann hat er Ihnen zuletzt etwas vorgeschlagen? |
+| 2   | Steuernachzahlung höher als gedacht? Das muss nächstes Jahr nicht wieder passieren.                           |
+| 3   | Ihr Steuerberater hat sich vor dem Jahresende noch nicht bei Ihnen gemeldet?                                  |
+| 4   | Ihre Lohnabrechnung läuft noch über Excel-Listen und E-Mails?                                                 |
+| 5   | Unzufrieden mit Ihrem Steuerberater, weil Sie ihm immer hinterherlaufen müssen?                               |
+| 6   | (ist bereits der direkte Hook)                                                                                |
+| 7   | Unzufrieden mit Ihrem Steuerberater, wenn es um Verkauf, Zukauf oder Nachfolge geht?                          |
+
 **So ist jede Anzeige aufgebaut:** Zuerst die Baulig-Struktur (Nummer und Schritte wie im PDF „20 Evergreen-Ads“), dann der Text Schritt für Schritt mit dem Namen des Baulig-Bausteins, danach der fertige Primärtext **zum Kopieren** in den Meta-Werbeanzeigenmanager.
 
 ---
