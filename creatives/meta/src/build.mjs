@@ -45,8 +45,9 @@ h1 { font-weight: 800; letter-spacing: -0.035em; line-height: 1.02; }
 const tick = (c = "#fff") =>
   `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="${c}" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>`;
 
-const footer = ({ dark = false, cta = "Kostenloses Erstgespräch sichern", fine } = {}) => `
+const footer = ({ dark = false, cta = "Kostenloses Erstgespräch sichern", fine, lead } = {}) => `
   <div style="display:flex; flex-direction:column; align-items:flex-start; gap:22px">
+    ${lead ? `<div style="font-size:32px; font-weight:700; letter-spacing:-0.01em; margin-bottom:-4px">${lead}</div>` : ""}
     <div class="cta">${cta} <span class="arr">→</span></div>
     <div class="fine" style="color:${dark ? "rgba(255,255,255,.72)" : "var(--muted)"}">${fine ?? "20 Minuten · unverbindlich · für Unternehmer ab 500.000 € Umsatz"}</div>
   </div>`;
@@ -291,11 +292,8 @@ function c6(f) {
         <div style="display:flex; flex-direction:column; gap:${v(12, 16)}px; margin-top:18px">${ahead.map((t) => pill(t, true)).join("")}</div>
       </div>
     </div>
-    <p style="font-size:${v(30, 34)}px; line-height:1.35; font-weight:500; color:rgba(255,255,255,.75); margin-top:${v(40, 64)}px">
-      Mit der Erfahrung eines Finanzchefs, der solche Entscheidungen <b style="color:#fff">selbst verantwortet</b> hat.
-    </p>
     <div class="spacer"></div>
-    ${footer({ dark: true, cta: "Ihren nächsten Schritt besprechen" })}
+    ${footer({ dark: true, lead: "Echte Steuerberatung statt Verwaltung kennenlernen:", cta: "Unverbindliches Erstgespräch sichern", fine: "Kostenlos · 20 Minuten · für Unternehmer ab 500.000 € Umsatz" })}
   </div>`;
 }
 
