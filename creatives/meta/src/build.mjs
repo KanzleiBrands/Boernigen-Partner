@@ -63,7 +63,7 @@ function c1(f) {
   return `
   <div class="frame" style="background:var(--paper)">
     <img class="logo" src="${A("logo.svg")}">
-    <h1 style="font-size:${v(74, 78)}px; margin-top:${v(44, 50)}px">
+    <h1 style="font-size:${v(66, 72)}px; margin-top:${v(36, 44)}px">
       Wann hat Ihr Steuerberater Ihnen zuletzt etwas <span style="color:var(--red)">vorgeschlagen?</span>
     </h1>
     <div style="margin-top:${v(44, 60)}px; background:#fff; border:2px solid var(--line); border-radius:36px; padding:${v("26px 32px 34px", "32px 36px 40px")}; box-shadow:0 30px 60px -30px rgba(29,27,28,.25); position:relative">
@@ -86,9 +86,8 @@ function c1(f) {
         Kein einziger Vorschlag.
       </div>
     </div>
-    ${v("", `<p style="font-size:38px; line-height:1.3; font-weight:500; color:var(--muted); margin-top:70px">Wir melden uns, <b style="color:var(--ink)">bevor</b> es zu spät ist.</p>`)}
     <div class="spacer"></div>
-    ${footer()}
+    ${footer({ lead: "Bei uns: Vorschläge, bevor es zu spät ist." })}
   </div>`;
 }
 
@@ -124,7 +123,7 @@ function c2(f) {
       </div>
     </div>
     <div class="spacer"></div>
-    ${footer({ dark: true, cta: "Nächstes Jahr vorher Bescheid wissen" })}
+    ${footer({ dark: true, lead: "Vorher wissen, was kommt – und gegensteuern.", cta: "Kostenloses Erstgespräch sichern" })}
   </div>`;
 }
 
@@ -163,7 +162,7 @@ function c3(f) {
         : `<div style="display:flex; gap:56px; align-items:center; margin-top:56px">${cal}<div>${list}</div></div>`
     }
     <p style="font-size:${v(32, 34)}px; line-height:1.3; font-weight:500; color:rgba(255,255,255,.85); margin-top:${v(56, 44)}px">
-      Was bis dahin nicht geregelt ist, zählt für dieses Jahr nicht mehr.
+      Wir prüfen mit Ihnen, was bis dahin noch geht – damit mehr vom Gewinn bei Ihnen bleibt.
     </p>
     <div class="spacer"></div>
     <div style="display:flex; flex-direction:column; align-items:flex-start; gap:22px">
@@ -224,7 +223,7 @@ function c4(f) {
       <span class="chip" style="background:var(--paper); border:2px solid var(--line); font-size:24px; padding:12px 22px">${tick("#e31536")} HRworks Partner</span>
     </div>
     <div class="spacer"></div>
-    ${footer({ cta: "Lohn-Prozess prüfen lassen" })}
+    ${footer({ lead: "Ihr Team spart jeden Monat Stunden.", cta: "Lohn-Prozess kostenlos prüfen lassen" })}
   </div>`;
 }
 
