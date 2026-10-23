@@ -1,4 +1,4 @@
-# Meta-Ads „Kostenloses Erstgespräch“: die 5 stärksten Angles
+# Meta-Ads „Kostenloses Erstgespräch“: 7 Angles
 
 Passend zur Landingpage https://boernigen-partner.kanzleianfrage.de. Jeder Angle hat einen Primärtext nach einer Baulig-Evergreen-Struktur, eine Überschrift, eine Beschreibung und zwei Creatives (Feed 4:5, Story 9:16).
 
@@ -9,17 +9,19 @@ Passend zur Landingpage https://boernigen-partner.kanzleianfrage.de. Jeder Angle
 - **Link:** `https://boernigen-partner.kanzleianfrage.de/?utm_source=meta&utm_medium=paid&utm_campaign=bup-erstgespraech&utm_content={{ad.name}}`
 - **Berufsrecht (§ 57a StBerG):** Die Anzeigen nennen keine Ersparnis-Beträge, geben keine Garantien und setzen keinen benannten Kollegen herab. „Ihr Steuerberater“ meint immer die Situation des Lesers.
 
-| #   | Angle                                | Baulig-Struktur        | Look                   | Wann am stärksten                     |
-| --- | ------------------------------------ | ---------------------- | ---------------------- | ------------------------------------- |
-| 1   | Der letzte Vorschlag                 | Real-Talk (#17)        | hell, E-Mail-Verlauf   | ganzjährig                            |
-| 2   | Die Nachzahlung                      | Agitation (#11)        | dunkel, Steuerbescheid | Okt–Dez und Jan–Apr (Bescheid-Saison) |
-| 3   | 31. Dezember                         | Zeitdruck (#10)        | rot, Abreißkalender    | Okt–Dez, höchstes Budget              |
-| 4   | Lohn ohne Excel-Chaos                | Neuer Weg (#12)        | weiß, vorher/nachher   | ganzjährig, für Firmen mit Team       |
-| 5   | Ihr Steuerberater meldet sich zuerst | Future Projection (#9) | Foto Petra Börnigen    | ganzjährig, gut für Retargeting       |
+| #   | Angle                                 | Baulig-Struktur        | Look                               | Wann am stärksten                           |
+| --- | ------------------------------------- | ---------------------- | ---------------------------------- | ------------------------------------------- |
+| 1   | Der letzte Vorschlag                  | Real-Talk (#17)        | hell, E-Mail-Verlauf               | ganzjährig                                  |
+| 2   | Die Nachzahlung                       | Agitation (#11)        | dunkel, Steuerbescheid             | Okt–Dez und Jan–Apr (Bescheid-Saison)       |
+| 3   | 31. Dezember                          | Zeitdruck (#10)        | rot, Abreißkalender                | Okt–Dez, höchstes Budget                    |
+| 4   | Lohn ohne Excel-Chaos                 | Neuer Weg (#12)        | weiß, vorher/nachher               | ganzjährig, für Firmen mit Team             |
+| 5   | Ihr Steuerberater meldet sich zuerst  | Future Projection (#9) | Foto Petra Börnigen                | ganzjährig, gut für Retargeting             |
+| 6   | Blick nach vorn (Jans Positionierung) | Anti-Mainstream (#15)  | dunkel, Blick zurück vs. nach vorn | ganzjährig, Abgrenzung zu anderen Kanzleien |
+| 7   | Selbst Finanzchef gewesen             | Wertebasiert (#8)      | Foto Jan Börnigen, Werdegang       | ganzjährig, gut für Retargeting             |
 
 **Testplan:**
 
-- Eine Kampagne, eine Anzeigengruppe (Advantage+ Audience, München + 150 km, 30–65 Jahre) mit allen 5 Angles. Meta liefert pro Anzeige Feed und Story über die Platzierungs-Anpassung aus.
+- Eine Kampagne, eine Anzeigengruppe (Advantage+ Audience, München + 150 km, 30–65 Jahre) mit allen 7 Angles. Meta liefert pro Anzeige Feed und Story über die Platzierungs-Anpassung aus.
 - Nach 7–10 Tagen die Verlierer anhand der Kosten pro Lead **und** der Lead-Qualität im OS abschalten.
 - Vom Gewinner neue Hooks testen, also die erste Zeile und die Headline variieren.
 
@@ -171,13 +173,13 @@ Im kostenlosen Erstgespräch (20 Minuten) schauen wir uns Ihren Lohn-Prozess an 
 
 **Struktur:** Hook → Traumbild → Machbarkeits-Teaser → Überleitung → CTA
 
-| Baulig-Baustein         | Text                                                                                                                                                                                                                                    |
-| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Hook**                | Stellen Sie sich vor, Ihr Steuerberater meldet sich zuerst. November, Dienstagmorgen. Eine Nachricht: „Ihre Hochrechnung ist fertig. Mit zwei Maßnahmen vor dem 31.12. sparen Sie noch Steuern. Passt Ihnen Donnerstag?“                |
-| **Traumbild**           | Sie müssen nichts hinterherlaufen und keinen Bescheid fürchten. Sie wissen das ganze Jahr, wo Ihr Unternehmen steht, und haben jemanden an Ihrer Seite, der mitdenkt wie ein eigener Finanzchef, ohne dass Sie einen einstellen müssen. |
-| **Machbarkeits-Teaser** | Das ist kein Wunschdenken, sondern unser Standard. Bei Börnigen & Partners haben Sie feste Ansprechpartner, die Ihr Unternehmen kennen, digitale Abläufe ohne Papierkram und Vorschläge, bevor es zu spät ist.                          |
-| **Überleitung**         | Wenn Sie sich vorstellen können, dass es bei Ihnen so läuft, finden wir gemeinsam heraus, was dafür nötig ist.                                                                                                                          |
-| **CTA**                 | Der erste Schritt dauert 20 Minuten: ein kostenloses Erstgespräch mit Jan oder Petra Börnigen, ganz ohne Wechselpflicht. 👉 Für Unternehmer ab 500.000 € Umsatz im Raum München. Jetzt Termin sichern.                                  |
+| Baulig-Baustein         | Text                                                                                                                                                                                                                                                                  |
+| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Hook**                | Stellen Sie sich vor, Ihr Steuerberater meldet sich zuerst. November, Dienstagmorgen. Eine Nachricht: „Ihre Hochrechnung ist fertig. Mit zwei Maßnahmen vor dem 31.12. sparen Sie noch Steuern. Passt Ihnen Donnerstag?“                                              |
+| **Traumbild**           | Sie müssen nichts hinterherlaufen und keinen Bescheid fürchten. Sie wissen das ganze Jahr, wo Ihr Unternehmen steht, und haben jemanden an Ihrer Seite, der mitdenkt wie ein eigener Finanzchef, ohne dass Sie einen einstellen müssen.                               |
+| **Machbarkeits-Teaser** | Das ist kein Wunschdenken, sondern unser Standard. Jan Börnigen war selbst Finanzchef einer Konzerneinheit, er kennt die Unternehmerseite. Bei Börnigen & Partners haben Sie feste Ansprechpartner, die Ihr Unternehmen kennen, und Vorschläge, bevor es zu spät ist. |
+| **Überleitung**         | Wenn Sie sich vorstellen können, dass es bei Ihnen so läuft, finden wir gemeinsam heraus, was dafür nötig ist.                                                                                                                                                        |
+| **CTA**                 | Der erste Schritt dauert 20 Minuten: ein kostenloses Erstgespräch mit Jan oder Petra Börnigen, ganz ohne Wechselpflicht. 👉 Für Unternehmer ab 500.000 € Umsatz im Raum München. Jetzt Termin sichern.                                                                |
 
 **Primärtext zum Kopieren**
 
@@ -188,7 +190,7 @@ November, Dienstagmorgen. Eine Nachricht: „Ihre Hochrechnung ist fertig. Mit z
 
 Sie müssen nichts hinterherlaufen und keinen Bescheid fürchten. Sie wissen das ganze Jahr, wo Ihr Unternehmen steht, und haben jemanden an Ihrer Seite, der mitdenkt wie ein eigener Finanzchef, ohne dass Sie einen einstellen müssen.
 
-Das ist kein Wunschdenken, sondern unser Standard. Bei Börnigen & Partners haben Sie feste Ansprechpartner, die Ihr Unternehmen kennen, digitale Abläufe ohne Papierkram und Vorschläge, bevor es zu spät ist.
+Das ist kein Wunschdenken, sondern unser Standard. Jan Börnigen war selbst Finanzchef einer Konzerneinheit, er kennt die Unternehmerseite. Bei Börnigen & Partners haben Sie feste Ansprechpartner, die Ihr Unternehmen kennen, und Vorschläge, bevor es zu spät ist.
 
 Wenn Sie sich vorstellen können, dass es bei Ihnen so läuft, finden wir gemeinsam heraus, was dafür nötig ist.
 
@@ -200,3 +202,79 @@ Der erste Schritt dauert 20 Minuten: ein kostenloses Erstgespräch mit Jan oder 
 - **Überschrift:** Ihr Steuerberater meldet sich zuerst
 - **Beschreibung:** Kostenloses Erstgespräch · 20 Minuten
 - **Creatives:** `feed/05-meldet-sich-zuerst-4x5.png` · `story/05-meldet-sich-zuerst-9x16.png`
+
+---
+
+## 6 · „Blick nach vorn“ · Anti-Mainstream-Ad (Baulig #15)
+
+Basiert auf Jan Börnigens Positionierung (E-Mail vom 23.10.). Grenzt die Kanzlei von „Steuerberatern, die nur zurückschauen“ ab, ohne einen Kollegen zu benennen.
+
+**Struktur:** Hook → Konfrontation → Neuer Gedanke → Beispiel / Beweis → CTA
+
+| Baulig-Baustein       | Text                                                                                                                                                                                                                                                                                         |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Hook**              | Vergessen Sie den Blick in den Rückspiegel. Wir erklären nicht, was war. Wir beraten, was als Nächstes kommt.                                                                                                                                                                                |
+| **Konfrontation**     | Die meisten Steuerberater liefern den Blick zurück: Abschluss, Erklärung, Bescheid. Das ist notwendig. Aber es hilft nicht bei der Frage, die Sie als Unternehmer wirklich beschäftigt: Was tun wir jetzt? Wie steuere ich mein Unternehmen?                                                 |
+| **Neuer Gedanke**     | Der Unterschied liegt im Zeitpunkt. Die steuerlichen Folgen einer Entscheidung gehören auf den Tisch, bevor Sie entscheiden, nicht ein Jahr später in den Bescheid.                                                                                                                          |
+| **Beispiel / Beweis** | Jan Börnigen war Finanzchef einer Konzerneinheit und später im Controlling und M&A eines Medienkonzerns. Er hat Entscheidungen vorbereitet, umgesetzt und verantwortet. Diese Perspektive bringen wir in die Beratung ein: strategisch, mit Zahlen und mit den steuerlichen Folgen im Blick. |
+| **CTA**               | Weiterentwicklung, Investition, Zukauf, Verkauf oder Nachfolge? Reden wir darüber, wie Sie Ihr Unternehmen voranbringen. Im kostenlosen Erstgespräch, 20 Minuten. 👉 Für Unternehmer ab 500.000 € Umsatz im Raum München. Jetzt Termin sichern.                                              |
+
+**Primärtext zum Kopieren**
+
+```text
+Vergessen Sie den Blick in den Rückspiegel.
+
+Wir erklären nicht, was war. Wir beraten, was als Nächstes kommt.
+
+Die meisten Steuerberater liefern den Blick zurück: Abschluss, Erklärung, Bescheid. Das ist notwendig. Aber es hilft nicht bei der Frage, die Sie als Unternehmer wirklich beschäftigt: Was tun wir jetzt? Wie steuere ich mein Unternehmen?
+
+Der Unterschied liegt im Zeitpunkt. Die steuerlichen Folgen einer Entscheidung gehören auf den Tisch, bevor Sie entscheiden, nicht ein Jahr später in den Bescheid.
+
+Jan Börnigen war Finanzchef einer Konzerneinheit und später im Controlling und M&A eines Medienkonzerns. Er hat Entscheidungen vorbereitet, umgesetzt und verantwortet. Diese Perspektive bringen wir in die Beratung ein: strategisch, mit Zahlen und mit den steuerlichen Folgen im Blick.
+
+Weiterentwicklung, Investition, Zukauf, Verkauf oder Nachfolge? Reden wir darüber, wie Sie Ihr Unternehmen voranbringen. Im kostenlosen Erstgespräch, 20 Minuten.
+
+👉 Für Unternehmer ab 500.000 € Umsatz im Raum München. Jetzt Termin sichern.
+```
+
+- **Überschrift:** Wir beraten, was als Nächstes kommt
+- **Beschreibung:** Kostenloses Erstgespräch · 20 Minuten
+- **Creatives:** `feed/06-blick-nach-vorn-4x5.png` · `story/06-blick-nach-vorn-9x16.png`
+
+---
+
+## 7 · „Selbst Finanzchef gewesen“ · Wertebasierte Ad (Baulig #8)
+
+In Jans Ich-Form, passend zum Foto im Creative. Läuft über die Unternehmensseite, deshalb mit Namen unterschrieben.
+
+**Struktur:** Hook → Story oder Beispiel → Brücke zum Angebot → Wertebestätigung → CTA
+
+| Baulig-Baustein         | Text                                                                                                                                                                                                                                                                     |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Hook**                | Mir war es immer wichtig, die Folgen einer Entscheidung zu kennen, bevor ich sie treffe. Nicht erst danach.                                                                                                                                                              |
+| **Story oder Beispiel** | Als Finanzchef einer Konzerneinheit und später im Controlling und M&A eines Medienkonzerns habe ich Entscheidungen vorbereitet, durchgeführt und verantwortet. Bei Investitionen, Zukäufen und Verkäufen reicht es nicht, im Nachhinein zu erklären, was passiert ist.   |
+| **Brücke zum Angebot**  | Genau diese Perspektive bringe ich heute als Steuerberater in die Beratung von Unternehmern ein: strategisch, mit Zahlen und mit den steuerlichen Folgen im Blick, bevor Sie entscheiden.                                                                                |
+| **Wertebestätigung**    | Wenn Sie einen Steuerberater suchen, der nicht nur erklärt, was war, sondern mit Ihnen plant, was als Nächstes kommt, dann passen wir zusammen.                                                                                                                          |
+| **CTA**                 | Weiterentwicklung, Investition, Zukauf, Verkauf, Nachfolge? Reden wir darüber, wie wir Ihr Unternehmen voranbringen, im kostenlosen Erstgespräch (20 Minuten). 👉 Für Unternehmer ab 500.000 € Umsatz im Raum München. Jetzt Termin sichern. Jan Börnigen, Steuerberater |
+
+**Primärtext zum Kopieren**
+
+```text
+Mir war es immer wichtig, die Folgen einer Entscheidung zu kennen, bevor ich sie treffe. Nicht erst danach.
+
+Als Finanzchef einer Konzerneinheit und später im Controlling und M&A eines Medienkonzerns habe ich Entscheidungen vorbereitet, durchgeführt und verantwortet. Bei Investitionen, Zukäufen und Verkäufen reicht es nicht, im Nachhinein zu erklären, was passiert ist.
+
+Genau diese Perspektive bringe ich heute als Steuerberater in die Beratung von Unternehmern ein: strategisch, mit Zahlen und mit den steuerlichen Folgen im Blick, bevor Sie entscheiden.
+
+Wenn Sie einen Steuerberater suchen, der nicht nur erklärt, was war, sondern mit Ihnen plant, was als Nächstes kommt, dann passen wir zusammen.
+
+Weiterentwicklung, Investition, Zukauf, Verkauf, Nachfolge? Reden wir darüber, wie wir Ihr Unternehmen voranbringen, im kostenlosen Erstgespräch (20 Minuten).
+
+👉 Für Unternehmer ab 500.000 € Umsatz im Raum München. Jetzt Termin sichern.
+
+Jan Börnigen, Steuerberater
+```
+
+- **Überschrift:** Ihr Steuerberater war selbst Finanzchef
+- **Beschreibung:** Erstgespräch mit Jan Börnigen · 20 Minuten
+- **Creatives:** `feed/07-selbst-finanzchef-4x5.png` · `story/07-selbst-finanzchef-9x16.png`

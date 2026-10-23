@@ -63,8 +63,20 @@ const faqs = [
 ];
 
 const partners = [
-  { ini: "JB", name: "Jan Börnigen", title: "Dipl.-Kfm., Steuerberater", img: "/img/team/jan-boernigen.jpg" },
-  { ini: "PB", name: "Petra Börnigen", title: "Dipl.-Kffr., Steuerberaterin", img: "/img/team/petra-boernigen.jpg" },
+  {
+    ini: "JB",
+    name: "Jan Börnigen",
+    title: "Dipl.-Kfm., Steuerberater",
+    bio: "Zuvor Finanzchef einer Konzerneinheit, dann Controlling und M&A",
+    img: "/img/team/jan-boernigen.jpg",
+  },
+  {
+    ini: "PB",
+    name: "Petra Börnigen",
+    title: "Dipl.-Kffr., Steuerberaterin",
+    bio: "",
+    img: "/img/team/petra-boernigen.jpg",
+  },
 ];
 // Portrait nur zeigen, wenn die Datei in public/img/team liegt – sonst Initialen als Platzhalter
 const hasImage = (src: string) => existsSync(path.join(process.cwd(), "public", src));
@@ -109,7 +121,7 @@ function Pillar({
   tint,
 }: {
   eyebrow: string;
-  title: string;
+  title: React.ReactNode;
   sub: string;
   points: string[];
   visual: React.ReactNode;
@@ -279,13 +291,17 @@ export default function Home() {
         <Pillar
           tint
           flip
-          eyebrow="CFO-Service – Ihr externer Finanzchef"
-          title="Ein Finanzchef an Ihrer Seite. Ohne ihn einzustellen."
-          sub="Große Unternehmen haben einen CFO, der Geld, Steuern und Planung im Blick hat. Diesen Blick bekommen Sie bei uns dazu – damit Sie sich auf Ihr Geschäft konzentrieren können."
+          eyebrow="Ihr externer Finanzchef"
+          title={
+            <>
+              <span className="text-grey">Wir erklären nicht, was war.</span> Wir beraten, was als Nächstes kommt.
+            </>
+          }
+          sub="Abschluss, Erklärung, Bescheid: Das ist der Blick zurück. Wir schauen mit Ihnen nach vorn – mit der Erfahrung eines Finanzchefs, der solche Entscheidungen selbst verantwortet hat."
           points={[
+            "Investition, Zukauf, Verkauf, Nachfolge: steuerliche Folgen kennen, bevor Sie entscheiden",
+            "Jan Börnigen war Finanzchef einer Konzerneinheit, später in Controlling und M&A eines Medienkonzerns",
             "Sie wissen jederzeit, wie viel Geld Ihnen bleibt",
-            "Wir melden uns mit Vorschlägen, bevor Sie fragen",
-            "Ein fester Ansprechpartner, der Ihr Unternehmen kennt",
           ]}
           visual={<CfoCockpit />}
         />
@@ -367,7 +383,7 @@ export default function Home() {
               sub="Kein Callcenter, kein ständig wechselnder Sachbearbeiter. Sie sprechen mit Steuerberatern, die Ihre Zahlen kennen."
             />
             <div className="mx-auto mt-10 grid max-w-xl grid-cols-2 gap-3 sm:gap-5">
-              {partners.map(({ ini, name, title, img }) => (
+              {partners.map(({ ini, name, title, bio, img }) => (
                 <figure key={name}>
                   {hasImage(img) ? (
                     // eslint-disable-next-line @next/next/no-img-element
@@ -384,6 +400,7 @@ export default function Home() {
                   <figcaption className="mt-3 text-center">
                     <p className="font-semibold text-ink">{name}</p>
                     <p className="text-sm text-muted">{title}</p>
+                    {bio && <p className="mt-1 text-xs leading-snug text-grey">{bio}</p>}
                   </figcaption>
                 </figure>
               ))}
