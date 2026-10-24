@@ -329,14 +329,14 @@ function c7(f) {
       <img class="logo" src="${A("logo-white.svg")}">
       <div class="overlay" style="margin-top:${v(468, 480)}px; align-self:flex-start; width:${v(640, 680)}px; background:rgba(255,255,255,.96); color:var(--ink); border-radius:30px; padding:22px 26px 24px; box-shadow:0 30px 60px -20px rgba(0,0,0,.55)">
         <div style="font-size:23px; font-weight:800">Jan Börnigen, Steuerberater</div>
-        <div style="font-size:20px; color:#5f5a57; margin-top:2px">Zuvor Finanzchef einer Konzerneinheit, Controlling &amp; M&amp;A</div>
+        <div style="font-size:20px; color:#5f5a57; margin-top:2px">Zuvor Finanzchef einer Konzerneinheit, später im Controlling und verantwortlicher M&amp;A-Leiter eines Medienkonzerns</div>
         <div style="height:2px; background:var(--line); margin:14px 0 12px"></div>
         <div class="eyebrow" style="font-size:18px; color:var(--red)">Was Sie davon haben</div>
-        <div style="display:flex; flex-direction:column; gap:8px; margin-top:10px">
+        <div style="display:flex; flex-direction:column; gap:${v(4, 6)}px; margin-top:10px">
           ${gains
             .map(
               (t) => `
-            <div style="display:flex; gap:12px; align-items:center; font-size:${v(23, 25)}px; font-weight:600">
+            <div style="display:flex; gap:12px; align-items:center; font-size:${v(22, 25)}px; font-weight:600">
               <span class="check" style="background:var(--red); width:28px; height:28px">${tick()}</span>${t}
             </div>`,
             )
@@ -345,7 +345,7 @@ function c7(f) {
       </div>
       <div class="spacer"></div>
       <div style="align-self:flex-start; background:var(--red); color:#fff; font-size:${v(30, 34)}px; font-weight:800; letter-spacing:-0.01em; padding:8px 18px; border-radius:12px; margin-bottom:16px">Verkauf, Zukauf oder Nachfolge geplant?</div>
-      <h1 style="font-size:${v(68, 76)}px; margin-bottom:${v(30, 40)}px">
+      <h1 style="font-size:${v(68, 70)}px; margin-bottom:${v(22, 30)}px">
         Ihr nächster Steuerberater war selbst <span style="color:var(--red)">Finanzchef.</span>
       </h1>
       ${footer({ dark: true, cta: "Erstgespräch mit Jan Börnigen sichern", fine: "Kostenlos · unverbindlich · 20 Minuten · ab 500.000 € Umsatz" })}
