@@ -164,7 +164,7 @@ export default function Home() {
           />
           <Container className="relative grid gap-10 pt-10 pb-14 sm:py-20 lg:grid-cols-[1.35fr_0.65fr] lg:items-center lg:gap-10 xl:grid-cols-[1.15fr_0.85fr] xl:gap-16 lg:py-24">
             <div>
-              <Eyebrow>Für Unternehmer ab 500.000 € Umsatz · Raum München</Eyebrow>
+              <Eyebrow>Für Unternehmer ab 500.000 € Umsatz</Eyebrow>
               <h1 className="mt-5 text-[2.6rem] leading-[1.02] font-semibold tracking-[-0.035em] text-balance text-ink sm:text-[3.25rem] lg:text-[3.2rem] xl:text-[3.6rem]">
                 <span className="text-red">Weniger Steuern.</span> Weniger Papierkram. Mehr Zeit für Ihr Unternehmen.
               </h1>
