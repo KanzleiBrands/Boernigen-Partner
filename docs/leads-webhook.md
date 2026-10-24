@@ -46,7 +46,7 @@ Antwort 502, wenn alle Kanäle scheitern → Lead bleibt im Browser und wird bei
 | `X-Signature-Timestamp` | Unix-Sekunden; Anfragen älter als 5 Minuten verwerfen |
 | `Authorization` | nur wenn `LEAD_WEBHOOK_TOKEN` gesetzt ist |
 
-Der Body enthält **nur die Angaben aus dem Formular** (lesbar beschriftet, leere Felder werden weggelassen). Technik-, Tracking- und Score-Felder gehen bewusst nicht ans OS. Sie stehen nur im Vercel-Log und in der optionalen Mail-Kopie. Die Lead-ID kommt ausschließlich als `Idempotency-Key`-Header.
+Der Body enthält **nur die Angaben aus dem Formular** (lesbar beschriftet, leere Felder werden weggelassen). Dazu kommt `einwilligung` als Nachweis der Datenschutz-Einwilligung (Zeitpunkt in deutscher Zeit). Technik-, Tracking- und Score-Felder gehen bewusst nicht ans OS. Sie stehen nur im Vercel-Log und in der optionalen Mail-Kopie. Die Lead-ID kommt ausschließlich als `Idempotency-Key`-Header.
 
 Beispiel-Body:
 
@@ -63,7 +63,8 @@ Beispiel-Body:
   "branche": "Beratung & Dienstleistung",
   "mitarbeiter": "10 – 49",
   "wechselgrund": "Antworten dauern zu lange, Keine proaktiven Gestaltungsvorschläge",
-  "nachricht": "Holding geplant"
+  "nachricht": "Holding geplant",
+  "einwilligung": "Ja, 24.10.2026 um 15:43 Uhr"
 }
 ```
 

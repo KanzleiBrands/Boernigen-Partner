@@ -47,7 +47,11 @@ export type WebhookBody = {
   mitarbeiter?: string;
   wechselgrund?: string;
   nachricht?: string;
+  einwilligung: string;
 };
+
+const berlin = (iso: string, o: Intl.DateTimeFormatOptions) =>
+  new Date(iso).toLocaleString("de-DE", { timeZone: "Europe/Berlin", ...o });
 
 export function webhookBody(p: LeadPayload): WebhookBody {
   const q = p.qualifizierung;
@@ -64,6 +68,8 @@ export function webhookBody(p: LeadPayload): WebhookBody {
     mitarbeiter: q.mitarbeiter?.label,
     wechselgrund: q.anlass?.label,
     nachricht: p.nachricht,
+    // Nachweis der Datenschutz-Einwilligung (Checkbox im Formular), Zeit in deutscher Ortszeit
+    einwilligung: `Ja, ${berlin(p.einwilligung.zeitpunkt, { dateStyle: "medium" })} um ${berlin(p.einwilligung.zeitpunkt, { timeStyle: "short" })} Uhr`,
   };
   // Leere Angaben gar nicht erst senden
   for (const k of Object.keys(body) as (keyof WebhookBody)[]) if (!body[k]?.trim()) delete body[k];
