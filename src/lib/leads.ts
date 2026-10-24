@@ -33,18 +33,55 @@ export type LeadPayload = {
   einwilligung: { datenschutz: true; zeitpunkt: string; text: string };
 };
 
+/** Was per Webhook rausgeht: nur die Angaben aus dem Formular, lesbar beschriftet – keine Technik-/Tracking-Felder. */
+export type WebhookBody = {
+  vorname: string;
+  nachname: string;
+  firma: string;
+  email: string;
+  telefon: string;
+  erreichbarkeit?: string;
+  jahresumsatz?: string;
+  rechtsform?: string;
+  branche?: string;
+  mitarbeiter?: string;
+  wechselgrund?: string;
+  nachricht?: string;
+};
+
+export function webhookBody(p: LeadPayload): WebhookBody {
+  const q = p.qualifizierung;
+  const body: WebhookBody = {
+    vorname: p.vorname,
+    nachname: p.nachname,
+    firma: p.firma,
+    email: p.email,
+    telefon: p.telefon,
+    erreichbarkeit: p.kontakt.erreichbarkeit,
+    jahresumsatz: q.umsatz?.label,
+    rechtsform: q.rechtsform?.label,
+    branche: q.branche?.label,
+    mitarbeiter: q.mitarbeiter?.label,
+    wechselgrund: q.anlass?.label,
+    nachricht: p.nachricht,
+  };
+  // Leere Angaben gar nicht erst senden
+  for (const k of Object.keys(body) as (keyof WebhookBody)[]) if (!body[k]?.trim()) delete body[k];
+  return body;
+}
+
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 /**
  * POST an einen Webhook mit Timeout, 3 Versuchen und HMAC-Signatur.
  * Header `Idempotency-Key` = lead_id, damit das Zielsystem Dubletten verwerfen kann.
  */
-async function postWebhook(url: string, payload: LeadPayload, secret?: string) {
-  const body = JSON.stringify(payload);
+async function postWebhook(url: string, data: WebhookBody, leadId: string, secret?: string) {
+  const body = JSON.stringify(data);
   const headers: Record<string, string> = {
     "Content-Type": "application/json",
     "User-Agent": "bup-erstgespraech/1.0",
-    "Idempotency-Key": payload.lead_id,
+    "Idempotency-Key": leadId,
   };
   const token = process.env.LEAD_WEBHOOK_TOKEN;
   if (token) headers.Authorization = `Bearer ${token}`;
@@ -122,39 +159,44 @@ export async function deliverLead(p: LeadPayload) {
   const backup = process.env.LEAD_BACKUP_WEBHOOK_URL;
   const secret = process.env.LEAD_WEBHOOK_SECRET;
 
+  const data = webhookBody(p);
   const [mainRes, backupRes] = await Promise.all([
-    main ? postWebhook(main, p, secret) : Promise.resolve(undefined),
-    backup ? postWebhook(backup, p, secret) : Promise.resolve(undefined),
+    main ? postWebhook(main, data, p.lead_id, secret) : Promise.resolve(undefined),
+    backup ? postWebhook(backup, data, p.lead_id, secret) : Promise.resolve(undefined),
   ]);
 
   const k = p.kontakt;
   const q = p.qualifizierung;
   const webhookFailed = (main && !mainRes?.ok) || (backup && !backupRes?.ok);
   const status = [
-    main ? `OS-Webhook: ${mainRes?.ok ? "übertragen" : `FEHLGESCHLAGEN (${mainRes && "error" in mainRes ? mainRes.error : "?"})`}` : "OS-Webhook: nicht konfiguriert",
+    main
+      ? `OS-Webhook: ${mainRes?.ok ? "übertragen" : `FEHLGESCHLAGEN (${mainRes && "error" in mainRes ? mainRes.error : "?"})`}`
+      : "OS-Webhook: nicht konfiguriert",
     backup ? `Backup-Webhook: ${backupRes?.ok ? "übertragen" : "FEHLGESCHLAGEN"}` : undefined,
   ]
     .filter(Boolean)
     .join("\n");
 
-  const html = `<h2 style="font-family:Arial,sans-serif;color:#1d1b1c">Neue Anfrage Erstgespräch – Klasse ${p.score.klasse}</h2>${table([
-    ["Name", `${k.vorname} ${k.nachname}`],
-    ["Unternehmen", k.firma],
-    ["E-Mail", k.email],
-    ["Telefon", k.telefon],
-    ["PLZ", k.plz ? `${k.plz}${p.im_zielgebiet ? "" : " (außerhalb Zielgebiet)"}` : undefined],
-    ["Erreichbarkeit", k.erreichbarkeit],
-    ["Jahresumsatz", q.umsatz?.label],
-    ["Rechtsform", q.rechtsform?.label],
-    ["Branche", q.branche?.label],
-    ["Mitarbeitende", q.mitarbeiter?.label],
-    ["Wechselgrund", q.anlass?.label],
-    ["Nachricht", p.nachricht],
-    ["Score", `${p.score.punkte} Punkte (Klasse ${p.score.klasse})`],
-    ["Kampagne", [p.tracking.utm_campaign, p.tracking.utm_content].filter(Boolean).join(" / ") || undefined],
-    ["Lead-ID", p.lead_id],
-    ["Übertragung", status],
-  ])}`;
+  const html = `<h2 style="font-family:Arial,sans-serif;color:#1d1b1c">Neue Anfrage Erstgespräch – Klasse ${p.score.klasse}</h2>${table(
+    [
+      ["Name", `${k.vorname} ${k.nachname}`],
+      ["Unternehmen", k.firma],
+      ["E-Mail", k.email],
+      ["Telefon", k.telefon],
+      ["PLZ", k.plz ? `${k.plz}${p.im_zielgebiet ? "" : " (außerhalb Zielgebiet)"}` : undefined],
+      ["Erreichbarkeit", k.erreichbarkeit],
+      ["Jahresumsatz", q.umsatz?.label],
+      ["Rechtsform", q.rechtsform?.label],
+      ["Branche", q.branche?.label],
+      ["Mitarbeitende", q.mitarbeiter?.label],
+      ["Wechselgrund", q.anlass?.label],
+      ["Nachricht", p.nachricht],
+      ["Score", `${p.score.punkte} Punkte (Klasse ${p.score.klasse})`],
+      ["Kampagne", [p.tracking.utm_campaign, p.tracking.utm_content].filter(Boolean).join(" / ") || undefined],
+      ["Lead-ID", p.lead_id],
+      ["Übertragung", status],
+    ],
+  )}`;
 
   // Standardweg: nur das OS (es benachrichtigt die Kanzlei selbst). Mail-Kopie nur, wenn ausdrücklich konfiguriert.
   const mailTo = list(process.env.LEAD_EMAIL, "");

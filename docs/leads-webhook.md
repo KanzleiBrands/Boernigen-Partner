@@ -46,44 +46,30 @@ Antwort 502, wenn alle Kanäle scheitern → Lead bleibt im Browser und wird bei
 | `X-Signature-Timestamp` | Unix-Sekunden; Anfragen älter als 5 Minuten verwerfen |
 | `Authorization` | nur wenn `LEAD_WEBHOOK_TOKEN` gesetzt ist |
 
-Beispiel-Body (echter Testlauf):
+Der Body enthält **nur die Angaben aus dem Formular** (lesbar beschriftet, leere Felder werden weggelassen). Technik-, Tracking- und Score-Felder gehen bewusst nicht ans OS. Sie stehen nur im Vercel-Log und in der optionalen Mail-Kopie. Die Lead-ID kommt ausschließlich als `Idempotency-Key`-Header.
+
+Beispiel-Body:
 
 ```json
 {
-  "event": "lead.created",
-  "lead_id": "31f09714-5add-4e94-9b98-a550e76cd01b",
-  "created_at": "2026-10-14T15:32:38.203Z",
-  "quelle": "landingpage-erstgespraech",
-  "kanzlei": "Börnigen & Partners Steuerberatungsgesellschaft mbH",
-  "status": "qualifiziert",
-  "vorname": "Max", "nachname": "Muster", "firma": "Muster Consulting GmbH",
-  "email": "max@example.com", "telefon": "0171 1234567",
-  "kontakt": {
-    "vorname": "Max", "nachname": "Muster", "firma": "Muster Consulting GmbH",
-    "email": "max@example.com", "telefon": "0171 1234567",
-    "erreichbarkeit": "Vormittags (8–12 Uhr)"
-  },
-  "nachricht": "Holding geplant",
-  "qualifizierung": {
-    "umsatz":      { "wert": "1m-2-5m", "label": "1 – 2,5 Mio. €" },
-    "rechtsform":  { "wert": "gmbh", "label": "GmbH / UG" },
-    "branche":     { "wert": "beratung", "label": "Beratung & Dienstleistung" },
-    "mitarbeiter": { "wert": "10-49", "label": "10 – 49" },
-    "anlass":      { "wert": ["erreichbarkeit", "nicht-proaktiv"], "label": "Antworten dauern zu lange, Keine proaktiven Gestaltungsvorschläge" }
-  },
-  "score": { "punkte": 8, "klasse": "A" },
-  "im_zielgebiet": null,
-  "tracking": {
-    "utm_source": "meta", "utm_campaign": "bup-erstgespraech", "utm_content": "angle1-video",
-    "fbclid": "…", "landing_url": "https://…", "referrer": "…", "user_agent": "…"
-  },
-  "einwilligung": { "datenschutz": true, "zeitpunkt": "2026-10-14T15:32:38.203Z", "text": "Ich bin einverstanden, …" }
+  "vorname": "Max",
+  "nachname": "Muster",
+  "firma": "Muster Consulting GmbH",
+  "email": "max@example.com",
+  "telefon": "0171 1234567",
+  "erreichbarkeit": "Vormittags (8–12 Uhr)",
+  "jahresumsatz": "1 – 2,5 Mio. €",
+  "rechtsform": "GmbH / UG",
+  "branche": "Beratung & Dienstleistung",
+  "mitarbeiter": "10 – 49",
+  "wechselgrund": "Antworten dauern zu lange, Keine proaktiven Gestaltungsvorschläge",
+  "nachricht": "Holding geplant"
 }
 ```
 
-**Kontaktfelder doppelt:** `vorname`, `nachname`, `firma`, `email` und `telefon` stehen zusätzlich auf oberster Ebene. Das Kanzlei Brands OS erkennt Kontaktfelder nur dort automatisch (`AUTO_DETECT` in `src/lib/webhook-ingest.ts` des OS) – ohne sie erscheint der Lead als „Unbenannt · Keine E-Mail · Kein Telefon“. `kontakt` bleibt für andere Empfänger erhalten.
+**Kontaktfelder auf oberster Ebene:** Das Kanzlei Brands OS erkennt `vorname`, `nachname`, `firma`, `email` und `telefon` nur dort automatisch (`AUTO_DETECT` in `src/lib/webhook-ingest.ts` des OS). Die übrigen Felder erscheinen im OS unter „Zusätzliche Angaben“.
 
-**Das OS muss:** mit `2xx` antworten, sobald der Lead gespeichert ist (nicht erst nach weiterer Verarbeitung), und `lead_id` als eindeutigen Schlüssel nutzen. `4xx` wird nicht wiederholt (Konfigurationsfehler → Alarm-Mail), `5xx`/`408`/`429`/Timeout werden wiederholt.
+**Das OS muss:** mit `2xx` antworten, sobald der Lead gespeichert ist (nicht erst nach weiterer Verarbeitung), und den `Idempotency-Key`-Header (= Lead-ID) als eindeutigen Schlüssel nutzen. `4xx` wird nicht wiederholt (Konfigurationsfehler → Alarm-Mail), `5xx`/`408`/`429`/Timeout werden wiederholt.
 
 Signaturprüfung im OS (Node-Beispiel):
 
@@ -103,7 +89,7 @@ const ok = Math.abs(Date.now() / 1000 - Number(ts)) < 300 &&
 4. **E-Mail-Kopie (optional):** Mit `LEAD_EMAIL` geht jeder Lead zusätzlich per Mail raus – mit Score im Betreff und Übertragungsstatus. Standardmäßig aus, weil das OS die Kanzlei benachrichtigt.
 5. **Alarm + Log:** Scheitert ein Webhook, geht eine Alarm-Mail mit dem kompletten JSON an Kanzlei Brands (manuell im OS nachtragen). Zusätzlich steht jeder Lead als `[lead]`-Zeile in den Vercel-Logs.
 
-**Wöchentlicher Abgleich (5 Minuten):** Anzahl Leads in Meta (Event `Lead`) ↔ Google Sheet (Backup) ↔ OS. Weichen die Zahlen ab, über die `lead_id` den fehlenden Lead finden.
+**Wöchentlicher Abgleich (5 Minuten):** Anzahl Leads in Meta (Event `Lead`) ↔ Google Sheet (Backup) ↔ OS. Weichen die Zahlen ab, den fehlenden Lead über E-Mail oder Name finden (die `lead_id` steht im Vercel-Log).
 
 ## Testen vor dem Livegang
 
