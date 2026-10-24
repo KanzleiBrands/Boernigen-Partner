@@ -67,7 +67,7 @@ const partners = [
     ini: "JB",
     name: "Jan Börnigen",
     title: "Dipl.-Kfm., Steuerberater",
-    bio: "Zuvor Finanzchef einer Konzerneinheit, dann Controlling und M&A",
+    bio: "Zuvor Finanzchef einer Konzerneinheit, später im Controlling und verantwortlicher M&A-Leiter eines Medienkonzerns",
     img: "/img/team/jan-boernigen.jpg",
   },
   {
@@ -300,7 +300,7 @@ export default function Home() {
           sub="Abschluss, Erklärung, Bescheid: Das ist der Blick zurück. Wir schauen mit Ihnen nach vorn – mit der Erfahrung eines Finanzchefs, der solche Entscheidungen selbst verantwortet hat."
           points={[
             "Investition, Zukauf, Verkauf, Nachfolge: steuerliche Folgen kennen, bevor Sie entscheiden",
-            "Jan Börnigen war Finanzchef einer Konzerneinheit, später in Controlling und M&A eines Medienkonzerns",
+            "Jan Börnigen war Finanzchef einer Konzerneinheit, später im Controlling und verantwortlicher M&A-Leiter eines Medienkonzerns",
             "Sie wissen jederzeit, wie viel Geld Ihnen bleibt",
           ]}
           visual={<CfoCockpit />}
