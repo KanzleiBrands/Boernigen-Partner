@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { CalendarCheck, FileSearch, PhoneCall } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { LeadConversion } from "@/components/LeadConversion";
 import { Container, Eyebrow, KANZLEI } from "@/components/ui";
 
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ export default async function DankePage({ searchParams }: { searchParams: Promis
   const name = n?.trim().slice(0, 80);
   return (
     <>
+      <LeadConversion />
       <Header minimal />
       <main className="bg-paper">
         <Container className="py-16 sm:py-24">
