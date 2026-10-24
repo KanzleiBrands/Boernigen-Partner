@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { ArrowLeft, ArrowRight, Check, Loader2, Lock, Phone } from "lucide-react";
 import { QUESTIONS, isDisqualified, type Answers, type Option } from "@/lib/funnel";
 import { getTracking, newLeadId, send } from "@/lib/outbox";
+import { PENDING_LEAD_KEY } from "@/components/LeadConversion";
 import { getMetaCookies } from "@/lib/meta-cookies";
 import { KANZLEI } from "@/components/ui";
 
@@ -127,11 +128,11 @@ export function Funnel() {
     };
     const r = await send(leadId, body);
     if (r === "ok") {
-      // Standard-Event „Lead“ – gleiche eventID wie das Server-Event (Conversions API) → Meta dedupliziert
-      window.fbq?.("track", "Lead", {}, { eventID: leadId });
+      // Meta-Event „Lead“ feuert die Danke-Seite (LeadConversion) – dort sieht man es auch im Pixel Helper
       window.dataLayer?.push({ event: "lead_submitted", lead_id: leadId });
       try {
         sessionStorage.removeItem(STATE_KEY);
+        sessionStorage.setItem(PENDING_LEAD_KEY, leadId);
       } catch {
         /* ignorieren */
       }
